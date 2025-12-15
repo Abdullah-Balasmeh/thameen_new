@@ -1,0 +1,46 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  plugins:
+    - dart_code_metrics
+  exclude:
+    - "**/*.g.dart"
+    - "build/**"
+  language:
+    strict-casts: true # Avoid unsafe downcasts
+    strict-inference: true # No dynamic types without explicit declaration
+    strict-raw-types: true # Avoid using raw generic types
+
+formatter:
+  trailing_commas: preserve
+
+linter:
+  rules:
+    # ✨ Style & Readability
+    file_names: true
+    directives_ordering: true
+    avoid_print: true
+    prefer_single_quotes: true
+    slash_for_doc_comments: true
+    control_flow_in_finally: true
+
+    # 🧠 Immutability & Const
+    prefer_const_constructors: true # Add const to widgets when possible
+    prefer_const_constructors_in_immutables: true # Add const to immutable class constructors
+    prefer_const_literals_to_create_immutables: true # Add const to [], {}, etc.
+    prefer_const_declarations: true # Add const to variables when possible
+    require_trailing_commas: true
+
+    # ⚙️ Best Practices & Safety
+    cancel_subscriptions: true
+    close_sinks: true
+    use_build_context_synchronously: true
+    avoid_unnecessary_containers: true
+    sized_box_for_whitespace: true
+    avoid_web_libraries_in_flutter: true
+
+    # ⚠️ Correctness & Cleanup
+    unnecessary_brace_in_string_interps: true
+    unnecessary_parenthesis: true
+    unnecessary_string_escapes: true
+    non_constant_identifier_names: true

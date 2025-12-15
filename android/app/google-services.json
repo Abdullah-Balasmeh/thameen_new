@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "659936753588",
+    "project_id": "thameen-36d3d",
+    "storage_bucket": "thameen-36d3d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659936753588:android:6fc2540fb725cabd2624e1",
+        "android_client_info": {
+          "package_name": "com.example.thameen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG5uGuwVQFRSxaV36h5oDIuYL2CTk5anQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
