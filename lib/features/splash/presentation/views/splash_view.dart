@@ -4,7 +4,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:thameen/core/constants/shared_pref_constants.dart';
 import 'package:thameen/core/utils/assets.dart';
 import 'package:thameen/features/auth/presentation/views/sign_in_view.dart';
-import 'package:thameen/features/home/presentation/views/home_view.dart';
+import 'package:thameen/features/base/presentation/views/base_view.dart';
 import 'package:thameen/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 
@@ -40,7 +40,7 @@ class _SplashViewState extends State<SplashView> {
     final bool isRememberMe = SharedPreferencesSingleton.getBool(kisRememberMe);
     if (isSeen) {
       if (isRememberMe) {
-        return const HomeView();
+        return const BaseView();
       } else {
         return const SignInView();
       }

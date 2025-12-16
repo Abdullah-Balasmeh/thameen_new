@@ -18,22 +18,14 @@ class ProfileListTile extends StatelessWidget {
       onTap: onTap,
       child: ListTile(
         contentPadding: EdgeInsets.zero,
-        minLeadingWidth: 0,
-        dense: true,
-        visualDensity: VisualDensity.compact,
-        horizontalTitleGap: 16,
-        minVerticalPadding: 0,
         leading: Icon(
           icon,
           color: theme.iconTheme.color,
           size: 28,
         ),
-        title: Padding(
-          padding: const EdgeInsets.only(left: 8),
-          child: Text(
-            title,
-            style: theme.textTheme.bodyLarge,
-          ),
+        title: Text(
+          title,
+          style: theme.textTheme.bodyLarge,
         ),
         trailing: const Padding(
           padding: EdgeInsets.only(right: 8),

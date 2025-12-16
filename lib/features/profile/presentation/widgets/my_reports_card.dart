@@ -9,10 +9,10 @@ class MyReportsCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
-        color: AppColors.primary.withOpacity(0.1),
+        color: AppColors.primary.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: AppColors.primary.withOpacity(0.3),
+          color: AppColors.primary.withValues(alpha: 0.3),
           width: 1,
         ),
       ),
@@ -30,11 +30,11 @@ class MyReportsCard extends StatelessWidget {
                   width: 56,
                   height: 56,
                   decoration: BoxDecoration(
-                    color: AppColors.primary.withOpacity(0.2),
+                    color: AppColors.primary.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: const Icon(
-                    Icons.report_outlined,
+                    Icons.edit_document,
                     size: 28,
                     color: AppColors.primary,
                   ),
@@ -57,7 +57,7 @@ class MyReportsCard extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'View your reports',
+                        'View and manage your reports',
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.grey[600],
