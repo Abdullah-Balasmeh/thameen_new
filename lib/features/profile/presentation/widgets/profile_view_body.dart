@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
+import 'package:thameen/features/auth/presentation/views/sign_in_view.dart';
 import 'package:thameen/features/profile/presentation/widgets/account_settings.dart';
 import 'package:thameen/features/profile/presentation/widgets/my_reports_card.dart';
 import 'package:thameen/features/profile/presentation/widgets/profile_header.dart';
@@ -48,7 +49,13 @@ class LogOutButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 16),
           minimumSize: const Size(double.infinity, 56),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            SignInView.routeName,
+            (route) => false,
+          );
+        },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

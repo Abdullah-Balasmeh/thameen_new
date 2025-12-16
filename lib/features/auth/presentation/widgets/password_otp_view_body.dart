@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:provider/provider.dart' show WatchContext;
 import 'package:thameen/core/constants/app_spacing.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/core/utils/assets.dart';
-import 'package:thameen/features/auth/presentation/views/new_password_view.dart';
+import 'package:thameen/features/auth/presentation/bloc/forgot_password_cubit/forgot_password_cubit.dart';
 import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
+import 'package:thameen/shared/widgets/loading_button.dart';
 
 class PasswordOtpViewBody extends StatefulWidget {
   const PasswordOtpViewBody({super.key});
@@ -55,6 +57,17 @@ class _PasswordOtpViewBodyState extends State<PasswordOtpViewBody>
 
   @override
   Widget build(BuildContext context) {
+    bool isLoading = false;
+    bool isButtonEnabled = true;
+    var forgotPasswordCubit = context.watch<ForgotPasswordCubit>();
+    if (forgotPasswordCubit.state is FPVerifyLoading) {
+      isLoading = true;
+      isButtonEnabled = false;
+    } else {
+      isLoading = false;
+      isButtonEnabled = true;
+    }
+    final email = forgotPasswordCubit.email;
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -85,7 +98,7 @@ class _PasswordOtpViewBodyState extends State<PasswordOtpViewBody>
             const SizedBox(height: 8),
 
             Text(
-              'abdullah@gmail.com',
+              email!,
               style: AppTextStyle.semiBold18.copyWith(
                 color: AppColors.primary,
                 decoration: TextDecoration.underline,
@@ -123,12 +136,21 @@ class _PasswordOtpViewBodyState extends State<PasswordOtpViewBody>
             const SizedBox(height: 20),
 
             AppButton(
-              child: Text(
-                S.of(context).verifyButton,
-                style: AppTextStyle.bold20,
-              ),
+              child: isLoading
+                  ? const LoadingButton()
+                  : Text(
+                      S.of(context).verifyButton,
+                      style: AppTextStyle.bold20,
+                    ),
               onPressed: () {
-                Navigator.pushNamed(context, NewPasswordView.routeName);
+                if (isButtonEnabled) {
+                  if (currentText.length == 6) {
+                    forgotPasswordCubit.verifyOtp(
+                      email,
+                      currentText,
+                    );
+                  }
+                }
               },
             ),
             const SizedBox(height: 18),
@@ -159,7 +181,7 @@ class _PasswordOtpViewBodyState extends State<PasswordOtpViewBody>
                 TextButton(
                   onPressed: _canResend
                       ? () {
-                          // TODO: call resend OTP API here
+                          forgotPasswordCubit.sendOtp(email);
 
                           setState(() {
                             _canResend = false;

@@ -47,6 +47,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
       emit(FPVerifyLoading());
       final isVerified = await authRepo.verifyOtp(email, otp);
       if (isVerified) {
+        authRepo.tempLogin(email);
         emit(FPVerifySuccess());
       } else {
         emit(FPVerifyError('Invalid OTP'));

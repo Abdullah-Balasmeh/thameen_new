@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:thameen/core/constants/app_spacing.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/core/utils/assets.dart';
+import 'package:thameen/core/utils/helper/build_error_snackbar.dart';
+import 'package:thameen/features/auth/presentation/bloc/forgot_password_cubit/forgot_password_cubit.dart';
 import 'package:thameen/features/auth/presentation/widgets/password_text_form_field.dart';
 import 'package:thameen/features/auth/presentation/widgets/showSuccessDialog.dart';
 import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
+import 'package:thameen/shared/widgets/loading_button.dart';
 
 class NewPasswordViewBody extends StatefulWidget {
   const NewPasswordViewBody({super.key});
@@ -36,6 +40,16 @@ class _NewPasswordViewBodyState extends State<NewPasswordViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    bool isLoading = false;
+    bool isButtonEnabled = true;
+    var forgotPasswordCubit = context.watch<ForgotPasswordCubit>();
+    if (forgotPasswordCubit.state is FPResetLoading) {
+      isLoading = true;
+      isButtonEnabled = false;
+    } else {
+      isLoading = false;
+      isButtonEnabled = true;
+    }
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -122,11 +136,35 @@ class _NewPasswordViewBodyState extends State<NewPasswordViewBody> {
             ),
             const SizedBox(height: 24),
             AppButton(
-              child: Text(
-                S.of(context).resetPasswordButton,
-                style: AppTextStyle.bold20,
-              ),
+              child: isLoading
+                  ? const LoadingButton()
+                  : Text(
+                      S.of(context).resetPasswordButton,
+                      style: AppTextStyle.bold20,
+                    ),
               onPressed: () {
+                if (isButtonEnabled) {
+                  if (_passwordController.text.isEmpty ||
+                      _confirmPasswordController.text.isEmpty) {
+                    buildErrorSnackBar(
+                      context,
+                      S.of(context).signinPasswordIsRequired,
+                    );
+                    return;
+                  }
+                  if (_passwordController.text !=
+                      _confirmPasswordController.text) {
+                    buildErrorSnackBar(
+                      context,
+                      S.of(context).signupErrorPasswordMismatch,
+                    );
+                    return;
+                  }
+                  forgotPasswordCubit.resetPassword(
+                    forgotPasswordCubit.email!,
+                    _passwordController.text,
+                  );
+                }
                 showSuccessDialog(
                   context,
                   S.of(context).passwordResetSuccessfully,

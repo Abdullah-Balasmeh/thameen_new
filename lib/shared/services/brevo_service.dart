@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 class BrevoService {
   final String brevoApiKey =
-      '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';
+      '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';
 
   Future<void> sendEmail({
     required String toEmail,
