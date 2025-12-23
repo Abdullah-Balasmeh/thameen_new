@@ -74,7 +74,9 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             child: AppButton(
               child: Text(
                 S.of(context).onboardingGetStartedButton,
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  color: AppColors.darkTextPrimary,
+                ),
               ),
               onPressed: () {
                 SharedPreferencesSingleton.setBool(isOnboardingSeen, true);

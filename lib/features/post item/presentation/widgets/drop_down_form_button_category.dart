@@ -14,7 +14,7 @@ class DropDownFormButtonCategory extends StatefulWidget {
     this.validator,
     required this.controller,
     this.autovalidateMode,
-    this.onChanged,
+    required this.onChanged,
     this.textInputAction,
     required this.itemList,
   });
@@ -25,7 +25,7 @@ class DropDownFormButtonCategory extends StatefulWidget {
   final String? Function(String?)? validator;
   final TextEditingController controller;
   final AutovalidateMode? autovalidateMode;
-  final ValueChanged<String>? onChanged;
+  final ValueChanged<String> onChanged;
   final TextInputAction? textInputAction;
   final List<ItemCategoryModel> itemList;
   @override
@@ -79,13 +79,18 @@ class _DropDownFormButtonCategoryState
             children: [
               Text(item.emoji),
               const SizedBox(width: 16),
-              Text(item.name),
+              Text(
+                item.name,
+                style: AppTextStyle.semiBold18.copyWith(
+                  color: theme.textTheme.bodyLarge!.color,
+                ),
+              ),
             ],
           ),
         );
       }).toList(),
       onChanged: (value) {
-        widget.onChanged!(value!);
+        widget.onChanged(value as String);
       },
 
       decoration: InputDecoration(

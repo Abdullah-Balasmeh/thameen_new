@@ -1,10 +1,11 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/post%20item/data/models/item_category.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
+import 'package:thameen/features/post%20item/presentation/bloc/create_post_cubit/create_post_cubit.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/anonymous_toggle.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/bounty_section.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/contact_methods_check_boxes.dart';
@@ -14,7 +15,9 @@ import 'package:thameen/features/post%20item/presentation/widgets/photo_upload.d
 import 'package:thameen/features/post%20item/presentation/widgets/report_text_form_field.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/report_type_selector.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/section_title.dart';
+import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
+import 'package:thameen/shared/widgets/loading_button.dart';
 
 class ReportForm extends StatefulWidget {
   const ReportForm({super.key});
@@ -27,14 +30,15 @@ class _ReportFormState extends State<ReportForm> {
   PostEntity? postEntity;
   final formKey = GlobalKey<FormState>();
   late AutovalidateMode autovalidateMode;
-  final ValueNotifier<bool> selectedType = ValueNotifier(false);
+  final ValueNotifier<PostType> selectedType = ValueNotifier(PostType.lost);
   late TextEditingController itemNameController;
   late TextEditingController itemCategoryController;
   late TextEditingController itemDescriptionController;
   late TextEditingController itemLocationController;
   late TextEditingController bountyController;
   final ValueNotifier<bool> postAnonymously = ValueNotifier(false);
-  late ValueNotifier<List<String>> selectedContactMethods = ValueNotifier([]);
+  late ValueNotifier<List<ContactMethod>> selectedContactMethods =
+      ValueNotifier([]);
   late ValueNotifier<List<File>> selectedPhotos = ValueNotifier([]);
   bool nameTouched = false;
   bool contactMethodsError = false;
@@ -86,6 +90,29 @@ class _ReportFormState extends State<ReportForm> {
 
   @override
   Widget build(BuildContext context) {
+    bool isLoading = false;
+    bool isButtonEnabled = true;
+    var createPostCubit = context.watch<CreatePostCubit>();
+    if (createPostCubit.state is CreatePostLoading) {
+      isLoading = true;
+      isButtonEnabled = false;
+    } else {
+      isLoading = false;
+      isButtonEnabled = true;
+    }
+    if (createPostCubit.state is CreatePostSuccess) {
+      itemNameController.clear();
+      itemCategoryController.clear();
+      itemDescriptionController.clear();
+      itemLocationController.clear();
+      bountyController.clear();
+      selectedType.value = PostType.lost;
+      selectedContactMethods.value = [];
+      selectedPhotos.value = [];
+      setState(() {
+        contactMethodsError = false;
+      });
+    }
     return Form(
       key: formKey,
       autovalidateMode: autovalidateMode,
@@ -186,11 +213,11 @@ class _ReportFormState extends State<ReportForm> {
             autovalidateMode: autovalidateMode,
           ),
           const SizedBox(height: 16),
-          ValueListenableBuilder<bool>(
+          ValueListenableBuilder<PostType>(
             valueListenable: selectedType,
             builder: (context, value, _) {
               return Visibility(
-                visible: value == false, // show only for LOST
+                visible: value == PostType.lost,
                 child: BountySection(
                   bountyController: bountyController,
                   autovalidateMode: autovalidateMode,
@@ -213,12 +240,6 @@ class _ReportFormState extends State<ReportForm> {
             children: [
               ContactMethodsCheckBoxes(
                 selectedContactMethods: selectedContactMethods,
-                onChanged: (list) {
-                  setState(() {
-                    selectedContactMethods.value = list;
-                    contactMethodsError = list.isEmpty; // validate live
-                  });
-                },
               ),
               if (contactMethodsError)
                 const Padding(
@@ -240,22 +261,29 @@ class _ReportFormState extends State<ReportForm> {
           const SizedBox(height: 16),
           AppButton(
             onPressed: () {
-              final isValid = formKey.currentState!.validate();
-              final hasContactMethod = selectedContactMethods.value.isNotEmpty;
+              if (isButtonEnabled) {
+                final isValid = formKey.currentState!.validate();
+                final hasContactMethod =
+                    selectedContactMethods.value.isNotEmpty;
 
-              setState(() {
-                contactMethodsError = !hasContactMethod;
-              });
+                setState(() {
+                  contactMethodsError = !hasContactMethod;
+                });
 
-              if (isValid && hasContactMethod) {
-                // Create post entity
-                postEntity = PostEntity(
-                  id: '',
+                if (!isValid || !hasContactMethod) {
+                  setState(() {
+                    autovalidateMode = AutovalidateMode.always;
+                  });
+                  return;
+                }
+
+                context.read<CreatePostCubit>().createPost(
+                  userId: SharedPreferencesSingleton.getString('user'),
+                  postType: selectedType.value,
                   itemName: itemNameController.text,
                   itemCategory: itemCategoryController.text,
                   itemDescription: itemDescriptionController.text,
                   location: itemLocationController.text,
-                  type: selectedType.value,
                   bountyAmount: bountyController.text.isEmpty
                       ? 0.0
                       : double.parse(bountyController.text),
@@ -263,15 +291,11 @@ class _ReportFormState extends State<ReportForm> {
                   contactMethods: selectedContactMethods.value,
                   photos: selectedPhotos.value,
                 );
-
-                log('postEntity: ${postEntity!.toMap()}');
-              } else {
-                setState(() {
-                  autovalidateMode = AutovalidateMode.always;
-                });
               }
             },
-            child: Text('Submit Report', style: AppTextStyle.bold20),
+            child: isLoading
+                ? const LoadingButton()
+                : Text('Submit Report', style: AppTextStyle.bold20),
           ),
         ],
       ),

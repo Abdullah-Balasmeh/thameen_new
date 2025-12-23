@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:thameen/core/theme/app_colors.dart';
+import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
 
 class ContactMethodsCheckBoxes extends StatefulWidget {
   const ContactMethodsCheckBoxes({
     super.key,
     required this.selectedContactMethods,
-    required this.onChanged,
   });
 
-  final ValueNotifier<List<String>> selectedContactMethods;
-  final ValueChanged<List<String>> onChanged;
+  final ValueNotifier<List<ContactMethod>> selectedContactMethods;
 
   @override
   State<ContactMethodsCheckBoxes> createState() =>
@@ -17,15 +15,23 @@ class ContactMethodsCheckBoxes extends StatefulWidget {
 }
 
 class _ContactMethodsCheckBoxesState extends State<ContactMethodsCheckBoxes> {
-  final List<String> contactMethods = [
-    'Mobile Phone',
-    'In-App Chat',
-    'Email',
-  ];
+  final List<ContactMethod> contactMethods = ContactMethod.values;
+
+  String _label(ContactMethod method) {
+    switch (method) {
+      case ContactMethod.mobilePhone:
+        return 'Mobile Phone';
+      case ContactMethod.inAppChat:
+        return 'In App Chat';
+      case ContactMethod.email:
+        return 'Email';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -40,25 +46,23 @@ class _ContactMethodsCheckBoxesState extends State<ContactMethodsCheckBoxes> {
           );
 
           return CheckboxListTile(
-            checkColor: AppColors.lightBorder,
-            title: Text(method),
+            title: Text(_label(method)),
             value: isSelected,
-            onChanged: (value) {
-              final updatedList = List<String>.from(
+            onChanged: (checked) {
+              final updatedList = List<ContactMethod>.from(
                 widget.selectedContactMethods.value,
               );
 
-              if (value == true) {
+              if (checked == true) {
                 updatedList.add(method);
               } else {
                 updatedList.remove(method);
               }
 
-              widget.onChanged(updatedList); // 🔥 return result to parent
-
+              widget.selectedContactMethods.value = updatedList;
               setState(() {});
             },
-            activeColor: AppColors.primary,
+            activeColor: Theme.of(context).colorScheme.primary,
             contentPadding: EdgeInsets.zero,
             controlAffinity: ListTileControlAffinity.leading,
           );

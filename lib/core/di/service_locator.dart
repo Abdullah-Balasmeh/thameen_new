@@ -4,8 +4,11 @@ import 'package:thameen/core/language/language_service.dart';
 import 'package:thameen/core/theme/theme_service.dart';
 import 'package:thameen/features/auth/data/repositories_impl/auth_repo_impl.dart';
 import 'package:thameen/features/auth/domain/repositories/auth_repo.dart';
+import 'package:thameen/features/post%20item/data/repositories_impl/post_repository_impl.dart';
+import 'package:thameen/features/post%20item/domain/repositories/post_repository.dart';
 import 'package:thameen/shared/services/database_service.dart';
 import 'package:thameen/shared/services/firebase_auth_service.dart';
+import 'package:thameen/shared/services/firebase_storage.dart';
 import 'package:thameen/shared/services/firestore_service.dart';
 import 'package:thameen/shared/services/image_picker_service.dart';
 import 'package:thameen/shared/services/shared_preferences_singleton.dart';
@@ -24,6 +27,13 @@ Future<void> setupServiceLocator() async {
   getIt.registerSingleton<AuthRepo>(
     AuthRepoImpl(
       authService: getIt<FirebaseAuthService>(),
+      databaseService: getIt<DatabaseService>(),
+    ),
+  );
+  getIt.registerLazySingleton(() => FirebaseStorageService());
+
+  getIt.registerSingleton<PostRepository>(
+    PostRepositoryImpl(
       databaseService: getIt<DatabaseService>(),
     ),
   );

@@ -27,6 +27,7 @@ class SignInCubit extends Cubit<SignInState> {
           SharedPreferencesSingleton.setBool(kisRememberMe, true);
           SharedPreferencesSingleton.setString('email', email);
           SharedPreferencesSingleton.setString('password', password);
+          SharedPreferencesSingleton.setString('user', user.id);
         }
         emit(SignInSuccess(user: user));
       },

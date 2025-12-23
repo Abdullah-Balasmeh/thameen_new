@@ -7,7 +7,7 @@ void buildSuccessSnackBar(BuildContext context, String errMessage) {
     SnackBar(
       duration: const Duration(seconds: 2),
       behavior: SnackBarBehavior.floating,
-      backgroundColor: AppColors.primary,
+      backgroundColor: AppColors.success,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
