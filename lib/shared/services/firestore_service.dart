@@ -138,4 +138,24 @@ class FirestoreService implements DatabaseService {
       _handleFirebaseException(e);
     }
   }
+
+  @override
+  Future<List<Map<String, dynamic>>> getCollection({
+    required String path,
+    int? limit,
+  }) async {
+    try {
+      Query query = _col(path).orderBy('createdAt', descending: true);
+      if (limit != null) {
+        query = query.limit(limit);
+      }
+
+      final snapshot = await query.get();
+      return snapshot.docs
+          .map((e) => e.data() as Map<String, dynamic>)
+          .toList();
+    } on FirebaseException catch (e) {
+      _handleFirebaseException(e);
+    }
+  }
 }

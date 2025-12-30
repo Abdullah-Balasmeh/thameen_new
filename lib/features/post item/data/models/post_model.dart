@@ -32,7 +32,8 @@ class PostModel extends PostEntity {
       contactMethods: getContactMethods(
         List<String>.from(map['contactMethods'] as List<dynamic>),
       ),
-      photoUrls: List<String>.from(map['photoUrls'] as List<String>),
+      photoUrls: List<String>.from(map['photoUrls'] as List<dynamic>),
+
       createdAt: (map['createdAt'] as Timestamp).toDate(),
       postState: getPostState(map['postState'] as String),
     );

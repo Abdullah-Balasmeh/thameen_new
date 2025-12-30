@@ -44,4 +44,9 @@ abstract class DatabaseService {
   Stream<List<Map<String, dynamic>>> streamCollection({
     required String path,
   });
+
+  Future<List<Map<String, dynamic>>> getCollection({
+    required String path,
+    int? limit,
+  });
 }

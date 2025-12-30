@@ -15,18 +15,10 @@ AppBar buildAppBar(
     scrolledUnderElevation: 0.0,
     leading: showButtonBack
         ? IconButton(
-            style: TextButton.styleFrom(
-              elevation: 10,
-              shape: const CircleBorder(
-                side: BorderSide(
-                  color: Color(0xffF1F1F5),
-                  width: 1,
-                ),
-              ),
-            ),
             onPressed: onPressed,
             icon: const Icon(
               Icons.arrow_back_ios_new,
+              color: Colors.white,
             ),
           )
         : null,

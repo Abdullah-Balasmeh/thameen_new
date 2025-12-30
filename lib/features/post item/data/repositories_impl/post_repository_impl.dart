@@ -14,5 +14,16 @@ class PostRepositoryImpl implements PostRepository {
       data: post.toMap(),
       documentId: post.id,
     );
+    var postCount = await databaseService.getData(
+      path: 'posts_count',
+      documentId: 'u1wPEreIeIY0qi5KZiG9',
+    );
+    await databaseService.updateData(
+      path: 'posts_count',
+      documentId: 'u1wPEreIeIY0qi5KZiG9',
+      data: post.postType == PostType.lost
+          ? {'lost': postCount['lost'] + 1}
+          : {'found': postCount['found'] + 1},
+    );
   }
 }

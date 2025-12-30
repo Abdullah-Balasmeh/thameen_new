@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/theme/app_colors.dart';
+import 'package:thameen/features/home/presentation/bloc/all_posts_cubit/home_cubit.dart';
 
 class HomeSearchBar extends StatelessWidget {
   const HomeSearchBar({super.key});
@@ -23,11 +25,9 @@ class HomeSearchBar extends StatelessWidget {
           decoration: InputDecoration(
             hintText: 'Search for something...',
             prefixIcon: const Icon(Icons.search, color: AppColors.primary),
-            suffixIcon: GestureDetector(
-              onTap: () {},
-              child: const Icon(
-                Icons.tune,
-              ),
+            suffixIcon: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.tune),
             ),
             border: InputBorder.none,
             contentPadding: const EdgeInsets.symmetric(
@@ -36,7 +36,10 @@ class HomeSearchBar extends StatelessWidget {
             ),
           ),
           onChanged: (value) {
-            // Handle search
+            context.read<HomeCubit>().filterPosts(itemName: value);
+          },
+          onSubmitted: (value) {
+            context.read<HomeCubit>().filterPosts(itemName: value);
           },
         ),
       ),

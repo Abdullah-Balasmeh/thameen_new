@@ -4,8 +4,8 @@ import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/home/presentation/widgets/stat_card.dart';
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({super.key});
-
+  const HomeHeader({super.key, required this.postsCount});
+  final Map<String, dynamic> postsCount;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,11 +35,19 @@ class HomeHeader extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          const Row(
+          Row(
             children: [
-              StatCard(title: 'Lost Items', count: '156', icon: Icons.search),
-              SizedBox(width: 12),
-              StatCard(title: 'Found Items', count: '89', icon: Icons.done_all),
+              StatCard(
+                title: 'Lost Items',
+                count: postsCount['lost'].toString() ?? '0',
+                icon: Icons.search,
+              ),
+              const SizedBox(width: 12),
+              StatCard(
+                title: 'Found Items',
+                count: postsCount['found'].toString() ?? '0',
+                icon: Icons.done_all,
+              ),
             ],
           ),
         ],

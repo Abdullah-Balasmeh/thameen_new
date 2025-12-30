@@ -4,6 +4,8 @@ import 'package:thameen/core/language/language_service.dart';
 import 'package:thameen/core/theme/theme_service.dart';
 import 'package:thameen/features/auth/data/repositories_impl/auth_repo_impl.dart';
 import 'package:thameen/features/auth/domain/repositories/auth_repo.dart';
+import 'package:thameen/features/home/data/home_repo_impl.dart';
+import 'package:thameen/features/home/domain/repositories/home_repo.dart';
 import 'package:thameen/features/post%20item/data/repositories_impl/post_repository_impl.dart';
 import 'package:thameen/features/post%20item/domain/repositories/post_repository.dart';
 import 'package:thameen/shared/services/database_service.dart';
@@ -34,6 +36,11 @@ Future<void> setupServiceLocator() async {
 
   getIt.registerSingleton<PostRepository>(
     PostRepositoryImpl(
+      databaseService: getIt<DatabaseService>(),
+    ),
+  );
+  getIt.registerSingleton<HomeRepo>(
+    HomeRepoImpl(
       databaseService: getIt<DatabaseService>(),
     ),
   );

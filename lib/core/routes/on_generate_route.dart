@@ -12,6 +12,7 @@ import 'package:thameen/features/auth/presentation/views/sign_up_view.dart';
 import 'package:thameen/features/auth/presentation/views/terms_condition_view.dart';
 import 'package:thameen/features/base/presentation/views/base_view.dart';
 import 'package:thameen/features/home/presentation/views/home_view.dart';
+import 'package:thameen/features/home/presentation/views/post_detail_view.dart';
 import 'package:thameen/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:thameen/features/splash/presentation/views/splash_view.dart';
 
@@ -61,6 +62,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const BaseView());
     case HomeView.routeName:
       return MaterialPageRoute(builder: (context) => const HomeView());
+    case PostDetailView.routeName:
+      return MaterialPageRoute(
+        settings: settings,
+        builder: (context) => const PostDetailView(),
+      );
     default:
       return MaterialPageRoute(builder: (context) => const SplashView());
   }
