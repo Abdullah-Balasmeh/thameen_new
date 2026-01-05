@@ -34,7 +34,7 @@ class _HomeCategoriesState extends State<HomeCategories> {
     Category(
       name: 'Accessories',
       icons: Icons.watch,
-      color: Colors.yellowAccent,
+      color: Colors.deepOrangeAccent,
     ),
     Category(
       name: 'Money',
