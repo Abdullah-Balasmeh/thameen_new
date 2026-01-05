@@ -347,6 +347,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                               isEmailVerified: false,
                               createdAt: DateTime.now().toString(),
                               photoUrl: '',
+                              postsId: [],
                             ),
                             _passwordController.text,
                           );

@@ -17,6 +17,11 @@ class HomeCategories extends StatefulWidget {
 class _HomeCategoriesState extends State<HomeCategories> {
   final List<Category> categories = [
     Category(
+      name: 'All Items',
+      icons: Icons.menu_rounded,
+      color: Colors.orange,
+    ),
+    Category(
       name: 'Electronics',
       icons: Icons.devices,
       color: Colors.blue,
@@ -29,7 +34,7 @@ class _HomeCategoriesState extends State<HomeCategories> {
     Category(
       name: 'Accessories',
       icons: Icons.watch,
-      color: Colors.orange,
+      color: Colors.yellowAccent,
     ),
     Category(
       name: 'Money',

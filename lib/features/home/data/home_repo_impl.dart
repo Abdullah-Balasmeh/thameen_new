@@ -1,3 +1,4 @@
+import 'package:thameen/features/home/domain/entities/poster_entity.dart';
 import 'package:thameen/features/home/domain/repositories/home_repo.dart';
 import 'package:thameen/features/post%20item/data/models/post_model.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
@@ -36,13 +37,18 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<String> getPosterNameById(String posterId) async {
+  Future<PosterEntity> getPosterDataById(String posterId) async {
     final data = await databaseService.getData(
       path: 'users',
       documentId: posterId,
     );
-    final firstName = data['firstName'] as String;
-    final lastName = data['lastName'] as String;
-    return '$firstName $lastName';
+    return PosterEntity(
+      id: posterId,
+      firstName: data['firstName'] as String,
+      lastName: data['lastName'] as String,
+      email: data['email'] as String,
+      phoneNumber: data['phoneNumber'] as String,
+      photoUrl: data['photoUrl'] as String?,
+    );
   }
 }

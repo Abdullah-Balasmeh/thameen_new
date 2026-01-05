@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:thameen/core/di/service_locator.dart';
 import 'package:thameen/core/theme/app_colors.dart';
+import 'package:thameen/features/home/domain/repositories/home_repo.dart';
+import 'package:thameen/features/home/presentation/bloc/all_posts_cubit/home_cubit.dart';
 import 'package:thameen/features/home/presentation/views/home_view.dart';
 import 'package:thameen/features/post%20item/presentation/views/post_report_view.dart';
 import 'package:thameen/features/profile/presentation/views/profile_view.dart';
@@ -48,28 +52,31 @@ class _BaseViewState extends State<BaseView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(
-        context,
-        showButtonBack: false,
-        showButtonActions: true,
-        title: titles[selectedIndex],
-        backgroundColor: AppColors.primary,
+    return BlocProvider(
+      create: (context) => HomeCubit(getIt<HomeRepo>()),
+      child: Scaffold(
+        appBar: buildAppBar(
+          context,
+          showButtonBack: false,
+          showButtonActions: true,
+          title: titles[selectedIndex],
+          backgroundColor: AppColors.primary,
+        ),
+        body: PageView.builder(
+          itemCount: 5,
+          physics: const BouncingScrollPhysics(),
+          controller: pageController,
+          onPageChanged: (index) {
+            setState(() {
+              selectedIndex = index;
+            });
+          },
+          itemBuilder: (context, index) {
+            return pages[index];
+          },
+        ),
+        bottomNavigationBar: buildBottomNavigationBar(),
       ),
-      body: PageView.builder(
-        itemCount: 5,
-        physics: const BouncingScrollPhysics(),
-        controller: pageController,
-        onPageChanged: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-        },
-        itemBuilder: (context, index) {
-          return pages[index];
-        },
-      ),
-      bottomNavigationBar: buildBottomNavigationBar(),
     );
   }
 

@@ -61,7 +61,7 @@ class CreatePostCubit extends Cubit<CreatePostState> {
       log('post: ${post.toMap()}');
       // 4️⃣ Save to Firestore
       await postRepository.createPost(post);
-
+      await postRepository.addPostIdToUser(post);
       emit(CreatePostSuccess());
     } catch (e) {
       log('Error: ${e.toString()}');

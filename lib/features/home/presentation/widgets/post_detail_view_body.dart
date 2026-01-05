@@ -1,20 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/core/utils/extuntions/date_time_ex.dart';
 import 'package:thameen/core/utils/helper/map_category_to_emoji.dart';
+import 'package:thameen/features/home/domain/entities/poster_entity.dart';
+import 'package:thameen/features/home/presentation/widgets/contact_reporter_bottom_sheet.dart';
 import 'package:thameen/features/home/presentation/widgets/post_detail_item_list_tile.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
 
-class PostDetailViewBody extends StatelessWidget {
+class PostDetailViewBody extends StatefulWidget {
   const PostDetailViewBody({
     super.key,
     required this.post,
-    required this.posterName,
+    required this.poster,
   });
   final PostEntity post;
-  final String posterName;
+  final PosterEntity poster;
+
+  @override
+  State<PostDetailViewBody> createState() => _PostDetailViewBodyState();
+}
+
+class _PostDetailViewBodyState extends State<PostDetailViewBody> {
+  final PageController pageController = PageController();
+
+  int currentPage = 0;
+
+  void onPageChanged(int index) {
+    setState(() {
+      currentPage = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -32,13 +52,13 @@ class PostDetailViewBody extends StatelessWidget {
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: post.postType == PostType.lost
+                    color: widget.post.postType == PostType.lost
                         ? AppColors.error
                         : AppColors.success,
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: Text(
-                    post.postType == PostType.lost ? 'Lost' : 'Found',
+                    widget.post.postType == PostType.lost ? 'Lost' : 'Found',
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
@@ -49,7 +69,7 @@ class PostDetailViewBody extends StatelessWidget {
                 const SizedBox(width: 12),
                 // Category
                 Text(
-                  '${mapCategoryToEmoji(post.itemCategory)} ${post.itemCategory}',
+                  '${mapCategoryToEmoji(widget.post.itemCategory)} ${widget.post.itemCategory}',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -68,7 +88,7 @@ class PostDetailViewBody extends StatelessWidget {
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: Text(
-                    post.postState.name.toUpperCase(),
+                    widget.post.postState.name.toUpperCase(),
                     style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
@@ -80,7 +100,7 @@ class PostDetailViewBody extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Text(
-              post.itemName,
+              widget.post.itemName,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -88,38 +108,72 @@ class PostDetailViewBody extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
+            //  if (widget.post.photoUrls.isNotEmpty)
+            //   GridView.builder(
+            //     shrinkWrap: true,
+            //     physics: const NeverScrollableScrollPhysics(),
+            //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            //       crossAxisCount: 3,
+            //       crossAxisSpacing: 8,
+            //       mainAxisSpacing: 8,
+            //     ),
+            //     itemCount: widget.post.photoUrls.length,
+            //     itemBuilder: (context, index) {
+            //       return ClipRRect(
+            //         borderRadius: BorderRadius.circular(12),
+            //         child: GestureDetector(
+            //           onTap: () {
+            //             // TODO: Open image in full screen
+            //             // Navigator.pushNamed(
+            //             //   context,
+            //             //   FullScreenImageView.routeName,
+            //             //   arguments: post.photoUrls[index],
+            //             // );
+            //           },
+            //           child: Image.network(
+            //             widget.post.photoUrls[index],
+            //             fit: BoxFit.cover,
+            //           ),
+            //         ),
+            //       );
+            //     },
+            //   ),
             // Item photos
-            if (post.photoUrls.isNotEmpty)
-              GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 8,
-                  mainAxisSpacing: 8,
-                ),
-                itemCount: post.photoUrls.length,
-                itemBuilder: (context, index) {
-                  return ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: GestureDetector(
-                      onTap: () {
-                        // TODO: Open image in full screen
-                        // Navigator.pushNamed(
-                        //   context,
-                        //   FullScreenImageView.routeName,
-                        //   arguments: post.photoUrls[index],
-                        // );
-                      },
-                      child: Image.network(
-                        post.photoUrls[index],
-                        fit: BoxFit.cover,
+            if (widget.post.photoUrls.isNotEmpty)
+              Container(
+                height: 300,
+                margin: const EdgeInsets.symmetric(vertical: 16),
+                child: PhotoViewGallery.builder(
+                  scrollPhysics: const BouncingScrollPhysics(),
+                  builder: (BuildContext context, int index) {
+                    return PhotoViewGalleryPageOptions(
+                      imageProvider: NetworkImage(widget.post.photoUrls[index]),
+                      initialScale: PhotoViewComputedScale.contained * 0.8,
+                      heroAttributes: PhotoViewHeroAttributes(
+                        tag: widget.post.photoUrls[index],
+                      ),
+                    );
+                  },
+                  itemCount: widget.post.photoUrls.length,
+                  loadingBuilder: (context, event) => Center(
+                    child: SizedBox(
+                      width: 20.0,
+                      height: 20.0,
+                      child: CircularProgressIndicator(
+                        value: event == null
+                            ? 0
+                            : event.cumulativeBytesLoaded /
+                                  event.expectedTotalBytes!,
                       ),
                     ),
-                  );
-                },
+                  ),
+                  backgroundDecoration: const BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  pageController: pageController,
+                  onPageChanged: onPageChanged,
+                ),
               ),
-
             const SizedBox(height: 16),
             Text(
               'Description',
@@ -131,7 +185,7 @@ class PostDetailViewBody extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              post.itemDescription,
+              widget.post.itemDescription,
               style: AppTextStyle.medium14.copyWith(
                 height: 1.6,
               ),
@@ -141,30 +195,41 @@ class PostDetailViewBody extends StatelessWidget {
             DetailRow(
               icon: Icons.person,
               label: 'Reported by',
-              value: post.postAnonymously ? 'Anonymous' : posterName,
+              value: widget.post.postAnonymously
+                  ? 'Anonymous'
+                  : '${widget.poster.firstName} ${widget.poster.lastName}',
             ),
             const SizedBox(height: 16),
             DetailRow(
               icon: Icons.location_on,
               label: 'Location',
-              value: post.location,
+              value: widget.post.location,
             ),
             const SizedBox(height: 16),
             DetailRow(
               icon: Icons.calendar_today,
               label: 'Reported Time',
-              value: timeAgo(post.createdAt),
+              value: timeAgo(widget.post.createdAt),
             ),
             const SizedBox(height: 16),
             DetailRow(
               icon: Icons.attach_money,
               label: 'Bounty',
-              value: '${post.bountyAmount} JD',
+              value: '${widget.post.bountyAmount} JD',
             ),
 
             const SizedBox(height: 32),
             AppButton(
-              onPressed: () {},
+              onPressed: () {
+                showBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return ContactReporterBottomSheet(
+                      poster: widget.poster,
+                    );
+                  },
+                );
+              },
               child: Text('Contact Reporter', style: AppTextStyle.bold20),
             ),
           ],

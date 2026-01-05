@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
+import 'package:thameen/core/theme/app_text_style.dart';
+import 'package:thameen/features/profile/presentation/views/my_reports_view.dart';
 
 class MyReportsCard extends StatelessWidget {
   const MyReportsCard({super.key});
@@ -9,17 +11,23 @@ class MyReportsCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
-        color: AppColors.primary.withValues(alpha: 0.1),
+        color: AppColors.primary.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: AppColors.primary.withValues(alpha: 0.3),
+          color: AppColors.primary.withOpacity(0.3),
           width: 1,
         ),
       ),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {},
+          onTap: () {Navigator.push(
+          context,
+          MaterialPageRoute(
+          builder: (context) => const MyReportsView(),
+          ),
+          );
+          }, 
           borderRadius: BorderRadius.circular(12),
           child: Padding(
             padding: const EdgeInsets.all(20),
@@ -30,11 +38,11 @@ class MyReportsCard extends StatelessWidget {
                   width: 56,
                   height: 56,
                   decoration: BoxDecoration(
-                    color: AppColors.primary.withValues(alpha: 0.2),
+                    color: AppColors.primary.withOpacity(0.2),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: const Icon(
-                    Icons.edit_document,
+                    Icons.report_outlined,
                     size: 28,
                     color: AppColors.primary,
                   ),
@@ -57,10 +65,10 @@ class MyReportsCard extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'View and manage your reports',
+                        'View your reports',
                         style: TextStyle(
                           fontSize: 14,
-                          color: Colors.grey[600],
+                          color:AppTextStyle.medium14.color,
                         ),
                       ),
                     ],
@@ -80,4 +88,6 @@ class MyReportsCard extends StatelessWidget {
       ),
     );
   }
+  // In your onTap or button press:
+  
 }

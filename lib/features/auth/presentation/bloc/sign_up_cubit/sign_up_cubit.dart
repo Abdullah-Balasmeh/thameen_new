@@ -26,6 +26,7 @@ class SignUpCubit extends Cubit<SignUpState> {
         isEmailVerified: user.isEmailVerified,
         photoUrl: user.photoUrl,
         createdAt: user.createdAt,
+        postsId: user.postsId,
       ),
       password,
     );

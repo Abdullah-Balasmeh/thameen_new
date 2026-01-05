@@ -29,6 +29,15 @@ class SignInCubit extends Cubit<SignInState> {
           SharedPreferencesSingleton.setString('password', password);
           SharedPreferencesSingleton.setString('user', user.id);
         }
+        SharedPreferencesSingleton.setString('user', user.id);
+        SharedPreferencesSingleton.setString('email', email);
+        SharedPreferencesSingleton.setString(
+          'userName',
+          '${user.firstName} ${user.lastName}',
+        );
+        var userName = SharedPreferencesSingleton.getString('userName');
+        log('userName: $userName');
+
         emit(SignInSuccess(user: user));
       },
     );

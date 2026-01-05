@@ -12,22 +12,24 @@ class UserModel extends UserEntity {
     super.photoUrl,
     required super.isEmailVerified,
     required super.createdAt,
+    super.postsId,
   });
 
   factory UserModel.fromFirebaseUser(
     User user,
-    String? password,
+    Map<String, dynamic> data,
   ) {
     return UserModel(
       id: user.uid,
-      firstName: user.displayName ?? '',
-      lastName: user.displayName ?? '',
-      phoneNumber: user.phoneNumber ?? '',
+      firstName: data['firstName'] as String,
+      lastName: data['lastName'] as String,
+      phoneNumber: data['phoneNumber'] as String,
       email: user.email ?? '',
-      password: password ?? '',
-      photoUrl: user.photoURL ?? '',
+      password: data['password'] as String,
+      photoUrl: data['photoUrl'] as String?,
       isEmailVerified: user.emailVerified,
       createdAt: user.metadata.creationTime.toString(),
+      postsId: (data['postsId'] as List<dynamic>?)?.cast<String?>(),
     );
   }
 }

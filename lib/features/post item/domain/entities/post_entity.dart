@@ -46,9 +46,41 @@ class PostEntity {
       'postState': postState.name,
     };
   }
+
+  PostEntity copyWith({
+    String? id,
+    String? userId,
+    PostType? postType,
+    String? itemName,
+    String? itemCategory,
+    String? itemDescription,
+    String? location,
+    double? bountyAmount,
+    bool? postAnonymously,
+    List<ContactMethod>? contactMethods,
+    List<String>? photoUrls,
+    DateTime? createdAt,
+    PostState? postState,
+  }) {
+    return PostEntity(
+      id: id ?? this.id,
+      userId: userId ?? this.userId,
+      postType: postType ?? this.postType,
+      itemName: itemName ?? this.itemName,
+      itemCategory: itemCategory ?? this.itemCategory,
+      itemDescription: itemDescription ?? this.itemDescription,
+      location: location ?? this.location,
+      bountyAmount: bountyAmount ?? this.bountyAmount,
+      postAnonymously: postAnonymously ?? this.postAnonymously,
+      contactMethods: contactMethods ?? this.contactMethods,
+      photoUrls: photoUrls ?? this.photoUrls,
+      createdAt: createdAt ?? this.createdAt,
+      postState: postState ?? this.postState,
+    );
+  }
 }
 
-enum PostType { lost, found }
+enum PostType { lost, found, all }
 
 enum ContactMethod { mobilePhone, inAppChat, email }
 
@@ -60,6 +92,8 @@ PostType getPostType(String postType) {
       return PostType.lost;
     case 'found':
       return PostType.found;
+    case 'active':
+      return PostType.all;
     default:
       return PostType.lost;
   }

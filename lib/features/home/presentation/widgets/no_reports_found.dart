@@ -25,15 +25,6 @@ class NoReportsFound extends StatelessWidget {
               color: AppTextStyle.medium14.color,
             ),
           ),
-          const SizedBox(height: 8),
-          Text(
-            'Be the first to report a lost or found item',
-            style: TextStyle(
-              fontSize: 14,
-              color: AppTextStyle.medium14.color,
-            ),
-            textAlign: TextAlign.center,
-          ),
         ],
       ),
     );

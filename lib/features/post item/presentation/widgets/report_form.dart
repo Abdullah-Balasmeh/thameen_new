@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:thameen/core/constants/jordan_cities.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/post%20item/data/models/item_category.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
@@ -72,20 +73,6 @@ class _ReportFormState extends State<ReportForm> {
     const ItemCategoryModel(name: 'Keys', emoji: '🔑'),
     const ItemCategoryModel(name: 'Pets', emoji: '🐶'),
     const ItemCategoryModel(name: 'Other', emoji: '📦'),
-  ];
-  final List<String> jordanCities = [
-    'Amman',
-    'Irbid',
-    'Zarqa',
-    'Salt',
-    'Jerash',
-    'Mafraq',
-    'Tafilah',
-    'Ma\'an',
-    'Aqaba',
-    'Madaba',
-    'Ajloun',
-    'Karak',
   ];
 
   @override

@@ -26,4 +26,22 @@ class PostRepositoryImpl implements PostRepository {
           : {'found': postCount['found'] + 1},
     );
   }
+
+  @override
+  Future<void> addPostIdToUser(PostEntity post) async {
+    final userData = await databaseService.getData(
+      path: 'users',
+      documentId: post.userId,
+    );
+    var postsId = userData['postsId'] as List<dynamic>?;
+    postsId ??= [];
+    postsId.add(post.id);
+    await databaseService.updateData(
+      path: 'users',
+      documentId: post.userId,
+      data: {
+        'postsId': postsId,
+      },
+    );
+  }
 }

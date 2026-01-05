@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:thameen/features/home/domain/entities/poster_entity.dart';
 import 'package:thameen/features/home/domain/repositories/home_repo.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
 
@@ -15,6 +16,7 @@ class HomeCubit extends Cubit<HomeState> {
   PostType? selectedType;
   String? selectedLocation;
   String? searchQuery;
+  String? selectedSort;
   Future<Map<String, dynamic>> getPostsCount() async {
     final count = await homeRepo.getPostsCount();
     return count;
@@ -24,8 +26,8 @@ class HomeCubit extends Cubit<HomeState> {
     posts = await homeRepo.getAllPosts();
   }
 
-  Future<String> getPosterNameById(String posterId) async {
-    return await homeRepo.getPosterNameById(posterId);
+  Future<PosterEntity> getPosterDataById(String posterId) async {
+    return await homeRepo.getPosterDataById(posterId);
   }
 
   void applyFilters() {
@@ -35,15 +37,23 @@ class HomeCubit extends Cubit<HomeState> {
       List<PostEntity> filteredPosts = List.from(posts);
 
       if (selectedCategory != null && selectedCategory!.isNotEmpty) {
-        filteredPosts = filteredPosts
-            .where((post) => post.itemCategory == selectedCategory)
-            .toList();
+        if (selectedCategory == 'All Items') {
+          filteredPosts = filteredPosts;
+        } else {
+          filteredPosts = filteredPosts
+              .where((post) => post.itemCategory == selectedCategory)
+              .toList();
+        }
       }
 
       if (selectedType != null) {
-        filteredPosts = filteredPosts
-            .where((post) => post.postType == selectedType)
-            .toList();
+        if (selectedType == PostType.all) {
+          filteredPosts = filteredPosts;
+        } else {
+          filteredPosts = filteredPosts
+              .where((post) => post.postType == selectedType)
+              .toList();
+        }
       }
 
       if (selectedLocation != null && selectedLocation!.isNotEmpty) {
@@ -59,6 +69,21 @@ class HomeCubit extends Cubit<HomeState> {
               post.itemDescription.toLowerCase().contains(query);
         }).toList();
       }
+      if (selectedSort != null) {
+        filteredPosts.sort((a, b) {
+          if (selectedSort == 'Most Recent') {
+            return b.createdAt.compareTo(a.createdAt);
+          } else if (selectedSort == 'Oldest First') {
+            return a.createdAt.compareTo(b.createdAt);
+          } else if (selectedSort == 'A-Z') {
+            return a.itemName.compareTo(b.itemName);
+          } else if (selectedSort == 'Z-A') {
+            return b.itemName.compareTo(a.itemName);
+          } else {
+            return 0;
+          }
+        });
+      }
 
       emit(HomeSearchSuccess(filteredPosts));
     } catch (e) {
@@ -71,11 +96,13 @@ class HomeCubit extends Cubit<HomeState> {
     PostType? type,
     String? location,
     String? itemName,
+    String? sort,
   }) async {
     if (category != null) selectedCategory = category;
     if (type != null) selectedType = type;
     if (location != null) selectedLocation = location;
     if (itemName != null) searchQuery = itemName;
+    if (sort != null) selectedSort = sort;
 
     applyFilters();
   }

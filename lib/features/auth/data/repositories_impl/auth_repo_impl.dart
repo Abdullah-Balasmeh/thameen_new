@@ -81,7 +81,7 @@ class AuthRepoImpl implements AuthRepo {
       );
 
       return Right(
-        UserModel.fromFirebaseUser(user, data['password'] as String),
+        UserModel.fromFirebaseUser(user, data),
       );
     } catch (_) {
       return const Left(ServerFailure('Invalid credentials'));

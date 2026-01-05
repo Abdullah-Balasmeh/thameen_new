@@ -15,7 +15,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        final posterName = await context.read<HomeCubit>().getPosterNameById(
+        final posterData = await context.read<HomeCubit>().getPosterDataById(
           post.userId,
         );
         if (context.mounted) {
@@ -24,7 +24,7 @@ class ItemCard extends StatelessWidget {
             PostDetailView.routeName,
             arguments: {
               'post': post,
-              'posterName': posterName,
+              'poster': posterData,
             },
           );
         }

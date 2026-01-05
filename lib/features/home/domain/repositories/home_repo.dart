@@ -1,3 +1,4 @@
+import 'package:thameen/features/home/domain/entities/poster_entity.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
 
 abstract class HomeRepo {
@@ -5,5 +6,5 @@ abstract class HomeRepo {
   Future<Map<String, dynamic>> getPostsCount();
   Future<List<PostEntity>> getAllPosts();
 
-  Future<String> getPosterNameById(String postId);
+  Future<PosterEntity> getPosterDataById(String postId);
 }
