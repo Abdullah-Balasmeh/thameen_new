@@ -108,36 +108,6 @@ class _PostDetailViewBodyState extends State<PostDetailViewBody> {
               ),
             ),
             const SizedBox(height: 16),
-            //  if (widget.post.photoUrls.isNotEmpty)
-            //   GridView.builder(
-            //     shrinkWrap: true,
-            //     physics: const NeverScrollableScrollPhysics(),
-            //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            //       crossAxisCount: 3,
-            //       crossAxisSpacing: 8,
-            //       mainAxisSpacing: 8,
-            //     ),
-            //     itemCount: widget.post.photoUrls.length,
-            //     itemBuilder: (context, index) {
-            //       return ClipRRect(
-            //         borderRadius: BorderRadius.circular(12),
-            //         child: GestureDetector(
-            //           onTap: () {
-            //             // TODO: Open image in full screen
-            //             // Navigator.pushNamed(
-            //             //   context,
-            //             //   FullScreenImageView.routeName,
-            //             //   arguments: post.photoUrls[index],
-            //             // );
-            //           },
-            //           child: Image.network(
-            //             widget.post.photoUrls[index],
-            //             fit: BoxFit.cover,
-            //           ),
-            //         ),
-            //       );
-            //     },
-            //   ),
             // Item photos
             if (widget.post.photoUrls.isNotEmpty)
               Container(

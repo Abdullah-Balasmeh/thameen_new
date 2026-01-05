@@ -53,15 +53,49 @@ class UpdateStatusBottomSheet extends StatelessWidget {
           const SizedBox(height: 12),
           _StatusOption(
             icon: Icons.cancel,
-            label: 'CLOSED',
+            label: 'DELETED',
             isSelected: currentStatus == PostState.deleted,
             color: AppColors.primary,
             onTap: () {
-              onStatusChanged(PostState.deleted);
-              Navigator.pop(context);
+              _showDeleteDialog(context);
             },
           ),
           const SizedBox(height: 24),
+        ],
+      ),
+    );
+  }
+
+  void _showDeleteDialog(BuildContext context) {
+    showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: const Text('Confirm Delete'),
+        content: const Text(
+          'Are you sure you want to delete this report?',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.error,
+            ),
+            onPressed: () {
+              onStatusChanged(PostState.deleted);
+              Navigator.pop(context);
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+              child: Text(
+                'Delete',
+                style: AppTextStyle.medium16,
+              ),
+            ),
+          ),
         ],
       ),
     );

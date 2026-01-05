@@ -49,4 +49,9 @@ abstract class DatabaseService {
     required String path,
     int? limit,
   });
+  Future<List<Map<String, dynamic>>> queryCollection({
+    required String path,
+    required String field,
+    required dynamic isEqualTo,
+  });
 }

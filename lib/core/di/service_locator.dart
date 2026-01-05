@@ -8,6 +8,8 @@ import 'package:thameen/features/home/data/home_repo_impl.dart';
 import 'package:thameen/features/home/domain/repositories/home_repo.dart';
 import 'package:thameen/features/post%20item/data/repositories_impl/post_repository_impl.dart';
 import 'package:thameen/features/post%20item/domain/repositories/post_repository.dart';
+import 'package:thameen/features/profile/data/repo_impl/my_repeprts_repo_impl.dart';
+import 'package:thameen/features/profile/domain/repo/my_reports_repo.dart';
 import 'package:thameen/shared/services/database_service.dart';
 import 'package:thameen/shared/services/firebase_auth_service.dart';
 import 'package:thameen/shared/services/firebase_storage.dart';
@@ -41,6 +43,11 @@ Future<void> setupServiceLocator() async {
   );
   getIt.registerSingleton<HomeRepo>(
     HomeRepoImpl(
+      databaseService: getIt<DatabaseService>(),
+    ),
+  );
+  getIt.registerSingleton<MyReportsRepo>(
+    MyReportsRepoImpl(
       databaseService: getIt<DatabaseService>(),
     ),
   );
