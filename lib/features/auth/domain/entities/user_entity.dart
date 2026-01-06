@@ -9,6 +9,8 @@ class UserEntity {
   final bool isEmailVerified;
   final String createdAt;
   final List<String?>? postsId;
+  final bool isOnline;
+  final DateTime lastSeen;
 
   UserEntity({
     required this.id,
@@ -21,6 +23,8 @@ class UserEntity {
     required this.isEmailVerified,
     required this.createdAt,
     this.postsId,
+    required this.isOnline,
+    required this.lastSeen,
   });
 
   Map<String, dynamic> toMap() {
@@ -35,6 +39,8 @@ class UserEntity {
       'isEmailVerified': isEmailVerified,
       'createdAt': createdAt,
       'postsId': postsId,
+      'isOnline': isOnline,
+      'lastSeen': lastSeen,
     };
   }
 }

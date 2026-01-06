@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
+import 'package:thameen/core/di/service_locator.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/core/utils/extuntions/date_time_ex.dart';
 import 'package:thameen/core/utils/helper/map_category_to_emoji.dart';
+import 'package:thameen/features/chat/presentation/bloc/cubit/chat_cubit.dart';
 import 'package:thameen/features/home/domain/entities/poster_entity.dart';
 import 'package:thameen/features/home/presentation/widgets/contact_reporter_bottom_sheet.dart';
 import 'package:thameen/features/home/presentation/widgets/post_detail_item_list_tile.dart';
@@ -191,15 +194,21 @@ class _PostDetailViewBodyState extends State<PostDetailViewBody> {
             const SizedBox(height: 32),
             AppButton(
               onPressed: () {
+                final parentContext = context;
+
                 showBottomSheet(
                   context: context,
-                  builder: (context) {
-                    return ContactReporterBottomSheet(
+                  builder: (_) => BlocProvider(
+                    create: (_) => getIt<ChatCubit>(),
+                    child: ContactReporterBottomSheet(
                       poster: widget.poster,
-                    );
-                  },
+                      postId: widget.post.id,
+                      parentContext: parentContext, // 👈 مهم
+                    ),
+                  ),
                 );
               },
+
               child: Text('Contact Reporter', style: AppTextStyle.bold20),
             ),
           ],

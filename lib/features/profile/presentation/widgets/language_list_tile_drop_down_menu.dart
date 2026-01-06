@@ -12,7 +12,7 @@ class LanguageListTileDropDownMenu extends StatefulWidget {
 
 class _LanguageListTileDropDownMenuState
     extends State<LanguageListTileDropDownMenu> {
-  String currentLanguage = 'English';
+  String? currentLanguage;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,9 @@ class _LanguageListTileDropDownMenuState
           ),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
-              value: currentLanguage,
+              value:
+                  currentLanguage ??
+                  (languageProvider.isArabic ? 'Arabic' : 'English'),
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
                 color: theme.iconTheme.color,

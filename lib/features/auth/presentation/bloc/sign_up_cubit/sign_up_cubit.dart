@@ -27,6 +27,8 @@ class SignUpCubit extends Cubit<SignUpState> {
         photoUrl: user.photoUrl,
         createdAt: user.createdAt,
         postsId: user.postsId,
+        isOnline: user.isOnline,
+        lastSeen: user.lastSeen,
       ),
       password,
     );

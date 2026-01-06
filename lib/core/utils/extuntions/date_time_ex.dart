@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 String timeAgo(DateTime dateTime) {
   final now = DateTime.now();
   final difference = now.difference(dateTime);
@@ -18,5 +20,27 @@ String timeAgo(DateTime dateTime) {
     return '${(difference.inDays / 30).floor()} mo ago';
   } else {
     return '${(difference.inDays / 365).floor()} y ago';
+  }
+}
+
+String formatChatTime(DateTime dateTime) {
+  final now = DateTime.now();
+
+  final today = DateTime(now.year, now.month, now.day);
+  final messageDay = DateTime(dateTime.year, dateTime.month, dateTime.day);
+  final difference = today.difference(messageDay).inDays;
+
+  if (difference == 0) {
+    // Today → 3:08 AM
+    return DateFormat('h:mm a').format(dateTime);
+  } else if (difference == 1) {
+    // Yesterday
+    return 'Yesterday';
+  } else if (difference < 7) {
+    // Weekday → Mon, Tue
+    return DateFormat('EEE').format(dateTime);
+  } else {
+    // Old → 12/01/2025
+    return DateFormat('dd/MM/yyyy').format(dateTime);
   }
 }

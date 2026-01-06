@@ -11,6 +11,7 @@ import 'package:thameen/features/auth/presentation/views/sign_in_view.dart';
 import 'package:thameen/features/auth/presentation/views/sign_up_view.dart';
 import 'package:thameen/features/auth/presentation/views/terms_condition_view.dart';
 import 'package:thameen/features/base/presentation/views/base_view.dart';
+import 'package:thameen/features/chat/presentation/views/chat_detail_view.dart';
 import 'package:thameen/features/home/presentation/views/home_view.dart';
 import 'package:thameen/features/home/presentation/views/post_detail_view.dart';
 import 'package:thameen/features/onBoarding/presentation/views/on_boarding_view.dart';
@@ -67,6 +68,14 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         settings: settings,
         builder: (context) => const PostDetailView(),
       );
+    case ChatDetailView.routeName:
+      final chatId = settings.arguments as String;
+      return MaterialPageRoute(
+        builder: (context) => ChatDetailView(
+          chatId: chatId,
+        ),
+      );
+
     default:
       return MaterialPageRoute(builder: (context) => const SplashView());
   }

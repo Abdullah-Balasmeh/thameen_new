@@ -13,11 +13,13 @@ import 'package:thameen/features/auth/domain/repositories/auth_repo.dart';
 import 'package:thameen/shared/services/brevo_service.dart';
 import 'package:thameen/shared/services/database_service.dart';
 import 'package:thameen/shared/services/firebase_auth_service.dart';
+import 'package:thameen/shared/services/user_presence_service.dart';
 
 class AuthRepoImpl implements AuthRepo {
   final FirebaseAuthService authService;
   final DatabaseService databaseService;
   final BrevoService brevoService = BrevoService();
+  final UserPresenceService userPresenceService;
 
   late UserCredential userCredential;
   static const String usersPath = 'users';
@@ -25,6 +27,7 @@ class AuthRepoImpl implements AuthRepo {
   AuthRepoImpl({
     required this.authService,
     required this.databaseService,
+    required this.userPresenceService,
   });
 
   @override
@@ -48,6 +51,10 @@ class AuthRepoImpl implements AuthRepo {
         password: hash,
         isEmailVerified: userData.isEmailVerified,
         createdAt: userData.createdAt,
+        photoUrl: userData.photoUrl,
+        postsId: userData.postsId,
+        isOnline: userData.isOnline,
+        lastSeen: userData.lastSeen,
       );
       await addUserData(user: userEntity);
       log('userEntity: $userEntity');
@@ -79,7 +86,7 @@ class AuthRepoImpl implements AuthRepo {
         path: usersPath,
         documentId: user.uid,
       );
-
+      await userPresenceService.setOnline(user.uid);
       return Right(
         UserModel.fromFirebaseUser(user, data),
       );
@@ -232,6 +239,10 @@ class AuthRepoImpl implements AuthRepo {
           isEmailVerified: userMap['isEmailVerified'] as bool,
           createdAt: userMap['createdAt'] as String,
           password: tempPassword,
+          photoUrl: userMap['photoUrl'] as String?,
+          postsId: (userMap['postsId'] as List<dynamic>?)?.cast<String?>(),
+          isOnline: userMap['isOnline'] as bool,
+          lastSeen: (userMap['lastSeen'] as DateTime?) ?? DateTime.now(),
         ),
       );
     } catch (e) {
@@ -269,4 +280,7 @@ class AuthRepoImpl implements AuthRepo {
       return false;
     }
   }
+
+  @override
+  String? get currentUserId => authService.currentUser?.uid;
 }

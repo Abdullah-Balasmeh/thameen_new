@@ -3,6 +3,7 @@ import 'package:thameen/core/errors/failure.dart';
 import 'package:thameen/features/auth/domain/entities/user_entity.dart';
 
 abstract class AuthRepo {
+  String? get currentUserId;
   Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(
     UserEntity user,
     String password,

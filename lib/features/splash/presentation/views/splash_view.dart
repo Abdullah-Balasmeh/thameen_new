@@ -7,6 +7,7 @@ import 'package:thameen/features/auth/presentation/views/sign_in_view.dart';
 import 'package:thameen/features/base/presentation/views/base_view.dart';
 import 'package:thameen/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:thameen/shared/services/shared_preferences_singleton.dart';
+import 'package:thameen/shared/services/user_presence_service.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -38,8 +39,12 @@ class _SplashViewState extends State<SplashView> {
   Widget executeNavigation() {
     final bool isSeen = SharedPreferencesSingleton.getBool(isOnboardingSeen);
     final bool isRememberMe = SharedPreferencesSingleton.getBool(kisRememberMe);
+    final String userId = SharedPreferencesSingleton.getString('user');
     if (isSeen) {
       if (isRememberMe) {
+        if (userId.isNotEmpty && userId != 'null') {
+          UserPresenceService().setOnline(userId);
+        }
         return const BaseView();
       } else {
         return const SignInView();

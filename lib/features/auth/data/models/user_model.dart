@@ -13,6 +13,8 @@ class UserModel extends UserEntity {
     required super.isEmailVerified,
     required super.createdAt,
     super.postsId,
+    required super.isOnline,
+    required super.lastSeen,
   });
 
   factory UserModel.fromFirebaseUser(
@@ -30,6 +32,8 @@ class UserModel extends UserEntity {
       isEmailVerified: user.emailVerified,
       createdAt: user.metadata.creationTime.toString(),
       postsId: (data['postsId'] as List<dynamic>?)?.cast<String?>(),
+      isOnline: data['isOnline'] as bool,
+      lastSeen: (data['lastSeen'] as DateTime?) ?? DateTime.now(),
     );
   }
 }

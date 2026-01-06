@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/di/service_locator.dart';
 import 'package:thameen/core/theme/app_colors.dart';
+import 'package:thameen/features/chat/presentation/views/chat_view.dart';
 import 'package:thameen/features/home/domain/repositories/home_repo.dart';
 import 'package:thameen/features/home/presentation/bloc/all_posts_cubit/home_cubit.dart';
 import 'package:thameen/features/home/presentation/views/home_view.dart';
 import 'package:thameen/features/post%20item/presentation/views/post_report_view.dart';
 import 'package:thameen/features/profile/presentation/views/profile_view.dart';
+import 'package:thameen/shared/services/app_lifecycle_handler.dart';
+import 'package:thameen/shared/services/shared_preferences_singleton.dart';
+import 'package:thameen/shared/services/user_presence_service.dart';
 import 'package:thameen/shared/widgets/app_bar.dart';
-import 'package:thameen/shared/widgets/switch_mode_and_language.dart';
 
 class BaseView extends StatefulWidget {
   const BaseView({super.key});
@@ -27,7 +30,7 @@ class _BaseViewState extends State<BaseView> {
     const HomeView(),
     const Text('AI Search'),
     const PostReportView(),
-    const SwitchModeAndLanguage(),
+    const ChatView(),
     const ProfileView(),
   ];
   List<String> titles = [
@@ -37,15 +40,25 @@ class _BaseViewState extends State<BaseView> {
     'Messages',
     'Profile',
   ];
+  late AppLifecycleHandler _lifecycleHandler;
 
   @override
   void initState() {
-    pageController = PageController();
     super.initState();
+    pageController = PageController();
+
+    final currentUserId = SharedPreferencesSingleton.getString('user');
+    _lifecycleHandler = AppLifecycleHandler(
+      currentUserId,
+      getIt<UserPresenceService>(),
+    );
+
+    WidgetsBinding.instance.addObserver(_lifecycleHandler);
   }
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_lifecycleHandler);
     pageController.dispose();
     super.dispose();
   }

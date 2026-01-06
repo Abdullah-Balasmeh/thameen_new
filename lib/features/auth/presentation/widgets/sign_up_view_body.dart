@@ -348,6 +348,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                               createdAt: DateTime.now().toString(),
                               photoUrl: '',
                               postsId: [],
+                              isOnline: false,
+                              lastSeen: DateTime.now(),
                             ),
                             _passwordController.text,
                           );
