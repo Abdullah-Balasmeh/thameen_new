@@ -114,7 +114,7 @@ class _PostDetailViewBodyState extends State<PostDetailViewBody> {
             // Item photos
             if (widget.post.photoUrls.isNotEmpty)
               Container(
-                height: 300,
+                height: 275,
                 margin: const EdgeInsets.symmetric(vertical: 16),
                 child: PhotoViewGallery.builder(
                   scrollPhysics: const BouncingScrollPhysics(),
@@ -211,6 +211,7 @@ class _PostDetailViewBodyState extends State<PostDetailViewBody> {
 
               child: Text('Contact Reporter', style: AppTextStyle.bold20),
             ),
+            const SizedBox(height: 32),
           ],
         ),
       ),

@@ -30,7 +30,9 @@ class PostDetailView extends StatelessWidget {
           Navigator.pop(context);
         },
       ),
-      body: PostDetailViewBody(post: post, poster: poster),
+      body: SafeArea(
+        child: PostDetailViewBody(post: post, poster: poster),
+      ),
     );
   }
 }

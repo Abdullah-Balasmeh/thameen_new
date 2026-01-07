@@ -7,7 +7,7 @@ class MyReportsRepoImpl implements MyReportsRepo {
   final DatabaseService databaseService;
 
   MyReportsRepoImpl({required this.databaseService});
-  late Map<String, dynamic> userData;
+  Map<String, dynamic>? userData;
   @override
   @override
   Future<List<PostEntity>> getMyReports(String userId) async {
@@ -15,6 +15,10 @@ class MyReportsRepoImpl implements MyReportsRepo {
       path: 'posts',
       field: 'userId',
       isEqualTo: userId,
+    );
+    userData = await databaseService.getData(
+      path: 'users',
+      documentId: userId,
     );
 
     return posts.map((e) => PostModel.fromMap(e)).toList();
@@ -42,20 +46,17 @@ class MyReportsRepoImpl implements MyReportsRepo {
       documentId: postId,
     );
 
-    // 2️⃣ نسخة آمنة من postsId
-    final List<dynamic> updatedPostsId = List<dynamic>.from(
-      userData['postsId'] as List<dynamic>? ?? [],
-    );
+    // 2️⃣ حذف التقرير من المستخدم
+    final postsId = userData?['postsId'] as List<dynamic>? ?? [];
 
-    // 3️⃣ إزالة الـ postId
-    updatedPostsId.remove(postId);
+    postsId.remove(postId);
 
     // 4️⃣ تحديث المستخدم بالقائمة الجديدة
     await databaseService.updateData(
       path: 'users',
-      documentId: userData['id'] as String,
+      documentId: userData?['id'] as String,
       data: {
-        'postsId': updatedPostsId,
+        'postsId': postsId,
       },
     );
   }

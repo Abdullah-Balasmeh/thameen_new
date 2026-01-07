@@ -32,7 +32,7 @@ AppBar buildChatDetailAppBar(
           );
         }
 
-        final chatData = chatSnapshot.data!.data() as Map<String, dynamic>;
+        final chatData = chatSnapshot.data?.data() as Map<String, dynamic>;
 
         final userIds = List<String>.from(chatData['userIds'] as List<dynamic>);
 

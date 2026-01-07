@@ -17,7 +17,8 @@ class ChatViewBody extends StatelessWidget {
         }
 
         if (state is ChatListLoaded) {
-          if (state.chats.isEmpty) {
+          if (state.chats.isEmpty ||
+              (state.chats.length == 1 && state.chats[0].lastMessage.isEmpty)) {
             return const Center(child: Text('No chats yet'));
           }
 
@@ -27,20 +28,22 @@ class ChatViewBody extends StatelessWidget {
             itemCount: state.chats.length,
             itemBuilder: (context, index) {
               final chat = state.chats[index];
-              return GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ChatDetailView(
-                        chatId: chat.chatId,
-                      ),
-                    ),
-                  );
-                },
-                child: ChatCard(chat: chat),
-              );
+              return chat.lastMessage.isEmpty
+                  ? const SizedBox()
+                  : GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => ChatDetailView(
+                              chatId: chat.chatId,
+                            ),
+                          ),
+                        );
+                      },
+                      child: ChatCard(chat: chat),
+                    );
             },
             separatorBuilder: (_, __) => const ChatDivider(),
           );
