@@ -25,14 +25,16 @@ AppBar buildChatDetailAppBar(
           .doc(chatId)
           .snapshots(),
       builder: (context, chatSnapshot) {
-        if (!chatSnapshot.hasData) {
+        if (!chatSnapshot.hasData ||
+            !chatSnapshot.data!.exists ||
+            chatSnapshot.data!.data() == null) {
           return const Text(
             'Loading...',
             style: TextStyle(color: Colors.white),
           );
         }
 
-        final chatData = chatSnapshot.data?.data() as Map<String, dynamic>;
+        final chatData = chatSnapshot.data!.data()! as Map<String, dynamic>;
 
         final userIds = List<String>.from(chatData['userIds'] as List<dynamic>);
 
