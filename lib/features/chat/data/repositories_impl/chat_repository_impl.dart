@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:thameen/features/auth/domain/repositories/auth_repo.dart';
 import 'package:thameen/features/chat/data/data_source/chat_remote_data_source.dart';
@@ -56,16 +54,16 @@ class ChatRepositoryImpl implements ChatRepository {
       (chats) async {
         if (chats.isEmpty) return [];
 
-        final futures = chats.map((chat) async {
+        final Map<String, ChatPreviewModel> uniqueChats = {};
+
+        for (final chat in chats) {
           final otherUserId = chat.userIds.firstWhere(
             (id) => id != _currentUserId,
           );
-          log('currentUserId: $_currentUserId');
-          log('otherUserId: $otherUserId');
 
           final userData = await remote.getUserData(otherUserId);
 
-          return ChatPreviewModel(
+          final preview = ChatPreviewModel(
             chatId: chat.id,
             otherUser: ChatUserModel(
               id: userData['id'] as String,
@@ -80,9 +78,19 @@ class ChatRepositoryImpl implements ChatRepository {
             lastMessageTime: chat.lastMessageTime,
             unreadCount: chat.unreadCount[_currentUserId] ?? 0,
           );
-        }).toList();
 
-        return Future.wait(futures);
+          // ✅ الدمج حسب المستخدم الآخر
+          final existing = uniqueChats[otherUserId];
+
+          if (existing == null ||
+              preview.lastMessageTime.isAfter(existing.lastMessageTime)) {
+            uniqueChats[otherUserId] = preview;
+          }
+        }
+
+        return uniqueChats.values.toList()..sort(
+          (a, b) => b.lastMessageTime.compareTo(a.lastMessageTime),
+        );
       },
     );
   }

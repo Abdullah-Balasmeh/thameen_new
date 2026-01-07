@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/features/chat/data/models/chat_preview_model.dart';
-import 'package:thameen/features/chat/data/models/chat_user_model.dart';
 import 'package:thameen/features/chat/data/models/message_model.dart';
 import 'package:thameen/features/chat/domain/repositories/chat_repository.dart';
 

@@ -63,6 +63,7 @@ class AuthRepoImpl implements AuthRepo {
       if (user != null) {
         await deleteUser(user);
       }
+
       return Left(ServerFailure(e.message));
     } catch (e) {
       if (user != null) {
@@ -90,7 +91,10 @@ class AuthRepoImpl implements AuthRepo {
       return Right(
         UserModel.fromFirebaseUser(user, data),
       );
-    } catch (_) {
+    } on CustomException catch (e) {
+      return Left(ServerFailure(e.message));
+    } catch (e) {
+      log('signInWithEmailAndPassword error: $e');
       return const Left(ServerFailure('Invalid credentials'));
     }
   }

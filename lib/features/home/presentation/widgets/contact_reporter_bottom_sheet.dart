@@ -6,6 +6,7 @@ import 'package:thameen/features/chat/presentation/bloc/cubit/chat_cubit.dart';
 import 'package:thameen/features/chat/presentation/views/chat_detail_view.dart';
 import 'package:thameen/features/home/domain/entities/poster_entity.dart';
 import 'package:thameen/features/home/presentation/widgets/contact_option.dart';
+import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 import 'package:thameen/shared/widgets/bottom_sheet_close_container.dart';
 
 class ContactReporterBottomSheet extends StatelessWidget {
@@ -54,8 +55,23 @@ class ContactReporterBottomSheet extends StatelessWidget {
                 otherUserId: poster.id, // صاحب البوست
                 postId: postId,
               );
-
-              if (parentContext.mounted) {
+              final userid = SharedPreferencesSingleton.getString('user');
+              if (userid == poster.id) {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: const Text('Error'),
+                    content: const Text('You can not chat with yourself'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: const Text('OK'),
+                      ),
+                    ],
+                  ),
+                );
+                return;
+              } else if (parentContext.mounted) {
                 Navigator.push(
                   parentContext,
                   MaterialPageRoute(

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:thameen/features/auth/domain/entities/user_entity.dart';
 
@@ -33,7 +34,7 @@ class UserModel extends UserEntity {
       createdAt: user.metadata.creationTime.toString(),
       postsId: (data['postsId'] as List<dynamic>?)?.cast<String?>(),
       isOnline: data['isOnline'] as bool,
-      lastSeen: (data['lastSeen'] as DateTime?) ?? DateTime.now(),
+      lastSeen: (data['lastSeen'] as Timestamp).toDate(),
     );
   }
 }

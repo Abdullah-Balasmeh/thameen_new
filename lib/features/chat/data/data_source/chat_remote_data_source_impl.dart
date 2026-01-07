@@ -17,19 +17,19 @@ class ChatRemoteDataSourceImpl implements ChatRemoteDataSource {
     required String otherUserId,
     required String postId,
   }) async {
+    if (currentUserId == otherUserId) {
+      throw Exception('You cannot chat with yourself');
+    }
+
     final users = [currentUserId, otherUserId]..sort();
-    final chatId = '${users[0]}_${users[1]}_$postId';
+    final chatId = '${users[0]}_${users[1]}';
+    final chatRef = FirebaseFirestore.instance.collection('chats').doc(chatId);
 
-    final exists = await firestore.exists(
-      path: 'chats',
-      documentId: chatId,
-    );
+    await FirebaseFirestore.instance.runTransaction((tx) async {
+      final snapshot = await tx.get(chatRef);
 
-    if (!exists) {
-      await firestore.setData(
-        path: 'chats',
-        documentId: chatId,
-        data: {
+      if (!snapshot.exists) {
+        tx.set(chatRef, {
           'userIds': users,
           'postId': postId,
           'lastMessage': '',
@@ -39,9 +39,9 @@ class ChatRemoteDataSourceImpl implements ChatRemoteDataSource {
             otherUserId: 0,
           },
           'createdAt': Timestamp.now(),
-        },
-      );
-    }
+        });
+      }
+    });
 
     return chatId;
   }
