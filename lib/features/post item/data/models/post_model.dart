@@ -29,9 +29,11 @@ class PostModel extends PostEntity {
       location: map['location'] as String,
       bountyAmount: (map['bountyAmount'] as num).toDouble(),
       postAnonymously: map['postAnonymously'] as bool,
-      contactMethods: getContactMethods(
-        List<String>.from(map['contactMethods'] as List<dynamic>),
-      ),
+      contactMethods: (map['contactMethods'] as List<dynamic>)
+          .map((e) => ContactMethod.values.byName(e as String))
+          .toSet() // 🔥 مهم
+          .toList(),
+
       photoUrls: List<String>.from(map['photoUrls'] as List<dynamic>),
 
       createdAt: (map['createdAt'] as Timestamp).toDate(),

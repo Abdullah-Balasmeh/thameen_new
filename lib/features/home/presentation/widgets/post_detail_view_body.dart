@@ -203,7 +203,8 @@ class _PostDetailViewBodyState extends State<PostDetailViewBody> {
                     child: ContactReporterBottomSheet(
                       poster: widget.poster,
                       postId: widget.post.id,
-                      parentContext: parentContext, // 👈 مهم
+                      parentContext: parentContext,
+                      post: widget.post, // 👈 مهم
                     ),
                   ),
                 );
