@@ -23,6 +23,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
   final ValueNotifier<String> selectedType = ValueNotifier('All');
   final TextEditingController locationController = TextEditingController();
   final ValueNotifier<String> selectedSort = ValueNotifier('Most Recent');
+  final ValueNotifier<bool> hasBounty = ValueNotifier(false);
 
   @override
   void initState() {
@@ -84,6 +85,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
             const SizedBox(height: 16),
             FilterByPostType(
               selectedType: selectedType,
+              hasBounty: hasBounty,
             ),
             const SizedBox(height: 16),
             FilterByLocation(
@@ -106,6 +108,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                       ? PostType.lost
                       : PostType.found,
                   location: locationController.text,
+                  sort: selectedSort.value,
+                  hasBounty: hasBounty.value,
                 );
                 Navigator.pop(context);
               },

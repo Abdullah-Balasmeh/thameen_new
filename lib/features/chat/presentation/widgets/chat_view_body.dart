@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:thameen/core/theme/app_colors.dart';
+import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/chat/presentation/bloc/cubit/chat_cubit.dart';
 import 'package:thameen/features/chat/presentation/views/chat_detail_view.dart';
 import 'package:thameen/features/chat/presentation/widgets/chat_card.dart';
@@ -19,7 +21,20 @@ class ChatViewBody extends StatelessWidget {
         if (state is ChatListLoaded) {
           if (state.chats.isEmpty ||
               (state.chats.length == 1 && state.chats[0].lastMessage.isEmpty)) {
-            return const Center(child: Text('No chats yet'));
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.chat_bubble_outline,
+                  size: 80,
+                  color: AppColors.primary,
+                ),
+                Text(
+                  'No chats yet...',
+                  style: AppTextStyle.bold20,
+                ),
+              ],
+            );
           }
 
           return ListView.separated(

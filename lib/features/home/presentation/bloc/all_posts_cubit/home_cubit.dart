@@ -17,6 +17,7 @@ class HomeCubit extends Cubit<HomeState> {
   String? selectedLocation;
   String? searchQuery;
   String? selectedSort;
+  bool? selectedHasBounty;
   Future<Map<String, dynamic>> getPostsCount() async {
     final count = await homeRepo.getPostsCount();
     return count;
@@ -84,6 +85,12 @@ class HomeCubit extends Cubit<HomeState> {
           }
         });
       }
+      log('selectedHasBounty: $selectedHasBounty');
+      if (selectedHasBounty != null && selectedHasBounty!) {
+        filteredPosts = filteredPosts
+            .where((post) => post.bountyAmount > 0.0)
+            .toList();
+      }
 
       emit(HomeSearchSuccess(filteredPosts));
     } catch (e) {
@@ -97,12 +104,14 @@ class HomeCubit extends Cubit<HomeState> {
     String? location,
     String? itemName,
     String? sort,
+    bool? hasBounty,
   }) async {
     if (category != null) selectedCategory = category;
     if (type != null) selectedType = type;
     if (location != null) selectedLocation = location;
     if (itemName != null) searchQuery = itemName;
     if (sort != null) selectedSort = sort;
+    if (hasBounty != null) selectedHasBounty = hasBounty;
 
     applyFilters();
   }
