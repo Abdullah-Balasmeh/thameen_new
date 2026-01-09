@@ -55,6 +55,9 @@ class _DropDownFormButtonCategoryState
     final bool isFocused = _focusNode.hasFocus;
     final theme = Theme.of(context);
     return DropdownButtonFormField<String>(
+      initialValue: widget.controller.text.isEmpty
+          ? null
+          : widget.controller.text,
       borderRadius: BorderRadius.circular(16),
       style: AppTextStyle.semiBold18,
       icon: Transform.rotate(

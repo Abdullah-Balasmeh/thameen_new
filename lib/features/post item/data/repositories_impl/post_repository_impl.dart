@@ -44,4 +44,13 @@ class PostRepositoryImpl implements PostRepository {
       },
     );
   }
+
+  @override
+  Future<void> updatePost(PostEntity post) {
+    return databaseService.updateData(
+      path: 'posts',
+      documentId: post.id,
+      data: post.toMap(),
+    );
+  }
 }

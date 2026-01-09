@@ -6,7 +6,6 @@ import 'package:thameen/core/constants/categories_list.dart';
 import 'package:thameen/core/constants/jordan_cities.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
-import 'package:thameen/features/post%20item/presentation/bloc/create_post_cubit/create_post_cubit.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/anonymous_toggle.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/bounty_section.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/contact_methods_check_boxes.dart';
@@ -16,42 +15,53 @@ import 'package:thameen/features/post%20item/presentation/widgets/photo_upload.d
 import 'package:thameen/features/post%20item/presentation/widgets/report_text_form_field.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/report_type_selector.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/section_title.dart';
-import 'package:thameen/shared/services/shared_preferences_singleton.dart';
+import 'package:thameen/features/profile/presentation/bloc/myreports/my_reports_cubit.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
 import 'package:thameen/shared/widgets/loading_button.dart';
 
-class ReportForm extends StatefulWidget {
-  const ReportForm({super.key});
-
+class PostEditForm extends StatefulWidget {
+  const PostEditForm({super.key, required this.post});
+  final PostEntity post;
   @override
-  State<ReportForm> createState() => _ReportFormState();
+  State<PostEditForm> createState() => _PostEditFormState();
 }
 
-class _ReportFormState extends State<ReportForm> {
-  PostEntity? postEntity;
+class _PostEditFormState extends State<PostEditForm> {
   final formKey = GlobalKey<FormState>();
-  late AutovalidateMode autovalidateMode;
-  final ValueNotifier<PostType> selectedType = ValueNotifier(PostType.lost);
+  late ValueNotifier<PostType> selectedType;
   late TextEditingController itemNameController;
   late TextEditingController itemCategoryController;
   late TextEditingController itemDescriptionController;
   late TextEditingController itemLocationController;
   late TextEditingController bountyController;
-  final ValueNotifier<bool> postAnonymously = ValueNotifier(false);
+  late ValueNotifier<bool> postAnonymously;
+  late AutovalidateMode autovalidateMode;
   late ValueNotifier<List<ContactMethod>> selectedContactMethods =
       ValueNotifier([]);
-  final existingImageUrls = ValueNotifier<List<String>>([]);
-  final newImages = ValueNotifier<List<File>>([]);
+  late ValueNotifier<List<String>> existingImageUrls;
+  late ValueNotifier<List<File>> newImages;
+
   bool nameTouched = false;
   bool contactMethodsError = false;
   @override
   void initState() {
+    selectedType = ValueNotifier(widget.post.postType);
+    itemNameController = TextEditingController(text: widget.post.itemName);
+    itemDescriptionController = TextEditingController(
+      text: widget.post.itemDescription,
+    );
+    itemCategoryController = TextEditingController(
+      text: widget.post.itemCategory,
+    );
+    itemLocationController = TextEditingController(text: widget.post.location);
+    bountyController = TextEditingController(
+      text: widget.post.bountyAmount.toString(),
+    );
+    postAnonymously = ValueNotifier(widget.post.postAnonymously);
+    selectedContactMethods.value = widget.post.contactMethods;
+    existingImageUrls = ValueNotifier(widget.post.photoUrls);
+    newImages = ValueNotifier([]);
     autovalidateMode = AutovalidateMode.disabled;
-    itemNameController = TextEditingController();
-    itemCategoryController = TextEditingController();
-    itemDescriptionController = TextEditingController();
-    itemLocationController = TextEditingController();
-    bountyController = TextEditingController();
     super.initState();
   }
 
@@ -69,31 +79,16 @@ class _ReportFormState extends State<ReportForm> {
   Widget build(BuildContext context) {
     bool isLoading = false;
     bool isButtonEnabled = true;
-    var createPostCubit = context.watch<CreatePostCubit>();
-    if (createPostCubit.state is CreatePostLoading) {
+    var createPostCubit = context.watch<MyReportsCubit>();
+    if (createPostCubit.state is UpdateReportLoading) {
       isLoading = true;
       isButtonEnabled = false;
     } else {
       isLoading = false;
       isButtonEnabled = true;
     }
-    if (createPostCubit.state is CreatePostSuccess) {
-      itemNameController.clear();
-      itemCategoryController.clear();
-      itemDescriptionController.clear();
-      itemLocationController.clear();
-      bountyController.clear();
-      selectedType.value = PostType.lost;
-      selectedContactMethods.value = [];
-      existingImageUrls.value = [];
-      newImages.value = [];
-      setState(() {
-        contactMethodsError = false;
-      });
-    }
     return Form(
       key: formKey,
-      autovalidateMode: autovalidateMode,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -128,7 +123,6 @@ class _ReportFormState extends State<ReportForm> {
             },
           ),
           const SizedBox(height: 16),
-
           DropDownFormButtonCategory(
             itemList: categories,
             hintText: 'Select Category',
@@ -199,11 +193,11 @@ class _ReportFormState extends State<ReportForm> {
                 child: BountySection(
                   bountyController: bountyController,
                   autovalidateMode: autovalidateMode,
+                  offerBountyEdit: widget.post.bountyAmount > 0,
                 ),
               );
             },
           ),
-
           const SizedBox(height: 16),
           const SectionTitle(title: 'Privacy'),
           const SizedBox(height: 16),
@@ -225,7 +219,6 @@ class _ReportFormState extends State<ReportForm> {
                   );
                 },
               ),
-
               if (contactMethodsError)
                 const Padding(
                   padding: EdgeInsets.only(left: 8, top: 6),
@@ -236,7 +229,6 @@ class _ReportFormState extends State<ReportForm> {
                 ),
             ],
           ),
-
           const SizedBox(height: 16),
           const SectionTitle(title: 'Photos (Up to 5) Optional'),
           const SizedBox(height: 16),
@@ -246,7 +238,7 @@ class _ReportFormState extends State<ReportForm> {
           ),
           const SizedBox(height: 16),
           AppButton(
-            onPressed: () {
+            onPressed: () async {
               if (isButtonEnabled) {
                 final isValid = formKey.currentState!.validate();
                 final hasContactMethod =
@@ -262,27 +254,46 @@ class _ReportFormState extends State<ReportForm> {
                   });
                   return;
                 }
+                if (selectedType.value == PostType.found) {
+                  bountyController.text = '';
+                }
+                final postImages = List<String>.from(existingImageUrls.value);
+                if (newImages.value.isNotEmpty) {
+                  final newPostImage = await context
+                      .read<MyReportsCubit>()
+                      .uploadImage(
+                        widget.post.id,
+                        newImages.value,
+                      );
+                  postImages.addAll(newPostImage);
+                }
 
-                context.read<CreatePostCubit>().createPost(
-                  userId: SharedPreferencesSingleton.getString('user'),
-                  postType: selectedType.value,
-                  itemName: itemNameController.text,
-                  itemCategory: itemCategoryController.text,
-                  itemDescription: itemDescriptionController.text,
-                  location: itemLocationController.text,
-                  bountyAmount: bountyController.text.isEmpty
-                      ? 0.0
-                      : double.parse(bountyController.text),
-                  postAnonymously: postAnonymously.value,
-                  contactMethods: selectedContactMethods.value,
-                  photos: newImages.value,
+                context.read<MyReportsCubit>().editReport(
+                  PostEntity(
+                    id: widget.post.id,
+                    userId: widget.post.userId,
+                    postType: selectedType.value,
+                    itemName: itemNameController.text,
+                    itemCategory: itemCategoryController.text,
+                    itemDescription: itemDescriptionController.text,
+                    location: itemLocationController.text,
+                    bountyAmount: bountyController.text.isEmpty
+                        ? 0.0
+                        : double.parse(bountyController.text),
+                    postAnonymously: postAnonymously.value,
+                    contactMethods: selectedContactMethods.value,
+                    photoUrls: postImages,
+                    createdAt: DateTime.now(),
+                    postState: widget.post.postState,
+                  ),
                 );
               }
             },
             child: isLoading
                 ? const LoadingButton()
-                : Text('Submit Report', style: AppTextStyle.bold20),
+                : Text('Update Report', style: AppTextStyle.bold20),
           ),
+          const SizedBox(height: 16),
         ],
       ),
     );

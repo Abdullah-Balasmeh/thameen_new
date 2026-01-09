@@ -5,6 +5,7 @@ import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/core/utils/extuntions/date_time_ex.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
 import 'package:thameen/features/profile/presentation/bloc/myreports/my_reports_cubit.dart';
+import 'package:thameen/features/profile/presentation/views/edit_post_view.dart';
 import 'package:thameen/features/profile/presentation/widgets/update_status_bottom_sheet.dart';
 
 class ReportCard extends StatefulWidget {
@@ -206,7 +207,20 @@ class _ReportCardState extends State<ReportCard> {
                 const SizedBox(width: 12),
                 Expanded(
                   child: OutlinedButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      final cubit = context.read<MyReportsCubit>();
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => BlocProvider.value(
+                            value: cubit,
+                            child: const EditPostView(),
+                          ),
+                          settings: RouteSettings(arguments: widget.post),
+                        ),
+                      );
+                    },
                     icon: const Icon(Icons.edit, size: 18),
                     label: const Text('Edit'),
                     style: OutlinedButton.styleFrom(

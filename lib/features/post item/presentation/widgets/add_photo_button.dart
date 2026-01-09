@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -51,21 +50,19 @@ class _AddPhotoButtonState extends State<AddPhotoButton> {
   }
 
   Future<void> _pickImages() async {
-    try {
-      final currentImages = widget.selectedImages.value;
+    final current = widget.selectedImages.value;
 
-      if (currentImages.length >= 5) {
-        _showSnack('You can only upload up to 5 images.');
-        return;
-      }
-
-      final updatedList = await imagePickerService.pickImages();
-
-      widget.selectedImages.value = updatedList;
-    } catch (e) {
-      log('Error picking images: $e');
-      _showSnack('Error picking images: $e');
+    if (current.length >= 5) {
+      _showSnack('You can only upload up to 5 images.');
+      return;
     }
+
+    final picked = await imagePickerService.pickImages();
+
+    widget.selectedImages.value = [
+      ...current,
+      ...picked,
+    ];
   }
 
   void _showSnack(String msg) {

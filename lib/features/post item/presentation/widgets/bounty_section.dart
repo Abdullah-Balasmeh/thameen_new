@@ -8,20 +8,23 @@ class BountySection extends StatefulWidget {
     super.key,
     required this.bountyController,
     required this.autovalidateMode,
+    this.offerBountyEdit,
   });
 
   final TextEditingController bountyController;
   final AutovalidateMode autovalidateMode;
+  final bool? offerBountyEdit;
 
   @override
   State<BountySection> createState() => _BountySectionState();
 }
 
 class _BountySectionState extends State<BountySection> {
-  bool offerBounty = false;
   final FocusNode _focusNode = FocusNode();
+  bool offerBounty = false;
   @override
   void initState() {
+    offerBounty = widget.offerBountyEdit ?? false;
     super.initState();
     _focusNode.addListener(() {
       setState(() {}); // rebuild when focus changes

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/features/profile/presentation/bloc/myreports/my_reports_cubit.dart';
@@ -12,7 +14,20 @@ class MyReportsViewBodyBlocConsumer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<MyReportsCubit, MyReportsState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is MyReportsInitial) {
+          log('MyReportsInitial');
+        }
+        if (state is MyReportsFailure) {
+          log('UpdateReportFailure');
+        }
+        if (state is MyReportsLoading) {
+          log('MyReportsLoading');
+        }
+        if (state is MyReportsSuccess) {
+          log('MyReportsSuccess');
+        }
+      },
       builder: (context, state) {
         if (state is MyReportsLoading) {
           return const Center(child: CircularProgressIndicator());

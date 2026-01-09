@@ -15,6 +15,7 @@ import 'package:thameen/features/chat/presentation/views/chat_detail_view.dart';
 import 'package:thameen/features/home/presentation/views/home_view.dart';
 import 'package:thameen/features/home/presentation/views/post_detail_view.dart';
 import 'package:thameen/features/onBoarding/presentation/views/on_boarding_view.dart';
+import 'package:thameen/features/profile/presentation/views/edit_post_view.dart';
 import 'package:thameen/features/splash/presentation/views/splash_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -74,6 +75,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         builder: (context) => ChatDetailView(
           chatId: chatId,
         ),
+      );
+    case EditPostView.routeName:
+      return MaterialPageRoute(
+        settings: settings,
+        builder: (context) => const EditPostView(),
       );
 
     default:

@@ -5,34 +5,16 @@ import 'package:image_picker/image_picker.dart';
 class ImagePickerService {
   final ImagePicker picker;
   ImagePickerService(this.picker);
-  final List<File> selectedImages = [];
 
-  Future<List<File>> pickImages() async {
+  Future<List<File>> pickImages({int limit = 5}) async {
     final pickedFiles = await picker.pickMultiImage(
       maxWidth: 900,
       maxHeight: 900,
       imageQuality: 80,
     );
-    await getLostData();
-    if (pickedFiles.isEmpty) return selectedImages;
 
-    final limited = pickedFiles.take(5 - selectedImages.length);
+    if (pickedFiles.isEmpty) return [];
 
-    selectedImages.addAll(limited.map((e) => File(e.path)));
-
-    return selectedImages.toList();
-  }
-
-  Future<void> getLostData() async {
-    final LostDataResponse response = await picker.retrieveLostData();
-    if (response.isEmpty) {
-      return;
-    }
-    final List<XFile>? files = response.files;
-    if (files != null) {
-      selectedImages.addAll(files.map((e) => File(e.path)));
-    } else {
-      throw response.exception!;
-    }
+    return pickedFiles.take(limit).map((e) => File(e.path)).toList();
   }
 }

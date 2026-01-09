@@ -17,3 +17,13 @@ class MyReportsFailure extends MyReportsState {
 
   MyReportsFailure(this.errMessage);
 }
+
+class UpdateReportLoading extends MyReportsState {}
+
+class UpdateReportSuccess extends MyReportsState {}
+
+class UpdateReportFailure extends MyReportsState {
+  final String errMessage;
+
+  UpdateReportFailure(this.errMessage);
+}

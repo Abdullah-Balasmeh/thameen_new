@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:thameen/features/post%20item/data/models/post_model.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
 import 'package:thameen/features/profile/domain/repo/my_reports_repo.dart';
@@ -9,19 +11,20 @@ class MyReportsRepoImpl implements MyReportsRepo {
   MyReportsRepoImpl({required this.databaseService});
   Map<String, dynamic>? userData;
   @override
-  @override
   Future<List<PostEntity>> getMyReports(String userId) async {
     final posts = await databaseService.queryCollection(
       path: 'posts',
       field: 'userId',
       isEqualTo: userId,
     );
-    userData = await databaseService.getData(
-      path: 'users',
-      documentId: userId,
+
+    final postEntities = posts.map((e) => PostModel.fromMap(e)).toList();
+
+    postEntities.sort(
+      (a, b) => b.createdAt.compareTo(a.createdAt),
     );
 
-    return posts.map((e) => PostModel.fromMap(e)).toList();
+    return postEntities;
   }
 
   @override
@@ -63,6 +66,7 @@ class MyReportsRepoImpl implements MyReportsRepo {
 
   @override
   Future<void> editReport(PostEntity post) async {
+    log('editReport: ${post.toMap()}');
     await databaseService.updateData(
       path: 'posts',
       documentId: post.id,

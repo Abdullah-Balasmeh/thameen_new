@@ -72,4 +72,19 @@ class CreatePostCubit extends Cubit<CreatePostState> {
       );
     }
   }
+
+  Future<void> editPost(PostEntity post) async {
+    emit(EditPostLoading());
+    try {
+      await postRepository.updatePost(post);
+      emit(EditPostSuccess());
+    } catch (e) {
+      log('Error: ${e.toString()}');
+      emit(
+        EditPostFailure(
+          errMessage: e.toString(),
+        ),
+      );
+    }
+  }
 }

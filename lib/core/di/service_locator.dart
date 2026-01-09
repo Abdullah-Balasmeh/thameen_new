@@ -42,7 +42,9 @@ Future<void> setupServiceLocator() async {
       userPresenceService: getIt<UserPresenceService>(),
     ),
   );
-  getIt.registerLazySingleton(() => FirebaseStorageService());
+  getIt.registerLazySingleton<FirebaseStorageService>(
+    () => FirebaseStorageService(),
+  );
 
   getIt.registerSingleton<PostRepository>(
     PostRepositoryImpl(

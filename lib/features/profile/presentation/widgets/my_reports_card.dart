@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
+import 'package:thameen/features/profile/presentation/bloc/myreports/my_reports_cubit.dart';
 import 'package:thameen/features/profile/presentation/views/my_reports_view.dart';
 
 class MyReportsCard extends StatelessWidget {
@@ -21,13 +23,20 @@ class MyReportsCard extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {Navigator.push(
-          context,
-          MaterialPageRoute(
-          builder: (context) => const MyReportsView(),
-          ),
-          );
-          }, 
+          onTap: () {
+            final myReportsCubit = context.read<MyReportsCubit>();
+
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => BlocProvider.value(
+                  value: myReportsCubit,
+                  child: const MyReportsView(),
+                ),
+              ),
+            );
+          },
+
           borderRadius: BorderRadius.circular(12),
           child: Padding(
             padding: const EdgeInsets.all(20),
@@ -68,7 +77,7 @@ class MyReportsCard extends StatelessWidget {
                         'View your reports',
                         style: TextStyle(
                           fontSize: 14,
-                          color:AppTextStyle.medium14.color,
+                          color: AppTextStyle.medium14.color,
                         ),
                       ),
                     ],
@@ -88,6 +97,6 @@ class MyReportsCard extends StatelessWidget {
       ),
     );
   }
+
   // In your onTap or button press:
-  
 }

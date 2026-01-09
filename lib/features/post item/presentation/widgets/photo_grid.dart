@@ -5,48 +5,58 @@ import 'package:flutter/material.dart';
 class PhotoGrid extends StatelessWidget {
   const PhotoGrid({
     super.key,
-    required this.images,
+    required this.networkImages,
+    required this.localImages,
     required this.onRemove,
   });
 
-  final List<File> images;
+  final List<String> networkImages;
+  final List<File> localImages;
   final void Function(int index) onRemove;
 
   @override
   Widget build(BuildContext context) {
+    final total = networkImages.length + localImages.length;
+
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: images.length,
+      itemCount: total,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         crossAxisSpacing: 8,
         mainAxisSpacing: 8,
       ),
       itemBuilder: (context, index) {
+        final Widget image;
+
+        if (index < networkImages.length) {
+          image = Image.network(
+            networkImages[index],
+            fit: BoxFit.cover,
+          );
+        } else {
+          image = Image.file(
+            localImages[index - networkImages.length],
+            fit: BoxFit.cover,
+          );
+        }
+
         return Stack(
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.file(
-                images[index],
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
-              ),
+              child: SizedBox.expand(child: image),
             ),
             Positioned(
               top: 4,
               right: 4,
               child: GestureDetector(
                 onTap: () => onRemove(index),
-                child: Container(
-                  padding: const EdgeInsets.all(4),
-                  decoration: const BoxDecoration(
-                    color: Colors.red,
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Icon(Icons.close, size: 16, color: Colors.white),
+                child: const CircleAvatar(
+                  radius: 12,
+                  backgroundColor: Colors.red,
+                  child: Icon(Icons.close, size: 14, color: Colors.white),
                 ),
               ),
             ),
