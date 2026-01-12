@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
@@ -35,6 +37,8 @@ AppBar buildChatDetailAppBar(
         }
 
         final chatData = chatSnapshot.data!.data()! as Map<String, dynamic>;
+        log(chatData.toString());
+        final isAnonymousChat = chatData['isAnonymousChat'] as bool;
 
         final userIds = List<String>.from(chatData['userIds'] as List<dynamic>);
 
@@ -49,9 +53,12 @@ AppBar buildChatDetailAppBar(
                 style: TextStyle(color: Colors.white),
               );
             }
-
+            final String displayName = isAnonymousChat
+                ? 'Anonymous'
+                : userSnapshot.data!.name;
             return NameAndOnlineState(
               user: userSnapshot.data!,
+              displayName: displayName,
             );
           },
         );

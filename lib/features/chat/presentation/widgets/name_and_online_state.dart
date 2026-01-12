@@ -7,15 +7,17 @@ class NameAndOnlineState extends StatelessWidget {
   const NameAndOnlineState({
     super.key,
     required this.user,
+    required this.displayName,
   });
   final ChatUserModel user;
+  final String displayName;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          user.name,
+          displayName,
           style: AppTextStyle.bold20.copyWith(
             color: Colors.white,
           ),

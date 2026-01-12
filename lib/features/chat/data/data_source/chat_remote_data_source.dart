@@ -6,6 +6,7 @@ abstract class ChatRemoteDataSource {
     required String currentUserId,
     required String otherUserId,
     required String postId,
+    required bool isAnonymousChat,
   });
   Stream<Map<String, dynamic>> streamUser(String userId);
 

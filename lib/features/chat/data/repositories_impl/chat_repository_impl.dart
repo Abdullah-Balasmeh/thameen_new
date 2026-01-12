@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:thameen/features/auth/domain/repositories/auth_repo.dart';
 import 'package:thameen/features/chat/data/data_source/chat_remote_data_source.dart';
@@ -40,11 +42,16 @@ class ChatRepositoryImpl implements ChatRepository {
   }
 
   @override
-  Future<String> startChat(String otherUserId, String postId) {
+  Future<String> startChat(
+    String otherUserId,
+    String postId,
+    bool isAnonymousChat,
+  ) {
     return remote.createOrGetChat(
       currentUserId: _currentUserId,
       otherUserId: otherUserId,
       postId: postId,
+      isAnonymousChat: isAnonymousChat,
     );
   }
 
@@ -62,12 +69,15 @@ class ChatRepositoryImpl implements ChatRepository {
           );
 
           final userData = await remote.getUserData(otherUserId);
-
+          log('isAnonymousChat: ${chat.isAnonymousChat}');
+          final isAnonymous = chat.isAnonymousChat;
           final preview = ChatPreviewModel(
             chatId: chat.id,
             otherUser: ChatUserModel(
               id: userData['id'] as String,
-              name: '${userData['firstName']} ${userData['lastName']}',
+              name: isAnonymous
+                  ? 'Anonymous'
+                  : '${userData['firstName']} ${userData['lastName']}',
               avatarUrl: userData['photoUrl'] as String?,
               isOnline: (userData['isOnline'] as bool?) ?? false,
               lastSeen:

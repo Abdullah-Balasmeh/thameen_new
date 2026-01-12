@@ -27,8 +27,6 @@ class ContactReporterBottomSheet extends StatelessWidget {
   final PostEntity post;
   @override
   Widget build(BuildContext context) {
-    log('post.contactMethods: ${post.contactMethods.length}');
-    log('post.contactMethods: ${post.contactMethods}');
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
@@ -60,10 +58,6 @@ class ContactReporterBottomSheet extends StatelessWidget {
 
                 final chatCubit = context.read<ChatCubit>();
 
-                final chatId = await chatCubit.startChat(
-                  otherUserId: poster.id, // صاحب البوست
-                  postId: postId,
-                );
                 final userid = SharedPreferencesSingleton.getString('user');
                 if (userid == poster.id) {
                   showDialog(
@@ -81,6 +75,12 @@ class ContactReporterBottomSheet extends StatelessWidget {
                   );
                   return;
                 } else if (parentContext.mounted) {
+                  log('post.postAnonymously: ${post.postAnonymously}');
+                  final chatId = await chatCubit.startChat(
+                    otherUserId: poster.id, // صاحب البوست
+                    postId: postId,
+                    isAnonymousChat: post.postAnonymously,
+                  );
                   Navigator.push(
                     parentContext,
                     MaterialPageRoute(

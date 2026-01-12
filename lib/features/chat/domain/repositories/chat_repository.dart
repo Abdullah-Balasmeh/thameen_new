@@ -5,7 +5,11 @@ import 'package:thameen/features/chat/data/models/message_model.dart';
 abstract class ChatRepository {
   Stream<ChatUserModel> streamChatUser(String userId);
 
-  Future<String> startChat(String otherUserId, String postId);
+  Future<String> startChat(
+    String otherUserId,
+    String postId,
+    bool isAnonymousChat,
+  );
 
   Stream<List<ChatPreviewModel>> getChats();
 

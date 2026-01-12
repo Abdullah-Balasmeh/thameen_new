@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/features/chat/data/models/chat_preview_model.dart';
@@ -26,7 +27,8 @@ class ChatCubit extends Cubit<ChatState> {
       (chats) {
         emit(ChatListLoaded(chats));
       },
-      onError: (_) {
+      onError: (e) {
+        log('loadChats error: $e');
         emit(ChatError('Failed to load chats'));
       },
     );
@@ -97,8 +99,9 @@ class ChatCubit extends Cubit<ChatState> {
   Future<String> startChat({
     required String otherUserId,
     required String postId,
+    required bool isAnonymousChat,
   }) async {
-    return await chatRepository.startChat(otherUserId, postId);
+    return await chatRepository.startChat(otherUserId, postId, isAnonymousChat);
   }
 
   @override

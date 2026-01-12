@@ -16,13 +16,16 @@ class ChatRemoteDataSourceImpl implements ChatRemoteDataSource {
     required String currentUserId,
     required String otherUserId,
     required String postId,
+    required bool isAnonymousChat,
   }) async {
     if (currentUserId == otherUserId) {
       throw Exception('You cannot chat with yourself');
     }
 
     final users = [currentUserId, otherUserId]..sort();
-    final chatId = '${users[0]}_${users[1]}';
+    final chatId = isAnonymousChat
+        ? '${users[0]}_${users[1]}_$postId'
+        : '${users[0]}_${users[1]}';
     final chatRef = FirebaseFirestore.instance.collection('chats').doc(chatId);
 
     await FirebaseFirestore.instance.runTransaction((tx) async {
@@ -32,6 +35,8 @@ class ChatRemoteDataSourceImpl implements ChatRemoteDataSource {
         tx.set(chatRef, {
           'userIds': users,
           'postId': postId,
+          'isAnonymousChat': isAnonymousChat, // 👈 جديد
+          'anonymousUserId': otherUserId,
           'lastMessage': '',
           'lastMessageTime': Timestamp.now(),
           'unreadCount': {
@@ -136,6 +141,8 @@ class ChatRemoteDataSourceImpl implements ChatRemoteDataSource {
                     e['unreadCount'] as Map<String, dynamic>,
                   ),
                   createdAt: (e['createdAt'] as Timestamp).toDate(),
+                  isAnonymousChat: e['isAnonymousChat'] as bool,
+                  anonymousUserId: e['anonymousUserId'] as String,
                 ),
               )
               .toList(),
