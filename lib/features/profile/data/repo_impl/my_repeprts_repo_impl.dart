@@ -4,6 +4,7 @@ import 'package:thameen/features/post%20item/data/models/post_model.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
 import 'package:thameen/features/profile/domain/repo/my_reports_repo.dart';
 import 'package:thameen/shared/services/database_service.dart';
+import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 
 class MyReportsRepoImpl implements MyReportsRepo {
   final DatabaseService databaseService;
@@ -57,7 +58,7 @@ class MyReportsRepoImpl implements MyReportsRepo {
     // 4️⃣ تحديث المستخدم بالقائمة الجديدة
     await databaseService.updateData(
       path: 'users',
-      documentId: userData?['id'] as String,
+      documentId: SharedPreferencesSingleton.getString('user'),
       data: {
         'postsId': postsId,
       },

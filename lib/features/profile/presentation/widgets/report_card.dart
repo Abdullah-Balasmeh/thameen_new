@@ -36,6 +36,7 @@ class _ReportCardState extends State<ReportCard> {
   }
 
   void _updateReportStatus(String postId, PostState newStatus) {
+    Navigator.pop(context);
     setState(() {
       context.read<MyReportsCubit>().updateReportStatus(postId, newStatus);
     });
