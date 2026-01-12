@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
+import 'package:thameen/features/home/presentation/bloc/all_posts_cubit/home_cubit.dart';
 
 class RecentItems extends StatelessWidget {
   const RecentItems({super.key});
@@ -23,7 +25,9 @@ class RecentItems extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  // View all
+                  context.read<HomeCubit>().filterPosts(
+                    category: 'All Items',
+                  );
                 },
                 child: Text(
                   'View All',
