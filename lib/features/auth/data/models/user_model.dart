@@ -37,4 +37,21 @@ class UserModel extends UserEntity {
       lastSeen: (data['lastSeen'] as Timestamp).toDate(),
     );
   }
+
+  factory UserModel.fromMap(Map<String, dynamic> data) {
+    return UserModel(
+      id: data['id'] as String,
+      firstName: data['firstName'] as String,
+      lastName: data['lastName'] as String,
+      phoneNumber: data['phoneNumber'] as String,
+      email: data['email'] as String,
+      password: data['password'] as String,
+      photoUrl: data['photoUrl'] as String?,
+      isEmailVerified: data['isEmailVerified'] as bool,
+      createdAt: data['createdAt'] as String,
+      postsId: (data['postsId'] as List<dynamic>?)?.cast<String?>(),
+      isOnline: data['isOnline'] as bool,
+      lastSeen: (data['lastSeen'] as Timestamp).toDate(),
+    );
+  }
 }

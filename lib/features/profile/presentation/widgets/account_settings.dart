@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thameen/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:thameen/features/profile/presentation/widgets/app_divider.dart';
 import 'package:thameen/features/profile/presentation/widgets/language_list_tile_drop_down_menu.dart';
 import 'package:thameen/features/profile/presentation/widgets/profile_list_tile.dart';
@@ -40,7 +41,9 @@ class AccountSettings extends StatelessWidget {
           ProfileListTile(
             icon: Icons.edit,
             title: 'Edit Profile',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, EditProfileView.routeName);
+            },
           ),
           const SizedBox(
             height: 16,
