@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:thameen/features/profile/presentation/views/about_view.dart';
+import 'package:thameen/features/profile/presentation/views/help_and_support_view.dart';
+import 'package:thameen/features/profile/presentation/views/privacy_and_security.dart';
 import 'package:thameen/features/profile/presentation/widgets/app_divider.dart';
 import 'package:thameen/features/profile/presentation/widgets/profile_list_tile.dart';
 
@@ -37,7 +40,9 @@ class SupportSection extends StatelessWidget {
           ProfileListTile(
             icon: Icons.help,
             title: 'Help & Support',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, HelpSupportView.routeName);
+            },
           ),
           const SizedBox(
             height: 16,
@@ -49,7 +54,9 @@ class SupportSection extends StatelessWidget {
           ProfileListTile(
             icon: Icons.security,
             title: 'Privacy & Security',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, PrivacySecurityView.routeName);
+            },
           ),
           const SizedBox(
             height: 16,
@@ -61,7 +68,9 @@ class SupportSection extends StatelessWidget {
           ProfileListTile(
             icon: Icons.info,
             title: 'About',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, AboutView.routeName);
+            },
           ),
         ],
       ),

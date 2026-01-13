@@ -15,7 +15,10 @@ import 'package:thameen/features/chat/presentation/views/chat_detail_view.dart';
 import 'package:thameen/features/home/presentation/views/home_view.dart';
 import 'package:thameen/features/home/presentation/views/post_detail_view.dart';
 import 'package:thameen/features/onBoarding/presentation/views/on_boarding_view.dart';
+import 'package:thameen/features/profile/presentation/views/about_view.dart';
 import 'package:thameen/features/profile/presentation/views/edit_post_view.dart';
+import 'package:thameen/features/profile/presentation/views/help_and_support_view.dart';
+import 'package:thameen/features/profile/presentation/views/privacy_and_security.dart';
 import 'package:thameen/features/splash/presentation/views/splash_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -80,6 +83,18 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         settings: settings,
         builder: (context) => const EditPostView(),
+      );
+    case HelpSupportView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const HelpSupportView(),
+      );
+    case PrivacySecurityView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const PrivacySecurityView(),
+      );
+    case AboutView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const AboutView(),
       );
 
     default:
