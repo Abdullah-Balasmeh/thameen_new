@@ -184,12 +184,15 @@ class _PostDetailViewBodyState extends State<PostDetailViewBody> {
               label: 'Reported Time',
               value: timeAgo(widget.post.createdAt),
             ),
-            const SizedBox(height: 16),
-            DetailRow(
-              icon: Icons.attach_money,
-              label: 'Bounty',
-              value: '${widget.post.bountyAmount} JD',
-            ),
+
+            if (widget.post.postType == PostType.lost) ...[
+              const SizedBox(height: 16),
+              DetailRow(
+                icon: Icons.attach_money,
+                label: 'Bounty',
+                value: '${widget.post.bountyAmount} JD',
+              ),
+            ],
 
             const SizedBox(height: 32),
             AppButton(

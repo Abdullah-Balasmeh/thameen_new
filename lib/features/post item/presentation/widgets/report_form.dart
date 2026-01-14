@@ -262,6 +262,9 @@ class _ReportFormState extends State<ReportForm> {
                   });
                   return;
                 }
+                if (selectedType.value == PostType.found) {
+                  bountyController.text = '';
+                }
 
                 context.read<CreatePostCubit>().createPost(
                   userId: SharedPreferencesSingleton.getString('user'),

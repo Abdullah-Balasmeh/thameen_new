@@ -25,6 +25,9 @@ class _BountySectionState extends State<BountySection> {
   @override
   void initState() {
     offerBounty = widget.offerBountyEdit ?? false;
+    if (offerBounty == false) {
+      widget.bountyController.text = '';
+    }
     super.initState();
     _focusNode.addListener(() {
       setState(() {}); // rebuild when focus changes
