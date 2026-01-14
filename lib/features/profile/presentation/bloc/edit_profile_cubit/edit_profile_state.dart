@@ -12,6 +12,12 @@ final class EditProfileSuccess extends EditProfileState {
   EditProfileSuccess({required this.user});
 }
 
+final class EditProfileUpdateSuccess extends EditProfileState {
+  final UserEntity user;
+
+  EditProfileUpdateSuccess({required this.user});
+}
+
 final class EditProfileFailure extends EditProfileState {
   final String errMessage;
 

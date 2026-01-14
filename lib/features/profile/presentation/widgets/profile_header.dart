@@ -13,6 +13,7 @@ class ProfileHeader extends StatelessWidget {
     final user = {
       'name': SharedPreferencesSingleton.getString('userName'),
       'email': SharedPreferencesSingleton.getString('email'),
+      'photoUrl': SharedPreferencesSingleton.getString('photoUrl'),
     };
     log('user: ${user['name']}');
     final theme = Theme.of(context);
@@ -30,11 +31,21 @@ class ProfileHeader extends StatelessWidget {
               color: AppColors.primary.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
-            child: const Icon(
-              Icons.person,
-              size: 50,
-              color: AppColors.primary,
-            ),
+            child: (user['photoUrl'] == null || user['photoUrl']!.isEmpty)
+                ? const Icon(
+                    Icons.person,
+                    size: 50,
+                    color: AppColors.primary,
+                  )
+                : ClipRRect(
+                    borderRadius: BorderRadius.circular(100),
+                    child: Image.network(
+                      user['photoUrl']!,
+                      fit: BoxFit.cover,
+                      width: 100,
+                      height: 100,
+                    ),
+                  ),
           ),
           const SizedBox(height: 16),
           // Name

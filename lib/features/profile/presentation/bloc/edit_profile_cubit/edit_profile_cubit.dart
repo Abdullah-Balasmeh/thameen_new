@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/features/auth/domain/entities/user_entity.dart';
 import 'package:thameen/features/profile/domain/edit_profile_repo.dart';
@@ -17,6 +19,26 @@ class EditProfileCubit extends Cubit<EditProfileState> {
         (failure) => emit(EditProfileFailure(errMessage: failure.errorMessage)),
         (user) => emit(EditProfileSuccess(user: user)),
       );
+    } catch (e) {
+      emit(EditProfileFailure(errMessage: e.toString()));
+    }
+  }
+
+  Future<void> updateProfile(UserEntity user, File? photo) async {
+    emit(EditProfileLoading());
+    try {
+      if (photo != null) {
+        final result = await editProfileRepo.updateProfilePhoto(user.id, photo);
+        result.fold(
+          (failure) =>
+              emit(EditProfileFailure(errMessage: failure.errorMessage)),
+          (url) {
+            user = user.copyWith(photoUrl: url);
+          },
+        );
+      }
+      await editProfileRepo.updateProfile(user);
+      emit(EditProfileUpdateSuccess(user: user));
     } catch (e) {
       emit(EditProfileFailure(errMessage: e.toString()));
     }

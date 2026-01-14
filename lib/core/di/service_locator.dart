@@ -71,6 +71,7 @@ Future<void> setupServiceLocator() async {
   getIt.registerSingleton<EditProfileRepo>(
     EditProfileRepoImpl(
       databaseService: getIt<DatabaseService>(),
+      storageService: getIt<FirebaseStorageService>(),
     ),
   );
 

@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/auth/domain/entities/user_entity.dart';
-import 'package:thameen/features/profile/presentation/widgets/change_password_list_tile.dart';
+import 'package:thameen/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_cubit.dart';
 import 'package:thameen/features/profile/presentation/widgets/edit_profile_phone_text_form_field.dart';
 import 'package:thameen/features/profile/presentation/widgets/edit_profile_photo.dart';
 import 'package:thameen/features/profile/presentation/widgets/edit_profile_text_form_field.dart';
@@ -24,6 +27,8 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
   late TextEditingController _lastNameController;
   late TextEditingController _emailController;
   late TextEditingController _phoneController;
+  late String currentImage;
+  ValueNotifier<File?> newImage = ValueNotifier(null);
   @override
   void initState() {
     _autovalidateMode = AutovalidateMode.disabled;
@@ -35,6 +40,7 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
     _lastNameController.text = widget.user.lastName;
     _emailController.text = widget.user.email;
     _phoneController.text = widget.user.phoneNumber;
+    currentImage = widget.user.photoUrl ?? '';
 
     super.initState();
   }
@@ -60,7 +66,10 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
           child: Column(
             children: [
               const SizedBox(height: 16),
-              const EditProfilePhoto(),
+              EditProfilePhoto(
+                currentImage: currentImage,
+                newImage: newImage,
+              ),
               const SizedBox(height: 16),
               EditProfileTextFormField(
                 hintText: 'First Name',
@@ -96,6 +105,7 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
                 keyboardType: TextInputType.emailAddress,
                 controller: _emailController,
                 textInputAction: TextInputAction.next,
+                isEmail: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email address';
@@ -121,8 +131,6 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
                 },
               ),
               const SizedBox(height: 16),
-              const ChangePasswordListTile(),
-              const SizedBox(height: 16),
               AppButton(
                 child: Text(
                   'Update',
@@ -130,7 +138,23 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
                 ),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    // TODO: Update profile
+                    context.read<EditProfileCubit>().updateProfile(
+                      UserEntity(
+                        id: widget.user.id,
+                        firstName: _firstNameController.text,
+                        lastName: _lastNameController.text,
+                        email: _emailController.text,
+                        phoneNumber: _phoneController.text,
+                        password: widget.user.password,
+                        isEmailVerified: widget.user.isEmailVerified,
+                        createdAt: widget.user.createdAt,
+                        photoUrl: widget.user.photoUrl,
+                        postsId: widget.user.postsId,
+                        isOnline: widget.user.isOnline,
+                        lastSeen: widget.user.lastSeen,
+                      ),
+                      newImage.value,
+                    );
                   }
                 },
               ),

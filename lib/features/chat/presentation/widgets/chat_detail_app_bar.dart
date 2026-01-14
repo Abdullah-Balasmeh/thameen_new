@@ -38,7 +38,8 @@ AppBar buildChatDetailAppBar(
 
         final chatData = chatSnapshot.data!.data()! as Map<String, dynamic>;
         log(chatData.toString());
-        final isAnonymousChat = chatData['isAnonymousChat'] as bool;
+        final bool isAnonymousChat =
+            (chatData['isAnonymousChat'] as bool?) ?? false;
 
         final userIds = List<String>.from(chatData['userIds'] as List<dynamic>);
 

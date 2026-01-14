@@ -50,4 +50,23 @@ class FirebaseStorageService {
         return 'image/*';
     }
   }
+
+  Future<String> uploadProfileImage({
+    required String userId,
+    required File image,
+  }) async {
+    final extension = path.extension(image.path);
+
+    final ref = _storage.ref(
+      'profile_images/$userId/profile$extension',
+    );
+
+    final metadata = SettableMetadata(
+      contentType: _contentType(extension),
+    );
+
+    await ref.putFile(image, metadata);
+
+    return await ref.getDownloadURL();
+  }
 }

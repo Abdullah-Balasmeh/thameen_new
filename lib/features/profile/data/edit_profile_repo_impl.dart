@@ -1,13 +1,20 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:thameen/core/errors/failure.dart';
 import 'package:thameen/features/auth/data/models/user_model.dart';
 import 'package:thameen/features/auth/domain/entities/user_entity.dart';
 import 'package:thameen/features/profile/domain/edit_profile_repo.dart';
 import 'package:thameen/shared/services/database_service.dart';
+import 'package:thameen/shared/services/firebase_storage.dart';
 
 class EditProfileRepoImpl implements EditProfileRepo {
   final DatabaseService databaseService;
-  EditProfileRepoImpl({required this.databaseService});
+  final FirebaseStorageService storageService;
+  EditProfileRepoImpl({
+    required this.databaseService,
+    required this.storageService,
+  });
   @override
   Future<Either<Failure, UserEntity>> getUser(String userId) async {
     try {
@@ -37,9 +44,19 @@ class EditProfileRepoImpl implements EditProfileRepo {
   }
 
   @override
-  Future<void> updateProfilePhoto(String userId, String photoUrl) {
-    // TODO: implement updateProfilePhoto
-    throw UnimplementedError();
+  Future<Either<Failure, String>> updateProfilePhoto(
+    String userId,
+    File photo,
+  ) async {
+    try {
+      final url = await storageService.uploadProfileImage(
+        userId: userId,
+        image: photo,
+      );
+      return Right(url);
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
   }
 
   @override

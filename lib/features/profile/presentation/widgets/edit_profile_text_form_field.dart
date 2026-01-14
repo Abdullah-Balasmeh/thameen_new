@@ -16,6 +16,7 @@ class EditProfileTextFormField extends StatefulWidget {
     this.autovalidateMode,
     this.onChanged,
     this.textInputAction,
+    this.isEmail = false,
   });
   final String hintText;
   final Widget prefixIcon;
@@ -25,6 +26,7 @@ class EditProfileTextFormField extends StatefulWidget {
   final AutovalidateMode? autovalidateMode;
   final ValueChanged<String>? onChanged;
   final TextInputAction? textInputAction;
+  final bool isEmail;
   @override
   State<EditProfileTextFormField> createState() =>
       _EditProfileTextFormFieldState();
@@ -89,7 +91,7 @@ class _EditProfileTextFormFieldState extends State<EditProfileTextFormField> {
             ),
           ),
         ),
-        if (readOnly)
+        if (readOnly && widget.isEmail == false)
           IconButton(
             icon: const Icon(Icons.edit, color: AppColors.primary),
             onPressed: () {

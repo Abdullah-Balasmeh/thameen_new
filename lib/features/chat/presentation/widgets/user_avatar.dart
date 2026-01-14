@@ -18,12 +18,24 @@ class UserAvatar extends StatelessWidget {
         CircleAvatar(
           radius: 30,
           backgroundColor: AppColors.primary,
-          child: Text(
-            chat.otherUser.name[0].toUpperCase(),
-            style: AppTextStyle.bold24.copyWith(
-              color: Colors.white,
-            ),
-          ),
+          child:
+              (chat.otherUser.avatarUrl == null ||
+                  chat.otherUser.avatarUrl!.isEmpty)
+              ? Text(
+                  chat.otherUser.name[0].toUpperCase(),
+                  style: AppTextStyle.bold24.copyWith(
+                    color: Colors.white,
+                  ),
+                )
+              : ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: Image.network(
+                    chat.otherUser.avatarUrl!,
+                    fit: BoxFit.cover,
+                    width: 60,
+                    height: 60,
+                  ),
+                ),
         ),
         if (chat.otherUser.isOnline)
           Positioned(

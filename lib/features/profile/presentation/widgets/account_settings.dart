@@ -52,6 +52,18 @@ class AccountSettings extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
+          ProfileListTile(
+            icon: Icons.lock_rounded,
+            title: 'Change Password',
+            onTap: () {},
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          const AppDivider(),
+          const SizedBox(
+            height: 16,
+          ),
           const ThemeSwitchListTile(),
           const SizedBox(
             height: 16,
