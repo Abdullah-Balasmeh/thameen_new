@@ -39,13 +39,17 @@ class HomeHeader extends StatelessWidget {
             children: [
               StatCard(
                 title: 'Lost Items',
-                count: postsCount['lost'].toString() ?? '0',
+                count: postsCount['lost'] != null
+                    ? postsCount['lost'].toString()
+                    : '0',
                 icon: Icons.search,
               ),
               const SizedBox(width: 12),
               StatCard(
                 title: 'Found Items',
-                count: postsCount['found'].toString() ?? '0',
+                count: postsCount['found'] != null
+                    ? postsCount['found'].toString()
+                    : '0',
                 icon: Icons.done_all,
               ),
             ],
