@@ -7,17 +7,20 @@ class NewPasswordView extends StatelessWidget {
   static const String routeName = 'new_password_view';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(
-        context,
-        showButtonBack: true,
-        showButtonActions: false,
-        title: 'New Password',
-        onPressed: () {
-          Navigator.pop(context);
-        },
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        appBar: buildAppBar(
+          context,
+          showButtonBack: true,
+          showButtonActions: false,
+          title: 'New Password',
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        body: const NewPasswordViewBodyBlocConsumer(),
       ),
-      body: const NewPasswordViewBodyBlocConsumer(),
     );
   }
 }

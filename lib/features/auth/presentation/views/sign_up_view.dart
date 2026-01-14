@@ -15,19 +15,22 @@ class SignUpView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => SignUpCubit(getIt<AuthRepo>()),
-      child: Scaffold(
-        appBar: authAppBar(
-          context: context,
-          title: S.of(context).signupTitle,
-          showButtonBack: true,
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          actions: [
-            const SwitchModeAndLanguage(),
-          ],
+      child: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Scaffold(
+          appBar: authAppBar(
+            context: context,
+            title: S.of(context).signupTitle,
+            showButtonBack: true,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            actions: [
+              const SwitchModeAndLanguage(),
+            ],
+          ),
+          body: const SignUpViewBodyBlocConsumer(),
         ),
-        body: const SignUpViewBodyBlocConsumer(),
       ),
     );
   }

@@ -15,17 +15,20 @@ class SignInView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => SignInCubit(getIt<AuthRepo>()),
-      child: Scaffold(
-        appBar: authAppBar(
-          context: context,
-          title: S.of(context).signinTitle,
-          showButtonBack: false,
-          onPressed: () {},
-          actions: [
-            const SwitchModeAndLanguage(),
-          ],
+      child: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Scaffold(
+          appBar: authAppBar(
+            context: context,
+            title: S.of(context).signinTitle,
+            showButtonBack: false,
+            onPressed: () {},
+            actions: [
+              const SwitchModeAndLanguage(),
+            ],
+          ),
+          body: const SignInViewBodyBlocConsumer(),
         ),
-        body: const SignInViewBodyBlocConsumer(),
       ),
     );
   }

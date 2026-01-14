@@ -7,17 +7,20 @@ class ForgotPasswordView extends StatelessWidget {
   static const String routeName = 'forgot_password_view';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(
-        context,
-        showButtonBack: true,
-        showButtonActions: false,
-        title: 'Forgot Password',
-        onPressed: () {
-          Navigator.pop(context);
-        },
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        appBar: buildAppBar(
+          context,
+          showButtonBack: true,
+          showButtonActions: false,
+          title: 'Forgot Password',
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        body: const ForgotPasswordViewBodyBlocConsumer(),
       ),
-      body: const ForgotPasswordViewBodyBlocConsumer(),
     );
   }
 }

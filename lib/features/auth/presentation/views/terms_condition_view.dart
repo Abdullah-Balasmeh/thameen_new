@@ -7,17 +7,20 @@ class TermsConditionView extends StatelessWidget {
   static const String routeName = 'terms_condition_view';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(
-        context,
-        showButtonBack: true,
-        showButtonActions: false,
-        title: 'Terms & Conditions',
-        onPressed: () {
-          Navigator.pop(context);
-        },
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        appBar: buildAppBar(
+          context,
+          showButtonBack: true,
+          showButtonActions: false,
+          title: 'Terms & Conditions',
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        body: const TermsConditionViewBody(),
       ),
-      body: const TermsConditionViewBody(),
     );
   }
 }

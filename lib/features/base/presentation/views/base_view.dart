@@ -67,28 +67,31 @@ class _BaseViewState extends State<BaseView> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => HomeCubit(getIt<HomeRepo>()),
-      child: Scaffold(
-        appBar: buildAppBar(
-          context,
-          showButtonBack: false,
-          showButtonActions: true,
-          title: titles[selectedIndex],
-          backgroundColor: AppColors.primary,
+      child: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Scaffold(
+          appBar: buildAppBar(
+            context,
+            showButtonBack: false,
+            showButtonActions: true,
+            title: titles[selectedIndex],
+            backgroundColor: AppColors.primary,
+          ),
+          body: PageView.builder(
+            itemCount: 5,
+            physics: const BouncingScrollPhysics(),
+            controller: pageController,
+            onPageChanged: (index) {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+            itemBuilder: (context, index) {
+              return pages[index];
+            },
+          ),
+          bottomNavigationBar: buildBottomNavigationBar(),
         ),
-        body: PageView.builder(
-          itemCount: 5,
-          physics: const BouncingScrollPhysics(),
-          controller: pageController,
-          onPageChanged: (index) {
-            setState(() {
-              selectedIndex = index;
-            });
-          },
-          itemBuilder: (context, index) {
-            return pages[index];
-          },
-        ),
-        bottomNavigationBar: buildBottomNavigationBar(),
       ),
     );
   }
@@ -107,24 +110,40 @@ class _BaseViewState extends State<BaseView> {
       type: BottomNavigationBarType.fixed,
       selectedItemColor: AppColors.primary,
       unselectedItemColor: Theme.of(context).iconTheme.color,
-      items: const [
-        BottomNavigationBarItem(
+      items: [
+        const BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home',
         ),
-        BottomNavigationBarItem(
+        const BottomNavigationBarItem(
           icon: Icon(Icons.psychology),
           label: 'AI Search',
         ),
-        BottomNavigationBarItem(
+        const BottomNavigationBarItem(
           icon: Icon(Icons.post_add),
           label: 'Post item',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.chat_bubble_outline),
+          icon: Stack(
+            children: [
+              const Icon(Icons.chat_bubble_outline),
+              Positioned(
+                top: 0,
+                right: 0,
+                child: Container(
+                  width: 10,
+                  height: 10,
+                  decoration: const BoxDecoration(
+                    color: AppColors.success,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              ),
+            ],
+          ),
           label: 'Messages',
         ),
-        BottomNavigationBarItem(
+        const BottomNavigationBarItem(
           icon: Icon(Icons.person),
           label: 'Profile',
         ),

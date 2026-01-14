@@ -7,17 +7,20 @@ class PasswordOtpView extends StatelessWidget {
   static const String routeName = 'password_otp_view';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(
-        context,
-        showButtonBack: true,
-        showButtonActions: false,
-        title: 'Password OTP',
-        onPressed: () {
-          Navigator.pop(context);
-        },
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        appBar: buildAppBar(
+          context,
+          showButtonBack: true,
+          showButtonActions: false,
+          title: 'Password OTP',
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        body: const PasswordOtpViewBodyBlocConsumer(),
       ),
-      body: const PasswordOtpViewBodyBlocConsumer(),
     );
   }
 }

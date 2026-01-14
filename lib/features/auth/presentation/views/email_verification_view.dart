@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/di/service_locator.dart';
 import 'package:thameen/features/auth/domain/repositories/auth_repo.dart';
 import 'package:thameen/features/auth/presentation/bloc/email_verification/email_verification_cubit.dart';
-import 'package:thameen/features/auth/presentation/views/email_verification_view_body_bloc_consumer.dart';
 import 'package:thameen/features/auth/presentation/views/sign_in_view.dart';
+import 'package:thameen/features/auth/presentation/widgets/email_verification_view_body_bloc_consumer.dart';
 import 'package:thameen/shared/widgets/app_bar.dart';
 
 class EmailVerificationView extends StatelessWidget {
@@ -15,21 +15,24 @@ class EmailVerificationView extends StatelessWidget {
     String userEmail = ModalRoute.of(context)!.settings.arguments.toString();
     return BlocProvider(
       create: (context) => EmailVerificationCubit(getIt<AuthRepo>()),
-      child: Scaffold(
-        appBar: buildAppBar(
-          context,
-          showButtonBack: true,
-          showButtonActions: false,
-          title: 'Email Verification',
-          onPressed: () {
-            Navigator.pushNamedAndRemoveUntil(
-              context,
-              SignInView.routeName,
-              (route) => false,
-            );
-          },
+      child: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Scaffold(
+          appBar: buildAppBar(
+            context,
+            showButtonBack: true,
+            showButtonActions: false,
+            title: 'Email Verification',
+            onPressed: () {
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                SignInView.routeName,
+                (route) => false,
+              );
+            },
+          ),
+          body: EmailVerificationViewBodyBlocConsumer(userEmail: userEmail),
         ),
-        body: EmailVerificationViewBodyBlocConsumer(userEmail: userEmail),
       ),
     );
   }
