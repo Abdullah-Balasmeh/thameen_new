@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thameen/features/profile/presentation/views/change_password_view.dart';
 import 'package:thameen/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:thameen/features/profile/presentation/widgets/app_divider.dart';
 import 'package:thameen/features/profile/presentation/widgets/language_list_tile_drop_down_menu.dart';
@@ -55,7 +56,9 @@ class AccountSettings extends StatelessWidget {
           ProfileListTile(
             icon: Icons.lock_rounded,
             title: 'Change Password',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, ChangePasswordView.routeName);
+            },
           ),
           const SizedBox(
             height: 16,

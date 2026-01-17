@@ -8,6 +8,7 @@ import 'package:thameen/features/profile/presentation/bloc/edit_profile_cubit/ed
 import 'package:thameen/features/profile/presentation/widgets/edit_profile_phone_text_form_field.dart';
 import 'package:thameen/features/profile/presentation/widgets/edit_profile_photo.dart';
 import 'package:thameen/features/profile/presentation/widgets/edit_profile_text_form_field.dart';
+import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
 
 class EditProfileViewBody extends StatefulWidget {
@@ -138,6 +139,11 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
                 ),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
+                    FocusScope.of(context).unfocus();
+                    SharedPreferencesSingleton.setString(
+                      'userName',
+                      '${_firstNameController.text} ${_lastNameController.text}',
+                    );
                     context.read<EditProfileCubit>().updateProfile(
                       UserEntity(
                         id: widget.user.id,

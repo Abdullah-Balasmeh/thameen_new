@@ -110,40 +110,24 @@ class _BaseViewState extends State<BaseView> {
       type: BottomNavigationBarType.fixed,
       selectedItemColor: AppColors.primary,
       unselectedItemColor: Theme.of(context).iconTheme.color,
-      items: [
-        const BottomNavigationBarItem(
+      items: const [
+        BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home',
         ),
-        const BottomNavigationBarItem(
+        BottomNavigationBarItem(
           icon: Icon(Icons.psychology),
           label: 'AI Search',
         ),
-        const BottomNavigationBarItem(
+        BottomNavigationBarItem(
           icon: Icon(Icons.post_add),
           label: 'Post item',
         ),
         BottomNavigationBarItem(
-          icon: Stack(
-            children: [
-              const Icon(Icons.chat_bubble_outline),
-              Positioned(
-                top: 0,
-                right: 0,
-                child: Container(
-                  width: 10,
-                  height: 10,
-                  decoration: const BoxDecoration(
-                    color: AppColors.success,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-              ),
-            ],
-          ),
+          icon: Icon(Icons.chat_bubble_outline),
           label: 'Messages',
         ),
-        const BottomNavigationBarItem(
+        BottomNavigationBarItem(
           icon: Icon(Icons.person),
           label: 'Profile',
         ),

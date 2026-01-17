@@ -4,7 +4,6 @@ import 'package:thameen/core/language/language_provider.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/core/utils/extuntions/time_formatter.dart';
-import 'package:thameen/core/utils/helper/build_message_status_icon.dart';
 import 'package:thameen/features/chat/data/models/message_model.dart';
 
 class MessageBubbleReceiver extends StatelessWidget {
@@ -60,7 +59,7 @@ class MessageBubbleReceiver extends StatelessWidget {
                   ),
 
                   const Spacer(),
-                  buildMessageStatusIcon(message.status),
+                  // buildMessageStatusIcon(message.status),
                 ],
               ),
             ],

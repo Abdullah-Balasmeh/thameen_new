@@ -16,6 +16,7 @@ import 'package:thameen/features/home/presentation/views/home_view.dart';
 import 'package:thameen/features/home/presentation/views/post_detail_view.dart';
 import 'package:thameen/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:thameen/features/profile/presentation/views/about_view.dart';
+import 'package:thameen/features/profile/presentation/views/change_password_view.dart';
 import 'package:thameen/features/profile/presentation/views/edit_post_view.dart';
 import 'package:thameen/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:thameen/features/profile/presentation/views/help_and_support_view.dart';
@@ -100,6 +101,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AboutView.routeName:
       return MaterialPageRoute(
         builder: (context) => const AboutView(),
+      );
+    case ChangePasswordView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ChangePasswordView(),
       );
 
     default:
