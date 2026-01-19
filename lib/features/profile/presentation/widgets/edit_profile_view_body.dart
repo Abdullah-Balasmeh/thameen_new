@@ -106,7 +106,7 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
                 keyboardType: TextInputType.emailAddress,
                 controller: _emailController,
                 textInputAction: TextInputAction.next,
-                isEmail: true,
+                isEmail: false,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email address';
