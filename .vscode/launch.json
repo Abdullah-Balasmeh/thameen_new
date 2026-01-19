@@ -16,6 +16,12 @@
             "type": "dart",
             "flutterMode": "profile"
         },
+        // {
+        //     "name": "thameen (release mode)",
+        //     "request": "launch",
+        //     "type": "dart",
+        //     "flutterMode": "release"
+        // },
         {
             "name": "Android",
             "request": "launch",

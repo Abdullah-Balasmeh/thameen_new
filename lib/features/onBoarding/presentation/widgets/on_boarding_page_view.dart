@@ -70,6 +70,7 @@ class OnBoardingPageView extends StatelessWidget {
             ],
           ),
           description: S.of(context).onboarding3Subtitle,
+          isAi: true,
         ),
       ],
     );

@@ -7,15 +7,16 @@ class OnBoardingPageViewItem extends StatelessWidget {
     required this.image,
     required this.description,
     required this.title,
+    this.isAi,
   });
   final String image, description;
   final Widget title;
-
+  final bool? isAi;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SvgPicture.asset(image, width: 250),
+        SvgPicture.asset(image, width: 250, height: isAi == true ? 300 : null),
         const SizedBox(height: 16),
         title,
         const SizedBox(height: 16),
