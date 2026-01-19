@@ -14,8 +14,10 @@ import 'package:thameen/features/home/domain/repositories/home_repo.dart';
 import 'package:thameen/features/post%20item/data/repositories_impl/post_repository_impl.dart';
 import 'package:thameen/features/post%20item/domain/repositories/post_repository.dart';
 import 'package:thameen/features/profile/data/edit_profile_repo_impl.dart';
+import 'package:thameen/features/profile/data/repo_impl/change_password_repo_impl.dart';
 import 'package:thameen/features/profile/data/repo_impl/my_repeprts_repo_impl.dart';
 import 'package:thameen/features/profile/domain/edit_profile_repo.dart';
+import 'package:thameen/features/profile/domain/repo/change_password_repo.dart';
 import 'package:thameen/features/profile/domain/repo/my_reports_repo.dart';
 import 'package:thameen/shared/services/database_service.dart';
 import 'package:thameen/shared/services/firebase_auth_service.dart';
@@ -84,6 +86,13 @@ Future<void> setupServiceLocator() async {
   getIt.registerFactory(
     () => ChatCubit(
       chatRepository: getIt<ChatRepository>(),
+    ),
+  );
+  getIt.registerSingleton<ChangePasswordRepo>(
+    ChangePasswordRepoImpl(
+      authRepo: getIt<AuthRepo>(),
+      databaseService: getIt<DatabaseService>(),
+      authService: getIt<FirebaseAuthService>(),
     ),
   );
 }

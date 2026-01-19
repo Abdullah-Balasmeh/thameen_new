@@ -1,12 +1,16 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:thameen/core/constants/app_spacing.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/core/utils/assets.dart';
 import 'package:thameen/core/utils/helper/build_error_snackbar.dart';
 import 'package:thameen/features/auth/presentation/widgets/password_text_form_field.dart';
-import 'package:thameen/features/auth/presentation/widgets/showSuccessDialog.dart';
+import 'package:thameen/features/profile/presentation/bloc/change_password/change_password_cubit.dart';
 import 'package:thameen/generated/l10n.dart';
+import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
 import 'package:thameen/shared/widgets/loading_button.dart';
 
@@ -46,6 +50,24 @@ class _ChangePasswordViewBodyState extends State<ChangePasswordViewBody> {
   Widget build(BuildContext context) {
     bool isLoading = false;
     bool isButtonEnabled = true;
+    var changePasswordCubit = context.watch<ChangePasswordCubit>();
+    if (changePasswordCubit.state is ChangePasswordLoading) {
+      isLoading = true;
+      isButtonEnabled = false;
+    } else {
+      isLoading = false;
+      isButtonEnabled = true;
+    }
+    if (changePasswordCubit.state is ChangePasswordSuccess) {
+      setState(() {
+        _oldPasswordController.text = '';
+        _passwordController.text = '';
+        _confirmPasswordController.text = '';
+        _oldPasswordTouched = false;
+        _passwordTouched = false;
+        _confirmPasswordTouched = false;
+      });
+    }
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -74,18 +96,6 @@ class _ChangePasswordViewBodyState extends State<ChangePasswordViewBody> {
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return S.of(context).signinPasswordIsRequired;
-                }
-
-                if (value.length < 8) {
-                  return S.of(context).signupErrorPasswordShort;
-                }
-
-                final regex = RegExp(
-                  r'^(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$&*~%^()\-_=+]).{8,}$',
-                );
-
-                if (!regex.hasMatch(value)) {
-                  return S.of(context).PasswordMustContain;
                 }
 
                 return null;
@@ -180,10 +190,33 @@ class _ChangePasswordViewBodyState extends State<ChangePasswordViewBody> {
               onPressed: () {
                 if (isButtonEnabled) {
                   if (_passwordController.text.isEmpty ||
-                      _confirmPasswordController.text.isEmpty) {
+                      _confirmPasswordController.text.isEmpty ||
+                      _oldPasswordController.text.isEmpty) {
                     buildErrorSnackBar(
                       context,
                       S.of(context).signinPasswordIsRequired,
+                    );
+                    return;
+                  }
+                  var oldPassword = SharedPreferencesSingleton.getString(
+                    'password',
+                  );
+                  log('oldPassword: $oldPassword');
+                  log(
+                    'oldPasswordController: ${_oldPasswordController.text}',
+                  );
+
+                  if (oldPassword != _oldPasswordController.text) {
+                    buildErrorSnackBar(
+                      context,
+                      'Old password is incorrect',
+                    );
+                    return;
+                  }
+                  if (_oldPasswordController.text == _passwordController.text) {
+                    buildErrorSnackBar(
+                      context,
+                      'Old password and new password cannot be the same',
                     );
                     return;
                   }
@@ -195,11 +228,11 @@ class _ChangePasswordViewBodyState extends State<ChangePasswordViewBody> {
                     );
                     return;
                   }
+                  changePasswordCubit.changePassword(
+                    SharedPreferencesSingleton.getString('user'),
+                    _passwordController.text,
+                  );
                 }
-                showSuccessDialog(
-                  context,
-                  S.of(context).passwordResetSuccessfully,
-                );
               },
             ),
           ],

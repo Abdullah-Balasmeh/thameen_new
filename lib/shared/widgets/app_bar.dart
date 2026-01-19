@@ -16,9 +16,11 @@ AppBar buildAppBar(
     leading: showButtonBack
         ? IconButton(
             onPressed: onPressed,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_ios_new,
-              color: Colors.white,
+              color: backgroundColor != null
+                  ? Colors.white
+                  : Theme.of(context).iconTheme.color,
             ),
           )
         : null,

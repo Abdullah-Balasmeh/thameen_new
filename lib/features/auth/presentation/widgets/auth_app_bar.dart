@@ -18,17 +18,6 @@ AppBar authAppBar({
     ),
     leading: showButtonBack
         ? IconButton(
-            style: TextButton.styleFrom(
-              elevation: 10,
-              shape: CircleBorder(
-                side: BorderSide(
-                  color: Theme.of(
-                    context,
-                  ).textTheme.bodyLarge!.color!.withValues(alpha: 0.6),
-                  width: 1,
-                ),
-              ),
-            ),
             onPressed: onPressed,
             icon: const Icon(Icons.arrow_back_ios_new),
           )

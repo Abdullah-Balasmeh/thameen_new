@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:thameen/core/di/service_locator.dart';
 import 'package:thameen/core/theme/app_colors.dart';
-import 'package:thameen/features/profile/presentation/widgets/change_password_view_body.dart';
+import 'package:thameen/features/profile/domain/repo/change_password_repo.dart';
+import 'package:thameen/features/profile/presentation/bloc/change_password/change_password_cubit.dart';
+import 'package:thameen/features/profile/presentation/widgets/change_password_view_body_bloc_consumer.dart';
 import 'package:thameen/shared/widgets/app_bar.dart';
 
 class ChangePasswordView extends StatelessWidget {
@@ -21,7 +25,10 @@ class ChangePasswordView extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        body: const ChangePasswordViewBody(),
+        body: BlocProvider(
+          create: (context) => ChangePasswordCubit(getIt<ChangePasswordRepo>()),
+          child: const ChangePasswordViewBodyBlocConsumer(),
+        ),
       ),
     );
   }
