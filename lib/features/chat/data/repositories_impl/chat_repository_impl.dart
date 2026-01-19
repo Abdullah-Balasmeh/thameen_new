@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:thameen/features/auth/domain/repositories/auth_repo.dart';
@@ -7,14 +8,16 @@ import 'package:thameen/features/chat/data/models/chat_preview_model.dart';
 import 'package:thameen/features/chat/data/models/chat_user_model.dart';
 import 'package:thameen/features/chat/data/models/message_model.dart';
 import 'package:thameen/features/chat/domain/repositories/chat_repository.dart';
+import 'package:thameen/shared/services/firebase_storage.dart';
 
 class ChatRepositoryImpl implements ChatRepository {
   final ChatRemoteDataSource remote;
   final AuthRepo authRepo;
-
+  final FirebaseStorageService storage;
   ChatRepositoryImpl({
     required this.remote,
     required this.authRepo,
+    required this.storage,
   });
 
   String get _currentUserId {
@@ -118,9 +121,27 @@ class ChatRepositoryImpl implements ChatRepository {
         chatId: chatId,
         senderId: _currentUserId,
         text: text,
+        type: MessageType.text,
         createdAt: DateTime.now(),
         status: MessageStatus.sent,
       ),
+    );
+  }
+
+  @override
+  Future<void> sendImages({
+    required String chatId,
+    required List<File> images,
+  }) async {
+    final urls = await storage.uploadPostImages(
+      postId: chatId,
+      images: images,
+    );
+
+    await remote.sendImageMessage(
+      chatId: chatId,
+      senderId: _currentUserId,
+      imageUrls: urls,
     );
   }
 

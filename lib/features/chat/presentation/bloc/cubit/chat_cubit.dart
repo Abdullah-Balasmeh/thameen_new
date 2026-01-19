@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/features/chat/data/models/chat_preview_model.dart';
@@ -91,6 +92,16 @@ class ChatCubit extends Cubit<ChatState> {
   }) async {
     if (text.trim().isEmpty) return;
     await chatRepository.sendMessage(chatId, text);
+  }
+
+  Future<void> sendImages({
+    required String chatId,
+    required List<File> images,
+  }) async {
+    await chatRepository.sendImages(
+      chatId: chatId,
+      images: images,
+    );
   }
 
   // =========================

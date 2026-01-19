@@ -81,6 +81,7 @@ Future<void> setupServiceLocator() async {
     () => ChatRepositoryImpl(
       remote: getIt<ChatRemoteDataSource>(),
       authRepo: getIt<AuthRepo>(),
+      storage: getIt<FirebaseStorageService>(),
     ),
   );
   getIt.registerFactory(

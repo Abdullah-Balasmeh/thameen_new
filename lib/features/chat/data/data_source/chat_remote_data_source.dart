@@ -17,6 +17,11 @@ abstract class ChatRemoteDataSource {
   Stream<List<ChatModel>> getUserChats(String userId);
 
   Future<Map<String, dynamic>> getUserData(String userId);
+  Future<void> sendImageMessage({
+    required String chatId,
+    required String senderId,
+    required List<String> imageUrls,
+  });
 
   // 🔹 Message Status
   Future<void> markMessageDelivered({

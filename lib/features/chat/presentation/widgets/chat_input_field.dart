@@ -4,6 +4,7 @@ import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/core/utils/helper/border_builder.dart';
 import 'package:thameen/features/chat/presentation/bloc/cubit/chat_cubit.dart';
+import 'package:thameen/features/chat/presentation/widgets/chat_bottom_sheet.dart';
 
 class ChatInputField extends StatefulWidget {
   const ChatInputField({super.key, required this.chatId});
@@ -66,7 +67,20 @@ class _ChatInputFieldState extends State<ChatInputField> {
                   decoration: InputDecoration(
                     hintText: 'Type a message',
                     suffixIcon: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        final chatCubit = context.read<ChatCubit>();
+
+                        showModalBottomSheet(
+                          context: context,
+                          useRootNavigator: false,
+                          isScrollControlled: true,
+                          builder: (_) => BlocProvider.value(
+                            value: chatCubit, // ✅ reuse existing cubit
+                            child: ChatBottomSheet(chatId: widget.chatId),
+                          ),
+                        );
+                      },
+
                       icon: const Icon(
                         Icons.attach_file,
                         size: 24,

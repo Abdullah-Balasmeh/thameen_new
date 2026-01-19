@@ -58,6 +58,7 @@ class ChatRemoteDataSourceImpl implements ChatRemoteDataSource {
       path: 'chats/${message.chatId}/messages',
       data: {
         'senderId': message.senderId,
+        'type': 'text',
         'text': message.text,
         'createdAt': Timestamp.now(),
         'status': 'sent',
@@ -82,8 +83,36 @@ class ChatRemoteDataSourceImpl implements ChatRemoteDataSource {
       documentId: message.chatId,
       data: {
         'lastMessage': message.text,
+
         'lastMessageTime': Timestamp.now(),
         'unreadCount.$receiverId': FieldValue.increment(1),
+      },
+    );
+  }
+
+  @override
+  Future<void> sendImageMessage({
+    required String chatId,
+    required String senderId,
+    required List<String> imageUrls,
+  }) async {
+    await firestore.addData(
+      path: 'chats/$chatId/messages',
+      data: {
+        'senderId': senderId,
+        'type': 'image',
+        'imageUrls': imageUrls,
+        'createdAt': Timestamp.now(),
+        'status': 'sent',
+      },
+    );
+
+    await firestore.updateData(
+      path: 'chats',
+      documentId: chatId,
+      data: {
+        'lastMessage': '📷 Photo',
+        'lastMessageTime': Timestamp.now(),
       },
     );
   }
@@ -100,7 +129,13 @@ class ChatRemoteDataSourceImpl implements ChatRemoteDataSource {
               id: doc.id,
               chatId: chatId,
               senderId: doc['senderId'] as String,
-              text: doc['text'] as String,
+              type: _mapType(doc['type'] as String),
+              text: doc.data().containsKey('text')
+                  ? doc['text'] as String?
+                  : null,
+              imageUrls: doc.data().containsKey('imageUrls')
+                  ? List<String>.from(doc['imageUrls'] as List<dynamic>)
+                  : null,
               createdAt: (doc['createdAt'] as Timestamp).toDate(),
               status: _mapStatus(doc['status'] as String),
             );
@@ -118,6 +153,17 @@ class ChatRemoteDataSourceImpl implements ChatRemoteDataSource {
         return MessageStatus.seen;
       default:
         return MessageStatus.sent;
+    }
+  }
+
+  MessageType _mapType(String type) {
+    switch (type) {
+      case 'text':
+        return MessageType.text;
+      case 'image':
+        return MessageType.image;
+      default:
+        return MessageType.text;
     }
   }
 
