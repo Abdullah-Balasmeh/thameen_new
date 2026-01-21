@@ -19,7 +19,7 @@ class HelpSupportView extends StatelessWidget {
   }
 
   Future<void> _openWhatsApp() async {
-    final Uri whatsappUri = Uri.parse('https://wa.me/962791234567');
+    final Uri whatsappUri = Uri.parse('https://wa.me/962795538730');
 
     if (await canLaunchUrl(whatsappUri)) {
       await launchUrl(whatsappUri, mode: LaunchMode.externalApplication);
@@ -54,7 +54,7 @@ class HelpSupportView extends StatelessWidget {
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(24),
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
               child: Column(
                 children: [
                   const Icon(
@@ -75,6 +75,7 @@ class HelpSupportView extends StatelessWidget {
                   Text(
                     'We\'re here to assist you with any questions',
                     style: AppTextStyle.medium14,
+
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -109,11 +110,11 @@ class HelpSupportView extends StatelessWidget {
             _ContactCard(
               icon: Icons.phone_outlined,
               title: 'Phone Support',
-              subtitle: '+962 79 123 4567',
+              subtitle: '+962 79 553 8730',
               description: 'Call us Mon-Fri, 9AM-6PM',
               color: AppColors.success,
               onTap: () async {
-                final Uri phoneUri = Uri(scheme: 'tel', path: '+962791234567');
+                final Uri phoneUri = Uri(scheme: 'tel', path: '+962795538730');
                 if (await canLaunchUrl(phoneUri)) {
                   await launchUrl(phoneUri);
                 }
@@ -211,7 +212,7 @@ class _ContactCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
@@ -305,7 +306,7 @@ class _FAQItemState extends State<_FAQItem> {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(

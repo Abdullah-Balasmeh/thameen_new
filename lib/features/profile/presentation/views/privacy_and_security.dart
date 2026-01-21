@@ -32,7 +32,7 @@ class PrivacySecurityView extends StatelessWidget {
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(24),
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
               child: Column(
                 children: [
                   const Icon(
@@ -154,11 +154,9 @@ class PrivacySecurityView extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 16),
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.1),
+                color: Theme.of(context).cardColor,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: AppColors.primary.withOpacity(0.3),
-                ),
+                border: Border.all(color: Theme.of(context).cardColor),
               ),
               child: Column(
                 children: [
@@ -230,7 +228,7 @@ class _ContentCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(

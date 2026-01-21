@@ -42,7 +42,7 @@ class AboutView extends StatelessWidget {
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(32),
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
               child: Column(
                 children: [
                   SizedBox(
@@ -56,14 +56,14 @@ class AboutView extends StatelessWidget {
                   Text(
                     'Lost & Found Platform',
                     style: AppTextStyle.medium16.copyWith(
-                      color: AppColors.lightTextSecondary,
+                      color: AppTextStyle.medium14.color,
                     ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     'Version 1.0.0',
                     style: AppTextStyle.medium14.copyWith(
-                      color: AppColors.lightTextSecondary,
+                      color: AppTextStyle.medium14.color,
                     ),
                   ),
                 ],
@@ -90,7 +90,7 @@ class AboutView extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
@@ -173,7 +173,7 @@ class AboutView extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Theme.of(context).cardColor,
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
@@ -264,21 +264,21 @@ class AboutView extends StatelessWidget {
                   Text(
                     '© 2025 Thameen App',
                     style: AppTextStyle.medium12.copyWith(
-                      color: AppColors.lightTextSecondary,
+                      color: AppTextStyle.medium14.color,
                     ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     'All rights reserved',
                     style: AppTextStyle.medium12.copyWith(
-                      color: AppColors.lightTextSecondary,
+                      color: AppTextStyle.medium14.color,
                     ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     'Made with ❤️ in Jordan',
                     style: AppTextStyle.medium12.copyWith(
-                      color: AppColors.lightTextSecondary,
+                      color: AppTextStyle.medium14.color,
                     ),
                   ),
                 ],
@@ -310,7 +310,7 @@ class _FeatureItem extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
@@ -337,17 +337,17 @@ class _FeatureItem extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.lightTextPrimary,
+                    color: AppTextStyle.medium14.color,
                   ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   description,
                   style: AppTextStyle.medium14.copyWith(
-                    color: AppColors.lightTextSecondary,
+                    color: AppColors.darkTextSecondary,
                   ),
                 ),
               ],
@@ -400,7 +400,7 @@ class _LegalLink extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
