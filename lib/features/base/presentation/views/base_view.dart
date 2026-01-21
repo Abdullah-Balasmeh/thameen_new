@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/di/service_locator.dart';
 import 'package:thameen/core/theme/app_colors.dart';
+import 'package:thameen/features/ai/presentation/views/ai_view.dart';
 import 'package:thameen/features/chat/presentation/views/chat_view.dart';
 import 'package:thameen/features/home/domain/repositories/home_repo.dart';
 import 'package:thameen/features/home/presentation/bloc/all_posts_cubit/home_cubit.dart';
@@ -28,7 +29,7 @@ class _BaseViewState extends State<BaseView> {
 
   List<Widget> pages = [
     const HomeView(),
-    const Text('AI Search'),
+    const AiView(),
     const PostReportView(),
     const ChatView(),
     const ProfileView(),
