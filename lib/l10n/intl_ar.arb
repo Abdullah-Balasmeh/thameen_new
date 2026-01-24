@@ -68,7 +68,8 @@
   "confirmNewPasswordLabel": "تأكيد كلمة المرور الجديدة",
   "resetPasswordButton": "إعادة تعيين كلمة المرور",
   "passwordResetSuccessfully": "تمت إعادة تعيين كلمة المرور بنجاح",
-  "resetPasswordErrorInvalidEmail": "الرجاء إدخال بريد صحيح"
+  "resetPasswordErrorInvalidEmail": "الرجاء إدخال بريد صحيح",
+  "test":"اختبار"
 
   
 
