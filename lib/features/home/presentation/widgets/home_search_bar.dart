@@ -28,11 +28,21 @@ class HomeSearchBar extends StatelessWidget {
             prefixIcon: const Icon(Icons.search, color: AppColors.primary),
             suffixIcon: IconButton(
               onPressed: () {
-                showBottomSheet(
+                showModalBottomSheet<void>(
                   context: context,
-                  builder: (context) => const FilterBottomSheet(),
+                  useRootNavigator: false,
+                  isScrollControlled: true,
+                  useSafeArea: true,
+                  backgroundColor: Colors.transparent,
+                  builder: (sheetContext) {
+                    return BlocProvider.value(
+                      value: context.read<HomeCubit>(),
+                      child: const FilterBottomSheet(),
+                    );
+                  },
                 );
               },
+
               icon: const Icon(Icons.tune),
             ),
             border: InputBorder.none,
