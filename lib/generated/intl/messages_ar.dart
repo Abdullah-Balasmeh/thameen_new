@@ -166,6 +166,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "عند إنشاء حساب فإنك توافق على ",
     ),
     "signupTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "test": MessageLookupByLibrary.simpleMessage("اختبار"),
     "unexpectedErrorTryAgain": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ غير متوقع، حاول مرة أخرى.",
     ),

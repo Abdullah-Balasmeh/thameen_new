@@ -88,5 +88,6 @@
   "errorPopupClosedByUser": "The login window was closed before the process was completed.",
   "errorUnauthorizedDomain": "This domain is not authorized for external sign-in.",
   "errorSignInFailed": "Sign-in failed. Please try again.",
-  "errorUnknown": "An unknown error occurred. Please try again later."
+  "errorUnknown": "An unknown error occurred. Please try again later.",
+  "test": "test"
 }
