@@ -27,6 +27,24 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
 
   @override
   void initState() {
+    final cubit = context.read<HomeCubit>();
+
+    // Post type
+    selectedType.value =
+        cubit.selectedType == null || cubit.selectedType == PostType.all
+        ? 'All'
+        : cubit.selectedType == PostType.lost
+        ? 'Lost'
+        : 'Found';
+
+    // Sort
+    selectedSort.value = cubit.selectedSort ?? 'Most Recent';
+
+    // Location
+    locationController.text = cubit.selectedLocation ?? '';
+
+    // Has bounty
+    hasBounty.value = cubit.selectedHasBounty ?? false;
     super.initState();
   }
 
@@ -63,10 +81,15 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   onPressed: () {
                     selectedType.value = 'All';
                     selectedSort.value = 'Most Recent';
-                    setState(() {
-                      locationController.text = '';
-                    });
-                    homeCubit.filterPosts();
+                    hasBounty.value = false;
+                    locationController.clear();
+
+                    cubit.filterPosts(
+                      type: PostType.all,
+                      location: '',
+                      sort: 'Most Recent',
+                      hasBounty: false,
+                    );
                   },
                   child: Text(
                     'Rest All',
