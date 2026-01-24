@@ -226,6 +226,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "By creating an account you agree to our ",
     ),
     "signupTitle": MessageLookupByLibrary.simpleMessage("Create Account"),
+    "test": MessageLookupByLibrary.simpleMessage("test"),
     "unexpectedErrorTryAgain": MessageLookupByLibrary.simpleMessage(
       "An unexpected error occurred, please try again.",
     ),
