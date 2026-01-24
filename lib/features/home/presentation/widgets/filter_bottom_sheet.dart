@@ -77,8 +77,10 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   style: AppTextStyle.bold24,
                 ),
                 const Spacer(),
-                TextButton(
-                  onPressed: () {
+                GestureDetector(
+                  onTap: () {
+                    final cubit = context.read<HomeCubit>();
+
                     selectedType.value = 'All';
                     selectedSort.value = 'Most Recent';
                     hasBounty.value = false;
