@@ -77,8 +77,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   style: AppTextStyle.bold24,
                 ),
                 const Spacer(),
-                GestureDetector(
-                  onTap: () {
+                TextButton(
+                  onPressed: () {
                     final cubit = context.read<HomeCubit>();
 
                     selectedType.value = 'All';
@@ -94,7 +94,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                     );
                   },
                   child: Text(
-                    'Rest All',
+                    'Reset All',
                     style: AppTextStyle.medium16.copyWith(
                       color: AppColors.primary,
                     ),
