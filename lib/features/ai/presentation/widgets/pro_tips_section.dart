@@ -3,7 +3,7 @@ import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 
 class ProTipsSection extends StatelessWidget {
-  const ProTipsSection({Key? key}) : super(key: key);
+  const ProTipsSection({super.key});
 
   @override
   Widget build(BuildContext context) {

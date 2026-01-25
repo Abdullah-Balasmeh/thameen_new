@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thameen/features/auth/presentation/widgets/terms_condition_view_body.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/widgets/app_bar.dart';
 
 class TermsConditionView extends StatelessWidget {
@@ -14,7 +15,7 @@ class TermsConditionView extends StatelessWidget {
           context,
           showButtonBack: true,
           showButtonActions: false,
-          title: 'Terms & Conditions',
+          title: S.of(context).termsAndConditionsTitle,
           onPressed: () {
             Navigator.pop(context);
           },
