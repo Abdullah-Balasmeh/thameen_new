@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/theme/app_colors.dart';
+import 'package:thameen/features/ai/presentation/bloc/ai/ai_cubit.dart';
 
 class SearchAgainButton extends StatelessWidget {
   const SearchAgainButton({
@@ -10,7 +12,7 @@ class SearchAgainButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton.icon(
       onPressed: () {
-        // TODO: Search again
+        context.read<AiSearchCubit>().reset();
       },
       icon: const Icon(Icons.refresh),
       label: const Text('Search Again'),
