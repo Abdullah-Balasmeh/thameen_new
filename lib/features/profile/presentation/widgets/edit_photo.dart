@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class EditPhoto extends StatelessWidget {
   const EditPhoto({super.key});
@@ -14,7 +15,7 @@ class EditPhoto extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Colors.grey[300]!),
       ),
-      child: const Text('Edit Photo'),
+      child: Text(S.of(context).editPhoto),
     );
   }
 }

@@ -53,6 +53,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "aiPoweredSearch": MessageLookupByLibrary.simpleMessage(
       "AI-powered Search",
     ),
+    "aiPoweredSearchDesc": MessageLookupByLibrary.simpleMessage(
+      "Upload a photo and let AI find visual matches",
+    ),
     "aiPoweredSearchDescription": MessageLookupByLibrary.simpleMessage(
       "Upload a photo and let AI find matches.",
     ),
@@ -63,13 +66,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "ajloun": MessageLookupByLibrary.simpleMessage("Ajloun"),
     "all": MessageLookupByLibrary.simpleMessage("All"),
     "allItems": MessageLookupByLibrary.simpleMessage("All Items"),
+    "allRightsReserved": MessageLookupByLibrary.simpleMessage(
+      "All rights reserved",
+    ),
     "allowingToPaste": MessageLookupByLibrary.simpleMessage(
       "Allowing to paste",
     ),
     "amman": MessageLookupByLibrary.simpleMessage("Amman"),
     "anonymous": MessageLookupByLibrary.simpleMessage("Anonymous"),
+    "applicationLegalese": MessageLookupByLibrary.simpleMessage(
+      "© 2025 Thameen App. All rights reserved.",
+    ),
     "applyFilters": MessageLookupByLibrary.simpleMessage("Apply Filters"),
     "aqaba": MessageLookupByLibrary.simpleMessage("Aqaba"),
+    "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "assistYouMessage": MessageLookupByLibrary.simpleMessage(
       "We\'re here to assist you with any questions",
     ),
@@ -87,15 +97,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "browse": MessageLookupByLibrary.simpleMessage("Browse..."),
     "callPhone": MessageLookupByLibrary.simpleMessage("Call Phone"),
     "camera": MessageLookupByLibrary.simpleMessage("Camera"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cannotChatYourself": MessageLookupByLibrary.simpleMessage(
       "You can not chat with yourself",
     ),
     "categories": MessageLookupByLibrary.simpleMessage("Categories"),
     "changePassword": MessageLookupByLibrary.simpleMessage("Change Password"),
+    "changePasswordInstruction": MessageLookupByLibrary.simpleMessage(
+      "Enter your old password and create a new password",
+    ),
     "changePasswordTitle": MessageLookupByLibrary.simpleMessage(
       "Change Password",
     ),
     "chatWithUs": MessageLookupByLibrary.simpleMessage(
+      "Chat with us instantly",
+    ),
+    "chatWithUsInstantly": MessageLookupByLibrary.simpleMessage(
       "Chat with us instantly",
     ),
     "clothing": MessageLookupByLibrary.simpleMessage("Clothing"),
@@ -103,6 +120,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "Code Verification",
     ),
     "collections": MessageLookupByLibrary.simpleMessage("Collections"),
+    "confirmDelete": MessageLookupByLibrary.simpleMessage("Confirm Delete"),
+    "confirmDeleteMessage": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to delete this report?",
+    ),
+    "confirmLogout": MessageLookupByLibrary.simpleMessage("Confirm Logout"),
+    "confirmLogoutMessage": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to log out from your account?",
+    ),
     "confirmNewPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "Confirm New Password",
     ),
@@ -119,6 +144,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "contactReporter": MessageLookupByLibrary.simpleMessage("Contact Reporter"),
     "contactUs": MessageLookupByLibrary.simpleMessage("Contact Us"),
+    "copyright": MessageLookupByLibrary.simpleMessage("© 2025 Thameen App"),
     "createNewPassword": MessageLookupByLibrary.simpleMessage(
       "Create New Password",
     ),
@@ -130,19 +156,29 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your data is stored on secure servers with backups. We retain information as long as necessary or required by law.",
     ),
     "daysAgo": MessageLookupByLibrary.simpleMessage("days ago"),
+    "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "description": MessageLookupByLibrary.simpleMessage("Description"),
     "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
       "Didn\'t receive the code?",
     ),
     "directChat": MessageLookupByLibrary.simpleMessage("Direct Chat"),
+    "directChatDesc": MessageLookupByLibrary.simpleMessage(
+      "Connect instantly with item reporters",
+    ),
     "directChatDescription": MessageLookupByLibrary.simpleMessage(
       "Connect instantly with reporters.",
     ),
     "documents": MessageLookupByLibrary.simpleMessage("Documents"),
     "easyReporting": MessageLookupByLibrary.simpleMessage("Easy Reporting"),
+    "easyReportingDesc": MessageLookupByLibrary.simpleMessage(
+      "Quickly report lost or found items",
+    ),
     "easyReportingDescription": MessageLookupByLibrary.simpleMessage(
       "Quickly report lost or found items.",
     ),
+    "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+    "editPhoto": MessageLookupByLibrary.simpleMessage("Edit Photo"),
+    "editPostTitle": MessageLookupByLibrary.simpleMessage("Edit Post"),
     "editPostedItem": MessageLookupByLibrary.simpleMessage(
       "Can I edit my posted item?",
     ),
@@ -150,10 +186,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "editProfileTitle": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "electronics": MessageLookupByLibrary.simpleMessage("Electronics"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
+    "emailRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your email address",
+    ),
     "emailResponseTime": MessageLookupByLibrary.simpleMessage(
       "Get help via email within 24 hours",
     ),
     "emailSupport": MessageLookupByLibrary.simpleMessage("Email Support"),
+    "emailSupportDesc": MessageLookupByLibrary.simpleMessage(
+      "Get help via email within 24 hours",
+    ),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "enter6DigitCode": MessageLookupByLibrary.simpleMessage(
       "Enter the 6-digit code sent to your number",
     ),
@@ -220,6 +264,60 @@ class MessageLookup extends MessageLookupByLibrary {
       "Weak password. Please choose a stronger one.",
     ),
     "faq": MessageLookupByLibrary.simpleMessage("Frequently Asked Questions"),
+    "faqAiSearch": MessageLookupByLibrary.simpleMessage(
+      "How does the AI Search work?",
+    ),
+    "faqAiSearchAnswer": MessageLookupByLibrary.simpleMessage(
+      "Upload a photo of your lost item, and our AI will search through found items to find potential matches based on visual similarity.",
+    ),
+    "faqAiSearchQuestion": MessageLookupByLibrary.simpleMessage(
+      "How does the AI Search work?",
+    ),
+    "faqEditPost": MessageLookupByLibrary.simpleMessage(
+      "Can I edit my posted item?",
+    ),
+    "faqEditPostAnswer": MessageLookupByLibrary.simpleMessage(
+      "Yes, go to \"My Reports\", select your item, and tap \"Edit\".",
+    ),
+    "faqInfoSafe": MessageLookupByLibrary.simpleMessage(
+      "Is my personal information safe?",
+    ),
+    "faqInfoSafeAnswer": MessageLookupByLibrary.simpleMessage(
+      "Yes, we take privacy seriously. Your contact information is only shared when you choose to contact someone about an item.",
+    ),
+    "faqReportFound": MessageLookupByLibrary.simpleMessage(
+      "How do I report a found item?",
+    ),
+    "faqReportFoundAnswer": MessageLookupByLibrary.simpleMessage(
+      "Go to the \"Post Item\" tab, select \"Found\", provide details about the item you found, and wait for the owner to contact you.",
+    ),
+    "faqReportFoundItemAnswer": MessageLookupByLibrary.simpleMessage(
+      "Go to the \"Post Item\" tab, select \"Found\", provide details about the item you found, and wait for the owner to contact you.",
+    ),
+    "faqReportFoundItemQuestion": MessageLookupByLibrary.simpleMessage(
+      "How do I report a found item?",
+    ),
+    "faqReportLost": MessageLookupByLibrary.simpleMessage(
+      "How do I report a lost item?",
+    ),
+    "faqReportLostAnswer": MessageLookupByLibrary.simpleMessage(
+      "Go to the \"Post Item\" tab, select \"Lost\", fill in the details including description, location, and photo, then submit.",
+    ),
+    "faqReportLostItemAnswer": MessageLookupByLibrary.simpleMessage(
+      "Go to the \"Post Item\" tab, select \"Lost\", fill in the details including description, location, and photo, then submit.",
+    ),
+    "faqReportLostItemQuestion": MessageLookupByLibrary.simpleMessage(
+      "How do I report a lost item?",
+    ),
+    "faqTitle": MessageLookupByLibrary.simpleMessage(
+      "Frequently Asked Questions",
+    ),
+    "faqUpdateStatus": MessageLookupByLibrary.simpleMessage(
+      "How do I update my report status?",
+    ),
+    "faqUpdateStatusAnswer": MessageLookupByLibrary.simpleMessage(
+      "Go to \"My Reports\" in your profile, select the report, and tap \"Update Status\".",
+    ),
     "filterAndSort": MessageLookupByLibrary.simpleMessage("Filter & Sort"),
     "filterByLocation": MessageLookupByLibrary.simpleMessage(
       "Filter by Location",
@@ -227,16 +325,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "filterByPostType": MessageLookupByLibrary.simpleMessage(
       "Filter by Post Type",
     ),
+    "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
+    "firstNameRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your first name",
+    ),
     "found": MessageLookupByLibrary.simpleMessage("Found"),
     "foundItems": MessageLookupByLibrary.simpleMessage("Found Items"),
+    "frequentlyAskedQuestions": MessageLookupByLibrary.simpleMessage(
+      "Frequently Asked Questions",
+    ),
     "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
     "hasBounty": MessageLookupByLibrary.simpleMessage("Has Bounty"),
     "hasBountyDesc": MessageLookupByLibrary.simpleMessage(
       "Show posts with bounty only",
     ),
+    "helpAndSupport": MessageLookupByLibrary.simpleMessage("Help & Support"),
     "helpAndSupportTitle": MessageLookupByLibrary.simpleMessage(
       "Help & Support",
     ),
+    "helpSupportTitle": MessageLookupByLibrary.simpleMessage("Help & Support"),
     "hideIdentity": MessageLookupByLibrary.simpleMessage(
       "Hide your identity from other users",
     ),
@@ -267,6 +374,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidEmailOrPassword": MessageLookupByLibrary.simpleMessage(
       "The email or password is incorrect.",
     ),
+    "invalidPhoneLength": MessageLookupByLibrary.simpleMessage(
+      "Phone number must be 9 digits after +962 7",
+    ),
     "irbid": MessageLookupByLibrary.simpleMessage("Irbid"),
     "isInfoSafe": MessageLookupByLibrary.simpleMessage(
       "Is my personal information safe?",
@@ -291,6 +401,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "keyFeatures": MessageLookupByLibrary.simpleMessage("Key Features"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "languageCode": MessageLookupByLibrary.simpleMessage("en"),
+    "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
+    "lastNameRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your last name",
+    ),
     "licenses": MessageLookupByLibrary.simpleMessage("Licenses"),
     "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
     "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
@@ -304,6 +418,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "lostItems": MessageLookupByLibrary.simpleMessage("Lost Items"),
     "maan": MessageLookupByLibrary.simpleMessage("Ma\'an"),
     "madaba": MessageLookupByLibrary.simpleMessage("Madaba"),
+    "madeInJordan": MessageLookupByLibrary.simpleMessage(
+      "Made with ❤️ in Jordan",
+    ),
     "mafraq": MessageLookupByLibrary.simpleMessage("Mafraq"),
     "maxImagesLimit": MessageLookupByLibrary.simpleMessage(
       "You can only upload up to 5 images.",
@@ -322,7 +439,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
     "offerBounty": MessageLookupByLibrary.simpleMessage("Offer Bounty"),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
+    "oldAndNewPasswordSame": MessageLookupByLibrary.simpleMessage(
+      "Old password and new password cannot be the same",
+    ),
     "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
+    "oldPasswordIncorrect": MessageLookupByLibrary.simpleMessage(
+      "Old password is incorrect",
+    ),
     "oldestFirst": MessageLookupByLibrary.simpleMessage("Oldest First"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "What is Thameen? Thameen is an application that helps you find your lost items as easily as possible, connecting you to a world of lost items with just a click of a button.",
@@ -352,6 +475,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ourMissionDescription": MessageLookupByLibrary.simpleMessage(
       "Thameen aims to reunite people with lost belongings through community and AI technology.",
     ),
+    "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Password changed successfully",
+    ),
     "passwordInstruction": MessageLookupByLibrary.simpleMessage(
       "Enter your old password and create a new password",
     ),
@@ -359,7 +485,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "Password has been reset successfully",
     ),
     "pets": MessageLookupByLibrary.simpleMessage("Pets"),
+    "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "phoneRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your phone number",
+    ),
     "phoneSupport": MessageLookupByLibrary.simpleMessage("Phone Support"),
+    "phoneSupportDesc": MessageLookupByLibrary.simpleMessage(
+      "Call us Mon-Fri, 9AM-6PM",
+    ),
     "photos": MessageLookupByLibrary.simpleMessage("Photos"),
     "photosOptional": MessageLookupByLibrary.simpleMessage(
       "Photos (Up to 5) Optional",
@@ -371,6 +504,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "postAnonymously": MessageLookupByLibrary.simpleMessage("Post Anonymously"),
     "postItem": MessageLookupByLibrary.simpleMessage("Post Item"),
     "privacy": MessageLookupByLibrary.simpleMessage("Privacy"),
+    "privacyAndSecurity": MessageLookupByLibrary.simpleMessage(
+      "Privacy & Security",
+    ),
     "privacyConcerns": MessageLookupByLibrary.simpleMessage("Privacy Concerns"),
     "privacyConcernsDescription": MessageLookupByLibrary.simpleMessage(
       "If you have questions, contact us at privacy@thameenapp.com.",
@@ -380,9 +516,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "Yes, we take privacy seriously. Your contact information is only shared when you choose to contact someone about an item.",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profileEmailPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "demo@example.com",
+    ),
     "profileUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Profile updated successfully",
     ),
+    "profileUserName": MessageLookupByLibrary.simpleMessage("User Name"),
     "ramtha": MessageLookupByLibrary.simpleMessage("Ramtha"),
     "recentItems": MessageLookupByLibrary.simpleMessage("Recent Items"),
     "reportCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -393,6 +533,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "reportLostItem": MessageLookupByLibrary.simpleMessage(
       "How do I report a lost item?",
+    ),
+    "reportUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Report updated successfully",
     ),
     "reportedBy": MessageLookupByLibrary.simpleMessage("Reported by"),
     "reportedTime": MessageLookupByLibrary.simpleMessage("Reported Time"),
@@ -511,6 +654,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "smartNotifications": MessageLookupByLibrary.simpleMessage(
       "Smart Notifications",
     ),
+    "smartNotificationsDesc": MessageLookupByLibrary.simpleMessage(
+      "Get notified about potential matches",
+    ),
     "smartNotificationsDescription": MessageLookupByLibrary.simpleMessage(
       "Get notified about potential matches.",
     ),
@@ -521,6 +667,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Start capturing photos and videos",
     ),
     "startChat": MessageLookupByLibrary.simpleMessage("Start Chat"),
+    "statusActive": MessageLookupByLibrary.simpleMessage("Active"),
+    "statusDeleted": MessageLookupByLibrary.simpleMessage("Deleted"),
+    "statusResolved": MessageLookupByLibrary.simpleMessage("Resolved"),
     "submitReport": MessageLookupByLibrary.simpleMessage("Submit Report"),
     "support": MessageLookupByLibrary.simpleMessage("Support"),
     "supportAndHelp": MessageLookupByLibrary.simpleMessage("Support & Help"),
@@ -597,9 +746,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "An unexpected error occurred, please try again.",
     ),
     "update": MessageLookupByLibrary.simpleMessage("Update"),
+    "updateReport": MessageLookupByLibrary.simpleMessage("Update Report"),
     "updateReportStatus": MessageLookupByLibrary.simpleMessage(
       "How do I update my report status?",
     ),
+    "updateStatus": MessageLookupByLibrary.simpleMessage("Update Status"),
     "updatesToPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
       "Updates to Privacy Policy",
     ),
@@ -608,6 +759,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "uploadPhotos": MessageLookupByLibrary.simpleMessage(
       "Upload photos of the item (up to 5)",
+    ),
+    "userNotLoggedIn": MessageLookupByLibrary.simpleMessage(
+      "User not logged in",
     ),
     "verifyButton": MessageLookupByLibrary.simpleMessage("Verify"),
     "verifyYourEmail": MessageLookupByLibrary.simpleMessage(
@@ -633,6 +787,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "We collect information you provide when creating an account (name, email, phone number), details about lost or found items you report, and photos you upload for AI search purposes.",
     ),
     "whatsappSupport": MessageLookupByLibrary.simpleMessage("WhatsApp Support"),
+    "whatsappSupportDesc": MessageLookupByLibrary.simpleMessage(
+      "Available 24/7",
+    ),
     "whenYouContactOthers": MessageLookupByLibrary.simpleMessage(
       "When You Contact Others",
     ),

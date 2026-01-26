@@ -5,6 +5,7 @@ import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/features/profile/domain/edit_profile_repo.dart';
 import 'package:thameen/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_cubit.dart';
 import 'package:thameen/features/profile/presentation/widgets/edit_profile_view_body_bloc_consumer.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/widgets/app_bar.dart';
 
 class EditProfileView extends StatelessWidget {
@@ -20,7 +21,7 @@ class EditProfileView extends StatelessWidget {
           showButtonBack: true,
           showButtonActions: false,
           backgroundColor: AppColors.primary,
-          title: 'Edit Profile',
+          title: S.of(context).editProfileTitle,
           onPressed: () {
             Navigator.pop(context);
           },

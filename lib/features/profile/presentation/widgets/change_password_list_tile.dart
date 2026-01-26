@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/features/profile/presentation/widgets/profile_list_tile.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class ChangePasswordListTile extends StatelessWidget {
   const ChangePasswordListTile({super.key});
@@ -17,7 +18,7 @@ class ChangePasswordListTile extends StatelessWidget {
       ),
       child: ProfileListTile(
         icon: Icons.lock,
-        title: 'Change Password',
+        title: S.of(context).changePassword,
         isChangePassword: true,
         onTap: () {
           // TODO: Navigate to change password view

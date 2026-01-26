@@ -53,6 +53,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "aiPoweredSearch": MessageLookupByLibrary.simpleMessage(
       "بحث مدعوم بالذكاء الاصطناعي",
     ),
+    "aiPoweredSearchDesc": MessageLookupByLibrary.simpleMessage(
+      "ارفع صورة ودع الذكاء الاصطناعي يجد تطابقات محتملة",
+    ),
     "aiPoweredSearchDescription": MessageLookupByLibrary.simpleMessage(
       "ارفع صورة ودع الذكاء الاصطناعي يجد التطابقات.",
     ),
@@ -63,11 +66,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "ajloun": MessageLookupByLibrary.simpleMessage("عجلون"),
     "all": MessageLookupByLibrary.simpleMessage("الكل"),
     "allItems": MessageLookupByLibrary.simpleMessage("جميع الأغراض"),
+    "allRightsReserved": MessageLookupByLibrary.simpleMessage(
+      "جميع الحقوق محفوظة",
+    ),
     "allowingToPaste": MessageLookupByLibrary.simpleMessage("السماح باللصق"),
     "amman": MessageLookupByLibrary.simpleMessage("عمّان"),
     "anonymous": MessageLookupByLibrary.simpleMessage("مجهول"),
+    "applicationLegalese": MessageLookupByLibrary.simpleMessage(
+      "© 2025 تطبيق ثمين. جميع الحقوق محفوظة.",
+    ),
     "applyFilters": MessageLookupByLibrary.simpleMessage("تطبيق الفلاتر"),
     "aqaba": MessageLookupByLibrary.simpleMessage("العقبة"),
+    "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "assistYouMessage": MessageLookupByLibrary.simpleMessage(
       "نحن هنا لمساعدتك في أي استفسار",
     ),
@@ -85,15 +95,30 @@ class MessageLookup extends MessageLookupByLibrary {
     "browse": MessageLookupByLibrary.simpleMessage("استعراض..."),
     "callPhone": MessageLookupByLibrary.simpleMessage("الاتصال"),
     "camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
+    "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "categories": MessageLookupByLibrary.simpleMessage("فئات"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
+    "changePasswordInstruction": MessageLookupByLibrary.simpleMessage(
+      "أدخل كلمة المرور القديمة وأنشئ كلمة مرور جديدة",
+    ),
     "changePasswordTitle": MessageLookupByLibrary.simpleMessage(
       "تغيير كلمة المرور",
     ),
     "chatWithUs": MessageLookupByLibrary.simpleMessage("تحدث معنا فوراً"),
+    "chatWithUsInstantly": MessageLookupByLibrary.simpleMessage(
+      "تحدث معنا فورًا",
+    ),
     "clothing": MessageLookupByLibrary.simpleMessage("ملابس"),
     "codeVerification": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "collections": MessageLookupByLibrary.simpleMessage("المجموعات"),
+    "confirmDelete": MessageLookupByLibrary.simpleMessage("تأكيد الحذف"),
+    "confirmDeleteMessage": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد أنك تريد حذف هذا البلاغ؟",
+    ),
+    "confirmLogout": MessageLookupByLibrary.simpleMessage("تأكيد تسجيل الخروج"),
+    "confirmLogoutMessage": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد أنك تريد تسجيل الخروج من حسابك؟",
+    ),
     "confirmNewPasswordLabel": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور الجديدة",
     ),
@@ -112,6 +137,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "contactReporter": MessageLookupByLibrary.simpleMessage("تواصل مع المبلّغ"),
     "contactUs": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
+    "copyright": MessageLookupByLibrary.simpleMessage("© 2025 تطبيق ثمين"),
     "createNewPassword": MessageLookupByLibrary.simpleMessage(
       "إنشاء كلمة مرور جديدة",
     ),
@@ -123,17 +149,27 @@ class MessageLookup extends MessageLookupByLibrary {
       "يتم تخزين بياناتك على خوادم آمنة مع نسخ احتياطية منتظمة، ونحتفظ بالبيانات فقط للمدة اللازمة أو المطلوبة قانونيًا.",
     ),
     "daysAgo": MessageLookupByLibrary.simpleMessage("أيام مضت"),
+    "delete": MessageLookupByLibrary.simpleMessage("حذف"),
     "description": MessageLookupByLibrary.simpleMessage("الوصف"),
     "didntReceiveCode": MessageLookupByLibrary.simpleMessage("لم تستلم الرمز؟"),
     "directChat": MessageLookupByLibrary.simpleMessage("دردشة مباشرة"),
+    "directChatDesc": MessageLookupByLibrary.simpleMessage(
+      "تواصل فورًا مع أصحاب البلاغات",
+    ),
     "directChatDescription": MessageLookupByLibrary.simpleMessage(
       "تواصل فورًا مع أصحاب البلاغات.",
     ),
     "documents": MessageLookupByLibrary.simpleMessage("مستندات"),
     "easyReporting": MessageLookupByLibrary.simpleMessage("بلاغات سهلة"),
+    "easyReportingDesc": MessageLookupByLibrary.simpleMessage(
+      "أبلِغ بسرعة عن الأغراض المفقودة أو الموجودة",
+    ),
     "easyReportingDescription": MessageLookupByLibrary.simpleMessage(
       "أبلغ بسرعة عن الأغراض المفقودة أو الموجودة.",
     ),
+    "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
+    "editPhoto": MessageLookupByLibrary.simpleMessage("تعديل الصورة"),
+    "editPostTitle": MessageLookupByLibrary.simpleMessage("تعديل البلاغ"),
     "editPostedItem": MessageLookupByLibrary.simpleMessage(
       "هل يمكنني تعديل الغرض الذي نشرته؟",
     ),
@@ -143,10 +179,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "electronics": MessageLookupByLibrary.simpleMessage("إلكترونيات"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "emailAddress": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "emailRequired": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال البريد الإلكتروني",
+    ),
     "emailResponseTime": MessageLookupByLibrary.simpleMessage(
       "سنرد عليك خلال 24 ساعة",
     ),
     "emailSupport": MessageLookupByLibrary.simpleMessage("الدعم عبر البريد"),
+    "emailSupportDesc": MessageLookupByLibrary.simpleMessage(
+      "احصل على المساعدة عبر البريد خلال 24 ساعة",
+    ),
+    "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
     "enter6DigitCode": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز التحقق المكون من 6 أرقام المرسل إلى رقمك",
     ),
@@ -209,6 +253,58 @@ class MessageLookup extends MessageLookupByLibrary {
       "كلمة المرور ضعيفة، يرجى اختيار كلمة أقوى.",
     ),
     "faq": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
+    "faqAiSearch": MessageLookupByLibrary.simpleMessage(
+      "كيف يعمل البحث بالذكاء الاصطناعي؟",
+    ),
+    "faqAiSearchAnswer": MessageLookupByLibrary.simpleMessage(
+      "ارفع صورة للغرض المفقود وسيبحث الذكاء الاصطناعي عن تطابقات بصرية.",
+    ),
+    "faqAiSearchQuestion": MessageLookupByLibrary.simpleMessage(
+      "كيف يعمل البحث بالذكاء الاصطناعي؟",
+    ),
+    "faqEditPost": MessageLookupByLibrary.simpleMessage(
+      "هل يمكنني تعديل الغرض الذي نشرته؟",
+    ),
+    "faqEditPostAnswer": MessageLookupByLibrary.simpleMessage(
+      "نعم، انتقل إلى \"تقاريري\"، اختر الغرض ثم اضغط \"تعديل\".",
+    ),
+    "faqInfoSafe": MessageLookupByLibrary.simpleMessage(
+      "هل معلوماتي الشخصية آمنة؟",
+    ),
+    "faqInfoSafeAnswer": MessageLookupByLibrary.simpleMessage(
+      "نعم، نولي الخصوصية أهمية كبيرة ولا نشارك معلوماتك إلا عند اختيارك التواصل.",
+    ),
+    "faqReportFound": MessageLookupByLibrary.simpleMessage(
+      "كيف أبلّغ عن غرض موجود؟",
+    ),
+    "faqReportFoundAnswer": MessageLookupByLibrary.simpleMessage(
+      "انتقل إلى تبويب \"نشر غرض\"، اختر \"موجود\"، وأدخل تفاصيل الغرض الذي وجدته.",
+    ),
+    "faqReportFoundItemAnswer": MessageLookupByLibrary.simpleMessage(
+      "انتقل إلى تبويب \"نشر غرض\"، اختر \"موجود\"، وأدخل تفاصيل الغرض الذي وجدته.",
+    ),
+    "faqReportFoundItemQuestion": MessageLookupByLibrary.simpleMessage(
+      "كيف أبلّغ عن غرض تم العثور عليه؟",
+    ),
+    "faqReportLost": MessageLookupByLibrary.simpleMessage(
+      "كيف أبلّغ عن غرض مفقود؟",
+    ),
+    "faqReportLostAnswer": MessageLookupByLibrary.simpleMessage(
+      "انتقل إلى تبويب \"نشر غرض\"، اختر \"مفقود\"، ثم أدخل التفاصيل مثل الوصف والموقع والصورة وأرسل البلاغ.",
+    ),
+    "faqReportLostItemAnswer": MessageLookupByLibrary.simpleMessage(
+      "انتقل إلى تبويب \"نشر غرض\"، اختر \"مفقود\"، ثم أدخل التفاصيل مثل الوصف والموقع والصورة، وبعدها قم بإرسال البلاغ.",
+    ),
+    "faqReportLostItemQuestion": MessageLookupByLibrary.simpleMessage(
+      "كيف أقوم بالإبلاغ عن غرض مفقود؟",
+    ),
+    "faqTitle": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
+    "faqUpdateStatus": MessageLookupByLibrary.simpleMessage(
+      "كيف أغيّر حالة البلاغ؟",
+    ),
+    "faqUpdateStatusAnswer": MessageLookupByLibrary.simpleMessage(
+      "انتقل إلى \"تقاريري\"، اختر البلاغ، واضغط \"تحديث الحالة\".",
+    ),
     "filterAndSort": MessageLookupByLibrary.simpleMessage("فلترة وترتيب"),
     "filterByLocation": MessageLookupByLibrary.simpleMessage(
       "فلترة حسب الموقع",
@@ -216,16 +312,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "filterByPostType": MessageLookupByLibrary.simpleMessage(
       "فلترة حسب نوع المنشور",
     ),
+    "firstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
+    "firstNameRequired": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال الاسم الأول",
+    ),
     "found": MessageLookupByLibrary.simpleMessage("موجود"),
     "foundItems": MessageLookupByLibrary.simpleMessage("الأشياء الموجودة"),
+    "frequentlyAskedQuestions": MessageLookupByLibrary.simpleMessage(
+      "الأسئلة الشائعة",
+    ),
     "gallery": MessageLookupByLibrary.simpleMessage("المعرض"),
     "hasBounty": MessageLookupByLibrary.simpleMessage("يحتوي على مكافأة"),
     "hasBountyDesc": MessageLookupByLibrary.simpleMessage(
       "عرض المنشورات التي تحتوي على مكافأة فقط",
     ),
+    "helpAndSupport": MessageLookupByLibrary.simpleMessage("المساعدة والدعم"),
     "helpAndSupportTitle": MessageLookupByLibrary.simpleMessage(
       "المساعدة والدعم",
     ),
+    "helpSupportTitle": MessageLookupByLibrary.simpleMessage("المساعدة والدعم"),
     "hideIdentity": MessageLookupByLibrary.simpleMessage(
       "إخفاء هويتك عن المستخدمين",
     ),
@@ -256,6 +361,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidEmailOrPassword": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
     ),
+    "invalidPhoneLength": MessageLookupByLibrary.simpleMessage(
+      "يجب أن يكون رقم الهاتف 9 أرقام بعد +962 7",
+    ),
     "irbid": MessageLookupByLibrary.simpleMessage("إربد"),
     "isInfoSafe": MessageLookupByLibrary.simpleMessage(
       "هل معلوماتي الشخصية آمنة؟",
@@ -280,6 +388,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "keyFeatures": MessageLookupByLibrary.simpleMessage("الميزات الرئيسية"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "languageCode": MessageLookupByLibrary.simpleMessage("ar"),
+    "lastName": MessageLookupByLibrary.simpleMessage("اسم العائلة"),
+    "lastNameRequired": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال اسم العائلة",
+    ),
     "licenses": MessageLookupByLibrary.simpleMessage("التراخيص"),
     "lightMode": MessageLookupByLibrary.simpleMessage("الوضع الفاتح"),
     "loading": MessageLookupByLibrary.simpleMessage("جارٍ التحميل..."),
@@ -293,6 +405,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "lostItems": MessageLookupByLibrary.simpleMessage("الأشياء المفقودة"),
     "maan": MessageLookupByLibrary.simpleMessage("معان"),
     "madaba": MessageLookupByLibrary.simpleMessage("مادبا"),
+    "madeInJordan": MessageLookupByLibrary.simpleMessage(
+      "صُنع بـ ❤️ في الأردن",
+    ),
     "mafraq": MessageLookupByLibrary.simpleMessage("المفرق"),
     "maxImagesLimit": MessageLookupByLibrary.simpleMessage(
       "يمكنك رفع حتى 5 صور فقط.",
@@ -315,7 +430,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "offerBounty": MessageLookupByLibrary.simpleMessage("تقديم مكافأة"),
     "ok": MessageLookupByLibrary.simpleMessage("موافق"),
+    "oldAndNewPasswordSame": MessageLookupByLibrary.simpleMessage(
+      "لا يمكن أن تكون كلمة المرور الجديدة مثل القديمة",
+    ),
     "oldPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
+    "oldPasswordIncorrect": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور القديمة غير صحيحة",
+    ),
     "oldestFirst": MessageLookupByLibrary.simpleMessage("الأقدم أولاً"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "ما هو تطبيق ثمين؟ ثمين تطبيق يساعدك في العثور على أغراضك المفقودة بسهولة، ويربطك بعالم من المفقودات بنقرة واحدة.",
@@ -345,6 +466,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ourMissionDescription": MessageLookupByLibrary.simpleMessage(
       "تسعى منصة ثمين لإعادة المفقودات لأصحابها من خلال قوة المجتمع وتقنيات الذكاء الاصطناعي.",
     ),
+    "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير كلمة المرور بنجاح",
+    ),
     "passwordInstruction": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة مرورك القديمة وأنشئ كلمة مرور جديدة",
     ),
@@ -352,7 +476,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "تمت إعادة تعيين كلمة المرور بنجاح",
     ),
     "pets": MessageLookupByLibrary.simpleMessage("حيوانات أليفة"),
+    "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "phoneRequired": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم الهاتف",
+    ),
     "phoneSupport": MessageLookupByLibrary.simpleMessage("الدعم الهاتفي"),
+    "phoneSupportDesc": MessageLookupByLibrary.simpleMessage(
+      "اتصل بنا من الأحد إلى الخميس، 9 صباحًا– 6 مساءً",
+    ),
     "photos": MessageLookupByLibrary.simpleMessage("الصور"),
     "photosOptional": MessageLookupByLibrary.simpleMessage(
       "صور (حتى 5) اختياري",
@@ -364,6 +495,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "postAnonymously": MessageLookupByLibrary.simpleMessage("النشر بشكل مجهول"),
     "postItem": MessageLookupByLibrary.simpleMessage("نشر غرض"),
     "privacy": MessageLookupByLibrary.simpleMessage("الخصوصية"),
+    "privacyAndSecurity": MessageLookupByLibrary.simpleMessage(
+      "الخصوصية والأمان",
+    ),
     "privacyConcerns": MessageLookupByLibrary.simpleMessage(
       "استفسارات الخصوصية",
     ),
@@ -375,9 +509,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "نعم، نحن نأخذ الخصوصية على محمل الجد. لا تتم مشاركة معلومات تواصلك إلا عندما تختار التواصل مع شخص ما بشأن غرض معين.",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "profileEmailPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "example@email.com",
+    ),
     "profileUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
       "تم تحديث الملف الشخصي بنجاح",
     ),
+    "profileUserName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "ramtha": MessageLookupByLibrary.simpleMessage("الرمثا"),
     "recentItems": MessageLookupByLibrary.simpleMessage("العناصر الحديثة"),
     "reportCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -388,6 +526,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "reportLostItem": MessageLookupByLibrary.simpleMessage(
       "كيف أبلغ عن غرض مفقود؟",
+    ),
+    "reportUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم تحديث البلاغ بنجاح",
     ),
     "reportedBy": MessageLookupByLibrary.simpleMessage("تم الإبلاغ بواسطة"),
     "reportedTime": MessageLookupByLibrary.simpleMessage("وقت الإبلاغ"),
@@ -502,6 +643,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "signupTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "smartNotifications": MessageLookupByLibrary.simpleMessage("إشعارات ذكية"),
+    "smartNotificationsDesc": MessageLookupByLibrary.simpleMessage(
+      "احصل على إشعارات عند وجود تطابقات محتملة",
+    ),
     "smartNotificationsDescription": MessageLookupByLibrary.simpleMessage(
       "احصل على إشعارات عند وجود تطابقات محتملة.",
     ),
@@ -512,6 +656,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "ابدأ بالتقاط الصور والفيديو",
     ),
     "startChat": MessageLookupByLibrary.simpleMessage("بدء محادثة"),
+    "statusActive": MessageLookupByLibrary.simpleMessage("نشط"),
+    "statusDeleted": MessageLookupByLibrary.simpleMessage("محذوف"),
+    "statusResolved": MessageLookupByLibrary.simpleMessage("تم الحل"),
     "submitReport": MessageLookupByLibrary.simpleMessage("إرسال البلاغ"),
     "support": MessageLookupByLibrary.simpleMessage("الدعم"),
     "supportAndHelp": MessageLookupByLibrary.simpleMessage("الدعم والمساعدة"),
@@ -586,9 +733,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "حدث خطأ غير متوقع، حاول مرة أخرى.",
     ),
     "update": MessageLookupByLibrary.simpleMessage("تحديث"),
+    "updateReport": MessageLookupByLibrary.simpleMessage("تحديث البلاغ"),
     "updateReportStatus": MessageLookupByLibrary.simpleMessage(
       "كيف أغيّر حالة بلاغي؟",
     ),
+    "updateStatus": MessageLookupByLibrary.simpleMessage("تحديث الحالة"),
     "updatesToPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
       "تحديث سياسة الخصوصية",
     ),
@@ -597,6 +746,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "uploadPhotos": MessageLookupByLibrary.simpleMessage(
       "قم برفع صور للغرض (حتى 5)",
+    ),
+    "userNotLoggedIn": MessageLookupByLibrary.simpleMessage(
+      "المستخدم غير مسجّل الدخول",
     ),
     "verifyButton": MessageLookupByLibrary.simpleMessage("تحقّق"),
     "verifyYourEmail": MessageLookupByLibrary.simpleMessage(
@@ -620,6 +772,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "نحن نجمع المعلومات التي تقدمها عند إنشاء حساب (الاسم، البريد، رقم الهاتف)، إضافة إلى تفاصيل الأغراض المفقودة أو الموجودة والصور المرفوعة للبحث بالذكاء الاصطناعي.",
     ),
     "whatsappSupport": MessageLookupByLibrary.simpleMessage("دعم الواتساب"),
+    "whatsappSupportDesc": MessageLookupByLibrary.simpleMessage(
+      "متاح على مدار الساعة",
+    ),
     "whenYouContactOthers": MessageLookupByLibrary.simpleMessage(
       "عند تواصلك مع الآخرين",
     ),

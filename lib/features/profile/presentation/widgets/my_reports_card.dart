@@ -4,6 +4,7 @@ import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/profile/presentation/bloc/myreports/my_reports_cubit.dart';
 import 'package:thameen/features/profile/presentation/views/my_reports_view.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class MyReportsCard extends StatelessWidget {
   const MyReportsCard({super.key});
@@ -64,9 +65,9 @@ class MyReportsCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'My Reports',
-                        style: TextStyle(
+                      Text(
+                        S.current.myReports,
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primary,
@@ -74,7 +75,7 @@ class MyReportsCard extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'View your reports',
+                        S.current.viewYourReports,
                         style: TextStyle(
                           fontSize: 14,
                           color: AppTextStyle.medium14.color,

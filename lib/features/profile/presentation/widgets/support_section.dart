@@ -4,6 +4,7 @@ import 'package:thameen/features/profile/presentation/views/help_and_support_vie
 import 'package:thameen/features/profile/presentation/views/privacy_and_security.dart';
 import 'package:thameen/features/profile/presentation/widgets/app_divider.dart';
 import 'package:thameen/features/profile/presentation/widgets/profile_list_tile.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class SupportSection extends StatelessWidget {
   const SupportSection({super.key});
@@ -30,7 +31,7 @@ class SupportSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Support',
+            S.of(context).support,
             style: theme.textTheme.bodyLarge,
           ),
           const SizedBox(
@@ -39,7 +40,7 @@ class SupportSection extends StatelessWidget {
 
           ProfileListTile(
             icon: Icons.help,
-            title: 'Help & Support',
+            title: S.of(context).helpAndSupport,
             onTap: () {
               Navigator.pushNamed(context, HelpSupportView.routeName);
             },
@@ -53,7 +54,7 @@ class SupportSection extends StatelessWidget {
           ),
           ProfileListTile(
             icon: Icons.security,
-            title: 'Privacy & Security',
+            title: S.of(context).privacyAndSecurity,
             onTap: () {
               Navigator.pushNamed(context, PrivacySecurityView.routeName);
             },
@@ -67,7 +68,7 @@ class SupportSection extends StatelessWidget {
           ),
           ProfileListTile(
             icon: Icons.info,
-            title: 'About',
+            title: S.of(context).about,
             onTap: () {
               Navigator.pushNamed(context, AboutView.routeName);
             },

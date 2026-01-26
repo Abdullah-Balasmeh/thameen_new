@@ -7,6 +7,7 @@ import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
 import 'package:thameen/features/profile/presentation/bloc/myreports/my_reports_cubit.dart';
 import 'package:thameen/features/profile/presentation/views/edit_post_view.dart';
 import 'package:thameen/features/profile/presentation/widgets/update_status_bottom_sheet.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class ReportCard extends StatefulWidget {
   final PostEntity post;
@@ -78,7 +79,7 @@ class _ReportCardState extends State<ReportCard> {
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: Text(
-                    widget.post.postType == PostType.lost ? 'LOST' : 'FOUND',
+                    widget.post.postType == PostType.lost ? S.of(context).lost : S.of(context).found,
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
@@ -194,7 +195,7 @@ class _ReportCardState extends State<ReportCard> {
                       _showUpdateStatusSheet(widget.post);
                     },
                     icon: const Icon(Icons.refresh, size: 18),
-                    label: const Text('Update Status'),
+                    label: Text(S.of(context).updateStatus),
                     style: OutlinedButton.styleFrom(
                       foregroundColor: AppColors.primary,
                       side: const BorderSide(color: AppColors.primary),
@@ -223,7 +224,7 @@ class _ReportCardState extends State<ReportCard> {
                       );
                     },
                     icon: const Icon(Icons.edit, size: 18),
-                    label: const Text('Edit'),
+                    label: Text(S.of(context).edit),
                     style: OutlinedButton.styleFrom(
                       foregroundColor: AppColors.primary,
                       side: const BorderSide(color: AppColors.primary),

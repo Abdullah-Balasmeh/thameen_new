@@ -2733,6 +2733,616 @@ class S {
   String get anonymous {
     return Intl.message('Anonymous', name: 'anonymous', desc: '', args: []);
   }
+
+  /// `Update Status`
+  String get updateStatus {
+    return Intl.message(
+      'Update Status',
+      name: 'updateStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Active`
+  String get statusActive {
+    return Intl.message('Active', name: 'statusActive', desc: '', args: []);
+  }
+
+  /// `Resolved`
+  String get statusResolved {
+    return Intl.message('Resolved', name: 'statusResolved', desc: '', args: []);
+  }
+
+  /// `Deleted`
+  String get statusDeleted {
+    return Intl.message('Deleted', name: 'statusDeleted', desc: '', args: []);
+  }
+
+  /// `Confirm Delete`
+  String get confirmDelete {
+    return Intl.message(
+      'Confirm Delete',
+      name: 'confirmDelete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this report?`
+  String get confirmDeleteMessage {
+    return Intl.message(
+      'Are you sure you want to delete this report?',
+      name: 'confirmDeleteMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
+
+  /// `Help & Support`
+  String get helpAndSupport {
+    return Intl.message(
+      'Help & Support',
+      name: 'helpAndSupport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy & Security`
+  String get privacyAndSecurity {
+    return Intl.message(
+      'Privacy & Security',
+      name: 'privacyAndSecurity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message('Edit', name: 'edit', desc: '', args: []);
+  }
+
+  /// `User Name`
+  String get profileUserName {
+    return Intl.message(
+      'User Name',
+      name: 'profileUserName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `demo@example.com`
+  String get profileEmailPlaceholder {
+    return Intl.message(
+      'demo@example.com',
+      name: 'profileEmailPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update Report`
+  String get updateReport {
+    return Intl.message(
+      'Update Report',
+      name: 'updateReport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Logout`
+  String get confirmLogout {
+    return Intl.message(
+      'Confirm Logout',
+      name: 'confirmLogout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to log out from your account?`
+  String get confirmLogoutMessage {
+    return Intl.message(
+      'Are you sure you want to log out from your account?',
+      name: 'confirmLogoutMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message('English', name: 'english', desc: '', args: []);
+  }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message('Arabic', name: 'arabic', desc: '', args: []);
+  }
+
+  /// `First Name`
+  String get firstName {
+    return Intl.message('First Name', name: 'firstName', desc: '', args: []);
+  }
+
+  /// `Last Name`
+  String get lastName {
+    return Intl.message('Last Name', name: 'lastName', desc: '', args: []);
+  }
+
+  /// `Email Address`
+  String get emailAddress {
+    return Intl.message(
+      'Email Address',
+      name: 'emailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your first name`
+  String get firstNameRequired {
+    return Intl.message(
+      'Please enter your first name',
+      name: 'firstNameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your last name`
+  String get lastNameRequired {
+    return Intl.message(
+      'Please enter your last name',
+      name: 'lastNameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your email address`
+  String get emailRequired {
+    return Intl.message(
+      'Please enter your email address',
+      name: 'emailRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your phone number`
+  String get phoneRequired {
+    return Intl.message(
+      'Please enter your phone number',
+      name: 'phoneRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number must be 9 digits after +962 7`
+  String get invalidPhoneLength {
+    return Intl.message(
+      'Phone number must be 9 digits after +962 7',
+      name: 'invalidPhoneLength',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report updated successfully`
+  String get reportUpdatedSuccessfully {
+    return Intl.message(
+      'Report updated successfully',
+      name: 'reportUpdatedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Photo`
+  String get editPhoto {
+    return Intl.message('Edit Photo', name: 'editPhoto', desc: '', args: []);
+  }
+
+  /// `Enter your old password and create a new password`
+  String get changePasswordInstruction {
+    return Intl.message(
+      'Enter your old password and create a new password',
+      name: 'changePasswordInstruction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Old password is incorrect`
+  String get oldPasswordIncorrect {
+    return Intl.message(
+      'Old password is incorrect',
+      name: 'oldPasswordIncorrect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Old password and new password cannot be the same`
+  String get oldAndNewPasswordSame {
+    return Intl.message(
+      'Old password and new password cannot be the same',
+      name: 'oldAndNewPasswordSame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password changed successfully`
+  String get passwordChangedSuccessfully {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'passwordChangedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User not logged in`
+  String get userNotLoggedIn {
+    return Intl.message(
+      'User not logged in',
+      name: 'userNotLoggedIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload a photo and let AI find visual matches`
+  String get aiPoweredSearchDesc {
+    return Intl.message(
+      'Upload a photo and let AI find visual matches',
+      name: 'aiPoweredSearchDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quickly report lost or found items`
+  String get easyReportingDesc {
+    return Intl.message(
+      'Quickly report lost or found items',
+      name: 'easyReportingDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connect instantly with item reporters`
+  String get directChatDesc {
+    return Intl.message(
+      'Connect instantly with item reporters',
+      name: 'directChatDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get notified about potential matches`
+  String get smartNotificationsDesc {
+    return Intl.message(
+      'Get notified about potential matches',
+      name: 'smartNotificationsDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `© 2025 Thameen App`
+  String get copyright {
+    return Intl.message(
+      '© 2025 Thameen App',
+      name: 'copyright',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All rights reserved`
+  String get allRightsReserved {
+    return Intl.message(
+      'All rights reserved',
+      name: 'allRightsReserved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Made with ❤️ in Jordan`
+  String get madeInJordan {
+    return Intl.message(
+      'Made with ❤️ in Jordan',
+      name: 'madeInJordan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `© 2025 Thameen App. All rights reserved.`
+  String get applicationLegalese {
+    return Intl.message(
+      '© 2025 Thameen App. All rights reserved.',
+      name: 'applicationLegalese',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Post`
+  String get editPostTitle {
+    return Intl.message('Edit Post', name: 'editPostTitle', desc: '', args: []);
+  }
+
+  /// `Help & Support`
+  String get helpSupportTitle {
+    return Intl.message(
+      'Help & Support',
+      name: 'helpSupportTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get help via email within 24 hours`
+  String get emailSupportDesc {
+    return Intl.message(
+      'Get help via email within 24 hours',
+      name: 'emailSupportDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call us Mon-Fri, 9AM-6PM`
+  String get phoneSupportDesc {
+    return Intl.message(
+      'Call us Mon-Fri, 9AM-6PM',
+      name: 'phoneSupportDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Available 24/7`
+  String get whatsappSupportDesc {
+    return Intl.message(
+      'Available 24/7',
+      name: 'whatsappSupportDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Frequently Asked Questions`
+  String get faqTitle {
+    return Intl.message(
+      'Frequently Asked Questions',
+      name: 'faqTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How do I report a lost item?`
+  String get faqReportLost {
+    return Intl.message(
+      'How do I report a lost item?',
+      name: 'faqReportLost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to the "Post Item" tab, select "Lost", fill in the details including description, location, and photo, then submit.`
+  String get faqReportLostAnswer {
+    return Intl.message(
+      'Go to the "Post Item" tab, select "Lost", fill in the details including description, location, and photo, then submit.',
+      name: 'faqReportLostAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How do I report a found item?`
+  String get faqReportFound {
+    return Intl.message(
+      'How do I report a found item?',
+      name: 'faqReportFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to the "Post Item" tab, select "Found", provide details about the item you found, and wait for the owner to contact you.`
+  String get faqReportFoundAnswer {
+    return Intl.message(
+      'Go to the "Post Item" tab, select "Found", provide details about the item you found, and wait for the owner to contact you.',
+      name: 'faqReportFoundAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How does the AI Search work?`
+  String get faqAiSearch {
+    return Intl.message(
+      'How does the AI Search work?',
+      name: 'faqAiSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload a photo of your lost item, and our AI will search through found items to find potential matches based on visual similarity.`
+  String get faqAiSearchAnswer {
+    return Intl.message(
+      'Upload a photo of your lost item, and our AI will search through found items to find potential matches based on visual similarity.',
+      name: 'faqAiSearchAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Is my personal information safe?`
+  String get faqInfoSafe {
+    return Intl.message(
+      'Is my personal information safe?',
+      name: 'faqInfoSafe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes, we take privacy seriously. Your contact information is only shared when you choose to contact someone about an item.`
+  String get faqInfoSafeAnswer {
+    return Intl.message(
+      'Yes, we take privacy seriously. Your contact information is only shared when you choose to contact someone about an item.',
+      name: 'faqInfoSafeAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How do I update my report status?`
+  String get faqUpdateStatus {
+    return Intl.message(
+      'How do I update my report status?',
+      name: 'faqUpdateStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to "My Reports" in your profile, select the report, and tap "Update Status".`
+  String get faqUpdateStatusAnswer {
+    return Intl.message(
+      'Go to "My Reports" in your profile, select the report, and tap "Update Status".',
+      name: 'faqUpdateStatusAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Can I edit my posted item?`
+  String get faqEditPost {
+    return Intl.message(
+      'Can I edit my posted item?',
+      name: 'faqEditPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes, go to "My Reports", select your item, and tap "Edit".`
+  String get faqEditPostAnswer {
+    return Intl.message(
+      'Yes, go to "My Reports", select your item, and tap "Edit".',
+      name: 'faqEditPostAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chat with us instantly`
+  String get chatWithUsInstantly {
+    return Intl.message(
+      'Chat with us instantly',
+      name: 'chatWithUsInstantly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Frequently Asked Questions`
+  String get frequentlyAskedQuestions {
+    return Intl.message(
+      'Frequently Asked Questions',
+      name: 'frequentlyAskedQuestions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How do I report a lost item?`
+  String get faqReportLostItemQuestion {
+    return Intl.message(
+      'How do I report a lost item?',
+      name: 'faqReportLostItemQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to the "Post Item" tab, select "Lost", fill in the details including description, location, and photo, then submit.`
+  String get faqReportLostItemAnswer {
+    return Intl.message(
+      'Go to the "Post Item" tab, select "Lost", fill in the details including description, location, and photo, then submit.',
+      name: 'faqReportLostItemAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How do I report a found item?`
+  String get faqReportFoundItemQuestion {
+    return Intl.message(
+      'How do I report a found item?',
+      name: 'faqReportFoundItemQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to the "Post Item" tab, select "Found", provide details about the item you found, and wait for the owner to contact you.`
+  String get faqReportFoundItemAnswer {
+    return Intl.message(
+      'Go to the "Post Item" tab, select "Found", provide details about the item you found, and wait for the owner to contact you.',
+      name: 'faqReportFoundItemAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How does the AI Search work?`
+  String get faqAiSearchQuestion {
+    return Intl.message(
+      'How does the AI Search work?',
+      name: 'faqAiSearchQuestion',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
