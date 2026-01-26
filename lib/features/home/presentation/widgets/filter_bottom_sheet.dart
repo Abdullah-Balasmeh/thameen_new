@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:path/path.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/home/presentation/bloc/all_posts_cubit/home_cubit.dart';
@@ -24,7 +23,9 @@ class FilterBottomSheet extends StatefulWidget {
 class _FilterBottomSheetState extends State<FilterBottomSheet> {
   final ValueNotifier<String> selectedType = ValueNotifier(S.current.all);
   final TextEditingController locationController = TextEditingController();
-  final ValueNotifier<String> selectedSort = ValueNotifier(S.current.mostRecent);
+  final ValueNotifier<String> selectedSort = ValueNotifier(
+    S.current.mostRecent,
+  );
   final ValueNotifier<bool> hasBounty = ValueNotifier(false);
 
   @override
