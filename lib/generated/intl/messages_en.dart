@@ -67,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Allowing to paste",
     ),
     "amman": MessageLookupByLibrary.simpleMessage("Amman"),
+    "anonymous": MessageLookupByLibrary.simpleMessage("Anonymous"),
     "applyFilters": MessageLookupByLibrary.simpleMessage("Apply Filters"),
     "aqaba": MessageLookupByLibrary.simpleMessage("Aqaba"),
     "assistYouMessage": MessageLookupByLibrary.simpleMessage(
@@ -85,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "bountyOptional": MessageLookupByLibrary.simpleMessage("Bounty (Optional)"),
     "browse": MessageLookupByLibrary.simpleMessage("Browse..."),
     "callPhone": MessageLookupByLibrary.simpleMessage("Call Phone"),
+    "camera": MessageLookupByLibrary.simpleMessage("Camera"),
     "cannotChatYourself": MessageLookupByLibrary.simpleMessage(
       "You can not chat with yourself",
     ),
@@ -227,6 +229,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "found": MessageLookupByLibrary.simpleMessage("Found"),
     "foundItems": MessageLookupByLibrary.simpleMessage("Found Items"),
+    "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
     "hasBounty": MessageLookupByLibrary.simpleMessage("Has Bounty"),
     "hasBountyDesc": MessageLookupByLibrary.simpleMessage(
       "Show posts with bounty only",
@@ -290,6 +293,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "languageCode": MessageLookupByLibrary.simpleMessage("en"),
     "licenses": MessageLookupByLibrary.simpleMessage("Licenses"),
     "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
+    "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "localeName": MessageLookupByLibrary.simpleMessage("en"),
     "location": MessageLookupByLibrary.simpleMessage("Location"),
     "logOut": MessageLookupByLibrary.simpleMessage("Log Out"),
@@ -312,6 +316,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage("New Password"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
+    "noChatsYet": MessageLookupByLibrary.simpleMessage("No chats yet..."),
     "noPhotosYet": MessageLookupByLibrary.simpleMessage("No photos yet"),
     "noReportsYet": MessageLookupByLibrary.simpleMessage("No Reports Yet"),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
@@ -337,6 +342,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Get Started",
     ),
     "onboardingSkipButton": MessageLookupByLibrary.simpleMessage("Skip"),
+    "online": MessageLookupByLibrary.simpleMessage("Online"),
     "other": MessageLookupByLibrary.simpleMessage("Other"),
     "otpCompleted": MessageLookupByLibrary.simpleMessage("Completed"),
     "otpResentSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -422,7 +428,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectLocationError": MessageLookupByLibrary.simpleMessage(
       "Please select an item location",
     ),
+    "selectPhotoSource": MessageLookupByLibrary.simpleMessage(
+      "Select Photo Source",
+    ),
+    "selectedImages": MessageLookupByLibrary.simpleMessage("Selected Images"),
     "sendEmail": MessageLookupByLibrary.simpleMessage("Send Email"),
+    "sendImages": MessageLookupByLibrary.simpleMessage("Send Images"),
     "sendVerificationCodeInfo": MessageLookupByLibrary.simpleMessage(
       "Don\'t worry, just write your email address and we will send you a verification code.",
     ),
@@ -580,6 +591,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "thirdPartySharingDescription": MessageLookupByLibrary.simpleMessage(
       "We do NOT sell your data. Contact details are only shared when you choose to contact someone. Anonymous data may be used for analytics.",
     ),
+    "today": MessageLookupByLibrary.simpleMessage("Today"),
+    "typeMessageHint": MessageLookupByLibrary.simpleMessage("Type a message"),
     "unexpectedErrorTryAgain": MessageLookupByLibrary.simpleMessage(
       "An unexpected error occurred, please try again.",
     ),
@@ -624,6 +637,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "When You Contact Others",
     ),
     "yes": MessageLookupByLibrary.simpleMessage("Yes"),
+    "yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
     "yourPrivacyMatters": MessageLookupByLibrary.simpleMessage(
       "Your Privacy Matters",
     ),

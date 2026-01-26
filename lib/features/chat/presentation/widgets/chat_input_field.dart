@@ -5,6 +5,7 @@ import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/core/utils/helper/border_builder.dart';
 import 'package:thameen/features/chat/presentation/bloc/cubit/chat_cubit.dart';
 import 'package:thameen/features/chat/presentation/widgets/chat_bottom_sheet.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class ChatInputField extends StatefulWidget {
   const ChatInputField({super.key, required this.chatId});
@@ -65,7 +66,7 @@ class _ChatInputFieldState extends State<ChatInputField> {
                   },
 
                   decoration: InputDecoration(
-                    hintText: 'Type a message',
+                    hintText: S.of(context).typeMessageHint,
                     suffixIcon: IconButton(
                       onPressed: () {
                         final chatCubit = context.read<ChatCubit>();

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/chat/presentation/widgets/chat_bottom_sheetIcon_container.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class SelectPhotoSourceContainer extends StatelessWidget {
   const SelectPhotoSourceContainer({
@@ -36,20 +37,20 @@ class SelectPhotoSourceContainer extends StatelessWidget {
               borderRadius: BorderRadius.circular(2),
             ),
           ),
-          Text('Select Photo Source', style: AppTextStyle.bold24),
+          Text(S.of(context).selectPhotoSource, style: AppTextStyle.bold24),
           const SizedBox(height: 16),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ChatBottomSheetIconContainer(
                 icon: Icons.photo_library,
-                label: 'Gallery',
+                label: S.of(context).gallery,
                 onTap: onGalleryTap,
               ),
               const SizedBox(width: 16),
               ChatBottomSheetIconContainer(
                 icon: Icons.camera_alt,
-                label: 'Camera',
+                label: S.of(context).camera,
                 onTap: onCameraTap,
               ),
             ],
