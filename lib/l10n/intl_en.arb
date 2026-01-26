@@ -354,6 +354,20 @@
   "oldestFirst": "Oldest First",
   "sortAZ": "A-Z",
   "sortZA": "Z-A",
-  "sortBy": "Sort By"
+  "sortBy": "Sort By",
+   
+  "itemNameRequired": "Please enter an item name",
+  "itemCategoryRequired": "Please select an item category",
+  "itemDescriptionRequired": "Please enter an item description",
+  "itemLocationRequired": "Please select an item location",
+  "contactMethodRequired": "Please select at least one contact method",
+  "reportCreatedSuccessfully": "Report created successfully",
+  "bountyAmountLabel": "Bounty Amount (JOD)",
+  "bountyAmountHint": "e.g., 50",
+  "bountyAmountRequired": "Please enter bounty amount",
+  "hideIdentityLabel": "Hide your identity from other users",
+  "uploadItemPhotosLabel": "Upload photos of the item (up to 5)",
+  "addMorePhotos": "Add More",
+  "maxImagesLimit": "You can only upload up to 5 images."
 
 }

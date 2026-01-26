@@ -48,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم إنشاء الحساب بنجاح",
     ),
     "accountSettings": MessageLookupByLibrary.simpleMessage("إعدادات الحساب"),
+    "addMorePhotos": MessageLookupByLibrary.simpleMessage("إضافة المزيد"),
     "addPhotos": MessageLookupByLibrary.simpleMessage("إضافة صور"),
     "aiPoweredSearch": MessageLookupByLibrary.simpleMessage(
       "بحث مدعوم بالذكاء الاصطناعي",
@@ -72,6 +73,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "bags": MessageLookupByLibrary.simpleMessage("حقائب"),
     "balqa": MessageLookupByLibrary.simpleMessage("البلقاء"),
     "bounty": MessageLookupByLibrary.simpleMessage("مكافأة"),
+    "bountyAmountHint": MessageLookupByLibrary.simpleMessage("مثال: 50"),
+    "bountyAmountLabel": MessageLookupByLibrary.simpleMessage(
+      "قيمة المكافأة (دينار أردني)",
+    ),
+    "bountyAmountRequired": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال قيمة المكافأة",
+    ),
     "bountyOptional": MessageLookupByLibrary.simpleMessage("مكافأة (اختياري)"),
     "browse": MessageLookupByLibrary.simpleMessage("استعراض..."),
     "callPhone": MessageLookupByLibrary.simpleMessage("الاتصال"),
@@ -91,6 +99,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تأكيد كلمة المرور",
     ),
     "connectWithUs": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
+    "contactMethodRequired": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار طريقة تواصل واحدة على الأقل",
+    ),
     "contactMethods": MessageLookupByLibrary.simpleMessage("طرق التواصل"),
     "contactOptions": MessageLookupByLibrary.simpleMessage("خيارات التواصل"),
     "contactPrivacy": MessageLookupByLibrary.simpleMessage("خصوصية التواصل"),
@@ -215,6 +226,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "hideIdentity": MessageLookupByLibrary.simpleMessage(
       "إخفاء هويتك عن المستخدمين",
     ),
+    "hideIdentityLabel": MessageLookupByLibrary.simpleMessage(
+      "إخفاء هويتك عن المستخدمين الآخرين",
+    ),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "hoursAgo": MessageLookupByLibrary.simpleMessage("ساعات مضت"),
     "howAiSearchWorks": MessageLookupByLibrary.simpleMessage(
@@ -243,9 +257,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "isInfoSafe": MessageLookupByLibrary.simpleMessage(
       "هل معلوماتي الشخصية آمنة؟",
     ),
+    "itemCategoryRequired": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار فئة الغرض",
+    ),
     "itemDescription": MessageLookupByLibrary.simpleMessage("وصف الغرض"),
+    "itemDescriptionRequired": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال وصف الغرض",
+    ),
     "itemInformation": MessageLookupByLibrary.simpleMessage("معلومات الغرض"),
+    "itemLocationRequired": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار موقع الغرض",
+    ),
     "itemName": MessageLookupByLibrary.simpleMessage("اسم الغرض"),
+    "itemNameRequired": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال اسم الغرض",
+    ),
     "jerash": MessageLookupByLibrary.simpleMessage("جرش"),
     "karak": MessageLookupByLibrary.simpleMessage("الكرك"),
     "keyFeatures": MessageLookupByLibrary.simpleMessage("الميزات الرئيسية"),
@@ -264,6 +290,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "maan": MessageLookupByLibrary.simpleMessage("معان"),
     "madaba": MessageLookupByLibrary.simpleMessage("مادبا"),
     "mafraq": MessageLookupByLibrary.simpleMessage("المفرق"),
+    "maxImagesLimit": MessageLookupByLibrary.simpleMessage(
+      "يمكنك رفع حتى 5 صور فقط.",
+    ),
     "messages": MessageLookupByLibrary.simpleMessage("الرسائل"),
     "mobilePhone": MessageLookupByLibrary.simpleMessage("الهاتف المحمول"),
     "money": MessageLookupByLibrary.simpleMessage("أموال"),
@@ -343,6 +372,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ramtha": MessageLookupByLibrary.simpleMessage("الرمثا"),
     "recentItems": MessageLookupByLibrary.simpleMessage("العناصر الحديثة"),
+    "reportCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم إنشاء البلاغ بنجاح",
+    ),
     "reportFoundItem": MessageLookupByLibrary.simpleMessage(
       "كيف أبلغ عن غرض موجود؟",
     ),
@@ -544,6 +576,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "updatesToPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
       "تحديث سياسة الخصوصية",
+    ),
+    "uploadItemPhotosLabel": MessageLookupByLibrary.simpleMessage(
+      "ارفع صور الغرض (حتى 5 صور)",
     ),
     "uploadPhotos": MessageLookupByLibrary.simpleMessage(
       "قم برفع صور للغرض (حتى 5)",

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:thameen/core/di/service_locator.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/services/image_picker_service.dart';
 
 class AddPhotoButton extends StatefulWidget {
@@ -24,11 +25,11 @@ class _AddPhotoButtonState extends State<AddPhotoButton> {
       children: [
         Center(
           child: Text(
-            'Upload photos of the item (up to 5)',
-            style: TextStyle(
+            S.of(context).uploadItemPhotosLabel,
+            style: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w500,
-              color: Theme.of(context).textTheme.bodyLarge!.color,
+              color: Colors.black,
             ),
           ),
         ),
@@ -37,7 +38,7 @@ class _AddPhotoButtonState extends State<AddPhotoButton> {
         OutlinedButton.icon(
           onPressed: _pickImages,
           icon: const Icon(Icons.add_photo_alternate),
-          label: Text(images.isEmpty ? 'Add Photos' : 'Add More'),
+          label: Text(images.isEmpty ? S.of(context).addPhotos : S.of(context).addMorePhotos),
           style: OutlinedButton.styleFrom(
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             shape: RoundedRectangleBorder(
@@ -53,7 +54,7 @@ class _AddPhotoButtonState extends State<AddPhotoButton> {
     final current = widget.selectedImages.value;
 
     if (current.length >= 5) {
-      _showSnack('You can only upload up to 5 images.');
+      _showSnack(S.of(context).maxImagesLimit);
       return;
     }
 

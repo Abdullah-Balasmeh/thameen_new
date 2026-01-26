@@ -48,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Account created successfully",
     ),
     "accountSettings": MessageLookupByLibrary.simpleMessage("Account Settings"),
+    "addMorePhotos": MessageLookupByLibrary.simpleMessage("Add More"),
     "addPhotos": MessageLookupByLibrary.simpleMessage("Add Photos"),
     "aiPoweredSearch": MessageLookupByLibrary.simpleMessage(
       "AI-powered Search",
@@ -74,6 +75,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "bags": MessageLookupByLibrary.simpleMessage("Bags"),
     "balqa": MessageLookupByLibrary.simpleMessage("Balqa"),
     "bounty": MessageLookupByLibrary.simpleMessage("Bounty"),
+    "bountyAmountHint": MessageLookupByLibrary.simpleMessage("e.g., 50"),
+    "bountyAmountLabel": MessageLookupByLibrary.simpleMessage(
+      "Bounty Amount (JOD)",
+    ),
+    "bountyAmountRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter bounty amount",
+    ),
     "bountyOptional": MessageLookupByLibrary.simpleMessage("Bounty (Optional)"),
     "browse": MessageLookupByLibrary.simpleMessage("Browse..."),
     "callPhone": MessageLookupByLibrary.simpleMessage("Call Phone"),
@@ -98,6 +106,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "connectWithUs": MessageLookupByLibrary.simpleMessage("Connect With Us"),
+    "contactMethodRequired": MessageLookupByLibrary.simpleMessage(
+      "Please select at least one contact method",
+    ),
     "contactMethods": MessageLookupByLibrary.simpleMessage("Contact Methods"),
     "contactOptions": MessageLookupByLibrary.simpleMessage("Contact Options"),
     "contactPrivacy": MessageLookupByLibrary.simpleMessage("Contact Privacy"),
@@ -226,6 +237,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "hideIdentity": MessageLookupByLibrary.simpleMessage(
       "Hide your identity from other users",
     ),
+    "hideIdentityLabel": MessageLookupByLibrary.simpleMessage(
+      "Hide your identity from other users",
+    ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "hoursAgo": MessageLookupByLibrary.simpleMessage("hours ago"),
     "howAiSearchWorks": MessageLookupByLibrary.simpleMessage(
@@ -254,9 +268,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "isInfoSafe": MessageLookupByLibrary.simpleMessage(
       "Is my personal information safe?",
     ),
+    "itemCategoryRequired": MessageLookupByLibrary.simpleMessage(
+      "Please select an item category",
+    ),
     "itemDescription": MessageLookupByLibrary.simpleMessage("Item Description"),
+    "itemDescriptionRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter an item description",
+    ),
     "itemInformation": MessageLookupByLibrary.simpleMessage("Item Information"),
+    "itemLocationRequired": MessageLookupByLibrary.simpleMessage(
+      "Please select an item location",
+    ),
     "itemName": MessageLookupByLibrary.simpleMessage("Item Name"),
+    "itemNameRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter an item name",
+    ),
     "jerash": MessageLookupByLibrary.simpleMessage("Jerash"),
     "karak": MessageLookupByLibrary.simpleMessage("Karak"),
     "keyFeatures": MessageLookupByLibrary.simpleMessage("Key Features"),
@@ -275,6 +301,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "maan": MessageLookupByLibrary.simpleMessage("Ma\'an"),
     "madaba": MessageLookupByLibrary.simpleMessage("Madaba"),
     "mafraq": MessageLookupByLibrary.simpleMessage("Mafraq"),
+    "maxImagesLimit": MessageLookupByLibrary.simpleMessage(
+      "You can only upload up to 5 images.",
+    ),
     "messages": MessageLookupByLibrary.simpleMessage("Messages"),
     "mobilePhone": MessageLookupByLibrary.simpleMessage("Mobile Phone"),
     "money": MessageLookupByLibrary.simpleMessage("Money"),
@@ -350,6 +379,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ramtha": MessageLookupByLibrary.simpleMessage("Ramtha"),
     "recentItems": MessageLookupByLibrary.simpleMessage("Recent Items"),
+    "reportCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Report created successfully",
+    ),
     "reportFoundItem": MessageLookupByLibrary.simpleMessage(
       "How do I report a found item?",
     ),
@@ -557,6 +589,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "updatesToPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
       "Updates to Privacy Policy",
+    ),
+    "uploadItemPhotosLabel": MessageLookupByLibrary.simpleMessage(
+      "Upload photos of the item (up to 5)",
     ),
     "uploadPhotos": MessageLookupByLibrary.simpleMessage(
       "Upload photos of the item (up to 5)",

@@ -16,6 +16,7 @@ import 'package:thameen/features/post%20item/presentation/widgets/photo_upload.d
 import 'package:thameen/features/post%20item/presentation/widgets/report_text_form_field.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/report_type_selector.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/section_title.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
 import 'package:thameen/shared/widgets/loading_button.dart';
@@ -101,13 +102,13 @@ class _ReportFormState extends State<ReportForm> {
             selectedType: selectedType,
           ),
           const SizedBox(height: 16),
-          const SectionTitle(title: 'Item Information'),
+          SectionTitle(title: S.current.itemInformation),
           const SizedBox(height: 16),
           ReportTextFormField(
             maxLines: 1,
             keyboardType: TextInputType.name,
             controller: itemNameController,
-            hintText: 'Item Name',
+            hintText: S.current.itemName,
             prefixIcon: const Icon(Icons.label),
             textInputAction: TextInputAction.next,
             autovalidateMode: nameTouched
@@ -122,7 +123,7 @@ class _ReportFormState extends State<ReportForm> {
             },
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter an item name';
+                return S.current.itemNameRequired;
               }
               return null;
             },
@@ -131,13 +132,13 @@ class _ReportFormState extends State<ReportForm> {
 
           DropDownFormButtonCategory(
             itemList: categories,
-            hintText: 'Select Category',
+            hintText: S.current.selectCategory,
             prefixIcon: const Icon(Icons.category),
             keyboardType: TextInputType.text,
             controller: itemCategoryController,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please select an item category';
+                return S.current.itemCategoryRequired;
               }
               return null;
             },
@@ -153,7 +154,7 @@ class _ReportFormState extends State<ReportForm> {
             maxLines: 4,
             keyboardType: TextInputType.multiline,
             controller: itemDescriptionController,
-            hintText: 'Item Description',
+            hintText: S.current.itemDescription,
             prefixIcon: const Padding(
               padding: EdgeInsets.only(bottom: 100),
               child: Icon(Icons.description),
@@ -162,24 +163,24 @@ class _ReportFormState extends State<ReportForm> {
             textInputAction: TextInputAction.next,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter an item description';
+                return S.current.itemDescriptionRequired;
               }
               return null;
             },
             autovalidateMode: autovalidateMode,
           ),
           const SizedBox(height: 16),
-          const SectionTitle(title: 'Location'),
+          SectionTitle(title: S.current.location),
           const SizedBox(height: 16),
           DropDownFormButtonCity(
             city: jordanCities,
-            hintText: 'Select City',
+            hintText: S.current.selectCity,
             prefixIcon: const Icon(Icons.location_city),
             keyboardType: TextInputType.text,
             controller: itemLocationController,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please select an item location';
+                return S.current.itemLocationRequired;
               }
               return null;
             },
@@ -205,13 +206,13 @@ class _ReportFormState extends State<ReportForm> {
           ),
 
           const SizedBox(height: 16),
-          const SectionTitle(title: 'Privacy'),
+          SectionTitle(title: S.current.privacy),
           const SizedBox(height: 16),
           AnonymousToggle(
             postAnonymously: postAnonymously,
           ),
           const SizedBox(height: 16),
-          const SectionTitle(title: 'Contact Methods'),
+          SectionTitle(title: S.current.contactMethods),
           const SizedBox(height: 16),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -227,10 +228,10 @@ class _ReportFormState extends State<ReportForm> {
               ),
 
               if (contactMethodsError)
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(left: 8, top: 6),
                   child: Text(
-                    'Please select at least one contact method',
+                    S.current.contactMethodRequired,
                     style: TextStyle(color: Colors.red, fontSize: 13),
                   ),
                 ),
@@ -238,7 +239,7 @@ class _ReportFormState extends State<ReportForm> {
           ),
 
           const SizedBox(height: 16),
-          const SectionTitle(title: 'Photos (Up to 5) Optional'),
+          SectionTitle(title: S.current.photosOptional),
           const SizedBox(height: 16),
           PhotoUpload(
             existingImageUrls: existingImageUrls,
@@ -284,7 +285,7 @@ class _ReportFormState extends State<ReportForm> {
             },
             child: isLoading
                 ? const LoadingButton()
-                : Text('Submit Report', style: AppTextStyle.bold20),
+                : Text(S.current.submitReport, style: AppTextStyle.bold20),
           ),
         ],
       ),

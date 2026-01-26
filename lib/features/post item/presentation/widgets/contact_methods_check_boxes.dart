@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class ContactMethodsCheckBoxes extends StatefulWidget {
   const ContactMethodsCheckBoxes({
@@ -32,11 +33,11 @@ class _ContactMethodsCheckBoxesState extends State<ContactMethodsCheckBoxes> {
   String _label(ContactMethod method) {
     switch (method) {
       case ContactMethod.mobilePhone:
-        return 'Mobile Phone';
+        return S.of(context).mobilePhone;
       case ContactMethod.inAppChat:
-        return 'In App Chat';
+        return S.of(context).inAppChat;
       case ContactMethod.email:
-        return 'Email';
+        return S.of(context).email;
     }
   }
 

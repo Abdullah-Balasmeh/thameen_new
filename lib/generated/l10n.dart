@@ -2528,6 +2528,131 @@ class S {
   String get sortBy {
     return Intl.message('Sort By', name: 'sortBy', desc: '', args: []);
   }
+
+  /// `Please enter an item name`
+  String get itemNameRequired {
+    return Intl.message(
+      'Please enter an item name',
+      name: 'itemNameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select an item category`
+  String get itemCategoryRequired {
+    return Intl.message(
+      'Please select an item category',
+      name: 'itemCategoryRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter an item description`
+  String get itemDescriptionRequired {
+    return Intl.message(
+      'Please enter an item description',
+      name: 'itemDescriptionRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select an item location`
+  String get itemLocationRequired {
+    return Intl.message(
+      'Please select an item location',
+      name: 'itemLocationRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select at least one contact method`
+  String get contactMethodRequired {
+    return Intl.message(
+      'Please select at least one contact method',
+      name: 'contactMethodRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report created successfully`
+  String get reportCreatedSuccessfully {
+    return Intl.message(
+      'Report created successfully',
+      name: 'reportCreatedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bounty Amount (JOD)`
+  String get bountyAmountLabel {
+    return Intl.message(
+      'Bounty Amount (JOD)',
+      name: 'bountyAmountLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `e.g., 50`
+  String get bountyAmountHint {
+    return Intl.message(
+      'e.g., 50',
+      name: 'bountyAmountHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter bounty amount`
+  String get bountyAmountRequired {
+    return Intl.message(
+      'Please enter bounty amount',
+      name: 'bountyAmountRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hide your identity from other users`
+  String get hideIdentityLabel {
+    return Intl.message(
+      'Hide your identity from other users',
+      name: 'hideIdentityLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload photos of the item (up to 5)`
+  String get uploadItemPhotosLabel {
+    return Intl.message(
+      'Upload photos of the item (up to 5)',
+      name: 'uploadItemPhotosLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add More`
+  String get addMorePhotos {
+    return Intl.message('Add More', name: 'addMorePhotos', desc: '', args: []);
+  }
+
+  /// `You can only upload up to 5 images.`
+  String get maxImagesLimit {
+    return Intl.message(
+      'You can only upload up to 5 images.',
+      name: 'maxImagesLimit',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

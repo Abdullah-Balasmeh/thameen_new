@@ -350,7 +350,23 @@
   "oldestFirst": "الأقدم أولاً",
   "sortAZ": "من أ إلى ي",
   "sortZA": "من ي إلى أ",
-  "sortBy": "الترتيب حسب"
+  "sortBy": "الترتيب حسب",
+
+  "itemNameRequired": "يرجى إدخال اسم الغرض",
+  "itemCategoryRequired": "يرجى اختيار فئة الغرض",
+  "itemDescriptionRequired": "يرجى إدخال وصف الغرض",
+  "itemLocationRequired": "يرجى اختيار موقع الغرض",
+  "contactMethodRequired": "يرجى اختيار طريقة تواصل واحدة على الأقل",
+  "reportCreatedSuccessfully": "تم إنشاء البلاغ بنجاح",   
+  "bountyAmountLabel": "قيمة المكافأة (دينار أردني)",
+  "bountyAmountHint": "مثال: 50",
+  "bountyAmountRequired": "يرجى إدخال قيمة المكافأة",
+  "hideIdentityLabel": "إخفاء هويتك عن المستخدمين الآخرين",
+  "uploadItemPhotosLabel": "ارفع صور الغرض (حتى 5 صور)",
+  "addMorePhotos": "إضافة المزيد",
+  "maxImagesLimit": "يمكنك رفع حتى 5 صور فقط."
+
+
 
 
 }

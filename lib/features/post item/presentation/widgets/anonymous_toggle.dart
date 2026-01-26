@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class AnonymousToggle extends StatefulWidget {
   const AnonymousToggle({super.key, required this.postAnonymously});
@@ -20,21 +21,21 @@ class _AnonymousToggleState extends State<AnonymousToggle> {
       ),
       child: Row(
         children: [
-          const Expanded(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Post Anonymously',
-                  style: TextStyle(
+                  S.current.postAnonymously,
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 SizedBox(height: 4),
                 Text(
-                  'Hide your identity from other users',
-                  style: TextStyle(
+                  S.current.hideIdentityLabel,
+                  style: const TextStyle(
                     fontSize: 12,
                     color: Colors.grey,
                   ),
