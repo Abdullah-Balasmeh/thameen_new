@@ -11,7 +11,6 @@ class HomeCubit extends Cubit<HomeState> {
   final HomeRepo homeRepo;
   HomeCubit(this.homeRepo) : super(HomeInitial());
   List<PostEntity> posts = [];
-
   String? selectedCategory;
   PostType? selectedType;
   String? selectedLocation;
