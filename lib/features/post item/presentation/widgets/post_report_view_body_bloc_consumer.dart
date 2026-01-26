@@ -4,6 +4,7 @@ import 'package:thameen/core/utils/helper/build_error_snackbar.dart';
 import 'package:thameen/core/utils/helper/build_success_snackbar.dart';
 import 'package:thameen/features/post%20item/presentation/bloc/create_post_cubit/create_post_cubit.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/post_report_view_body.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class PostReportViewBodyBlocConsumer extends StatelessWidget {
   const PostReportViewBodyBlocConsumer({
@@ -15,7 +16,7 @@ class PostReportViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<CreatePostCubit, CreatePostState>(
       listener: (context, state) {
         if (state is CreatePostSuccess) {
-          buildSuccessSnackBar(context, 'Report created successfully');
+          buildSuccessSnackBar(context, S.of(context).reportCreatedSuccessfully);
         }
         if (state is CreatePostFailure) {
           buildErrorSnackBar(context, state.errMessage);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class BountyToggle extends StatefulWidget {
   const BountyToggle({super.key, required this.hasBounty});
@@ -20,21 +21,21 @@ class _BountyToggleState extends State<BountyToggle> {
       ),
       child: Row(
         children: [
-          const Expanded(
+           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Has Bounty',
-                  style: TextStyle(
+                  S.of(context).hasBounty,
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(height: 4),
-                Text(
-                  'Show posts with bounty only',
-                  style: TextStyle(
+                const SizedBox(height: 4),
+                 Text(
+                  S.of(context).hasBountyDesc,
+                  style: const TextStyle(
                     fontSize: 12,
                     color: Colors.grey,
                   ),

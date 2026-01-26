@@ -27,7 +27,7 @@ class FirebaseAuthService {
       throw CustomException(message: mapFirebaseErrorToMessage(e.code));
     } catch (e) {
       log('Unexpected Exception => $e');
-      throw CustomException(message: S.current.errorUnknown);
+      throw CustomException(message: S.current.error);
     }
   }
 
@@ -48,7 +48,7 @@ class FirebaseAuthService {
       throw CustomException(message: mapFirebaseErrorToMessage(e.code));
     } catch (e) {
       log('Unexpected Exception => $e');
-      throw CustomException(message: S.current.errorUnknown);
+      throw CustomException(message: S.current.error);
     }
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class TermsConditionViewBody extends StatelessWidget {
   const TermsConditionViewBody({super.key});
@@ -11,108 +12,80 @@ class TermsConditionViewBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           /// Intro Card
-          _infoCard(
-            context,
-            'PLEASE READ THESE TERMS OF SERVICE (“TERMS” OR “AGREEMENT”) CAREFULLY BEFORE USING THE THAMEEN APPLICATION.\n\n'
-            'By downloading, accessing, or using the Thameen App (“App”), you agree to these Terms and our Privacy Policy. '
-            'If you do not agree, please do not use the App.',
-          ),
+          _infoCard(context, S.of(context).termsIntro),
 
           const SizedBox(height: 24),
 
           _section(
             context,
             number: '1',
-            title: 'Introduction',
+            title: S.of(context).termsSection1Title,
             body:
-                'Welcome to Thameen App (“we”, “our”, or “the Company”).\n\n'
-                'Thameen is a digital platform designed to help users report, post, and recover lost items within the Hashemite Kingdom of Jordan.',
+                S.of(context).termsSection1Body,
           ),
 
           _section(
             context,
             number: '2',
-            title: 'Acceptance of Terms',
+            title: S.of(context).termsSection2Title,
             body:
-                'By accessing or using the Services, you confirm that you have read, understood, and agree to be bound by these Terms. '
-                'If you do not agree, you must stop using the application.',
+                S.of(context).termsSection2Body,
           ),
 
           _section(
             context,
             number: '3',
-            title: 'Eligibility',
+            title: S.of(context).termsSection3Title,
             body:
-                'Thameen App may be used by minors, provided they use the application in a lawful and responsible manner. '
-                'Parents or guardians are encouraged to supervise usage.',
+                S.of(context).termsSection3Body,
           ),
 
           _section(
             context,
             number: '4',
-            title: 'Service Description',
+            title: S.of(context).termsSection4Title,
             body:
-                'Thameen App allows users to:\n\n'
-                '• Search for lost items\n'
-                '• Report items they have found\n'
-                '• Connect with item owners or finders\n'
-                '• Post descriptions and photos\n'
-                '• Receive notifications related to their posts\n\n'
-                'Thameen acts solely as a connecting platform and does not guarantee item recovery.',
+                S.of(context).termsSection4Body,
           ),
 
           _section(
             context,
             number: '5',
-            title: 'User Responsibilities',
+            title: S.of(context).termsSection5Title,
             body:
-                'Users agree to:\n\n'
-                '• Provide accurate information\n'
-                '• Avoid misleading or false reports\n'
-                '• Respect others and the law\n'
-                '• Remove content violating others’ rights\n\n'
-                'Users are fully responsible for uploaded content.',
+                S.of(context).termsSection5Body,
           ),
 
           _section(
             context,
             number: '6',
-            title: 'Prohibited Activities',
+            title: S.of(context).termsSection6Title,
             body:
-                'You may not:\n\n'
-                '• Post stolen or illegal items\n'
-                '• Claim items not belonging to you\n'
-                '• Upload offensive or harmful content\n'
-                '• Scam or deceive users\n'
-                '• Hack or disrupt the service\n\n'
-                'Violations may lead to suspension or permanent removal.',
+                S.of(context).termsSection6Body,
           ),
 
           _section(
             context,
             number: '7',
-            title: 'Privacy & Data Usage',
+            title: S.of(context).termsSection7Title,
             body:
-                'We may collect limited information such as account details, item data, and interactions.\n\n'
-                'We do not sell or share user data and comply with Jordanian privacy laws.',
+                S.of(context).termsSection7Body,
           ),
 
           _section(
             context,
             number: '8',
-            title: 'Limitation of Liability',
+            title: S.of(context).termsSection8Title,
             body:
-                'Thameen App is provided “as is”. We are not liable for lost items, user interactions, fraud, or technical issues.\n\n'
-                'Use of the app is at your own responsibility.',
+                S.of(context).termsSection8Body,
           ),
 
           _section(
             context,
             number: '9',
-            title: 'Governing Law',
+            title: S.of(context).termsSection9Title,
             body:
-                'These Terms are governed by the laws of the Hashemite Kingdom of Jordan. '
-                'Any disputes shall be resolved according to Jordanian law.',
+                S.of(context).termsSection9Body,
           ),
 
           const SizedBox(height: 32),

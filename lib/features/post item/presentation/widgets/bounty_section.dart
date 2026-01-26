@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/utils/helper/border_builder.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/section_title.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class BountySection extends StatefulWidget {
   const BountySection({
@@ -47,7 +48,7 @@ class _BountySectionState extends State<BountySection> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(title: 'Bounty (Optional)'),
+        SectionTitle(title: S.of(context).bountyOptional),
         const SizedBox(height: 16),
         Container(
           padding: const EdgeInsets.all(16),
@@ -61,12 +62,12 @@ class _BountySectionState extends State<BountySection> {
             children: [
               Row(
                 children: [
-                  const Expanded(
+                  Expanded(
                     child: Text(
-                      'Offer Bounty?',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                      S.current.offerBounty,
+                      style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -77,17 +78,17 @@ class _BountySectionState extends State<BountySection> {
                         setState(() => offerBounty = value);
                       }
                     },
-                    child: const Row(
+                    child: Row(
                       children: [
                         // YES
                         Row(
                           children: [
-                            Radio<bool>(
-                              value: true,
+                            const Radio<bool> (
+                            value: true,
                               toggleable: false,
                               activeColor: Color(0xff0D61AD),
                             ),
-                            Text('Yes'),
+                            Text(S.current.yes),
                           ],
                         ),
 
@@ -96,12 +97,12 @@ class _BountySectionState extends State<BountySection> {
                         // NO
                         Row(
                           children: [
-                            Radio<bool>(
+                            const Radio<bool>(
                               value: false,
                               toggleable: false,
                               activeColor: Color(0xff0D61AD),
                             ),
-                            Text('No'),
+                            Text(S.current.no),
                           ],
                         ),
                       ],
@@ -117,8 +118,8 @@ class _BountySectionState extends State<BountySection> {
                   controller: widget.bountyController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: 'Bounty Amount (JOD)',
-                    hintText: 'e.g., 50',
+                    labelText: S.current.bountyAmountLabel,
+                    hintText: S.current.bountyAmountHint,
                     prefixIcon: Icon(
                       Icons.attach_money,
                       color: isFocused
@@ -145,7 +146,7 @@ class _BountySectionState extends State<BountySection> {
                   autovalidateMode: widget.autovalidateMode,
                   validator: (value) {
                     if (offerBounty && (value == null || value.isEmpty)) {
-                      return 'Please enter bounty amount';
+                      return S.of(context).bountyAmountRequired;
                     }
 
                     return null;

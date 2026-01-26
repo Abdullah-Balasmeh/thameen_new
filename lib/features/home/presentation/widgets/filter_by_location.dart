@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thameen/core/constants/jordan_cities.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/drop_down_form_button_city.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class FilterByLocation extends StatelessWidget {
   const FilterByLocation({
@@ -17,20 +18,20 @@ class FilterByLocation extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Filter by Location',
+          S.of(context).filterByLocation,
           style: AppTextStyle.medium16,
         ),
         const SizedBox(height: 16),
 
         DropDownFormButtonCity(
           city: jordanCities,
-          hintText: 'Select City',
+          hintText: S.of(context).selectCity,
           prefixIcon: const Icon(Icons.location_city),
           keyboardType: TextInputType.text,
           controller: locationController,
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Please select an item location';
+              return S.of(context).selectLocationError;
             }
             return null;
           },

@@ -12,6 +12,7 @@ import 'package:thameen/features/home/domain/entities/poster_entity.dart';
 import 'package:thameen/features/home/presentation/widgets/contact_reporter_bottom_sheet.dart';
 import 'package:thameen/features/home/presentation/widgets/post_detail_item_list_tile.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
 
 class PostDetailViewBody extends StatefulWidget {
@@ -61,7 +62,7 @@ class _PostDetailViewBodyState extends State<PostDetailViewBody> {
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: Text(
-                    widget.post.postType == PostType.lost ? 'Lost' : 'Found',
+                    widget.post.postType == PostType.lost ? S.current.lost : S.current.found,
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
@@ -149,7 +150,7 @@ class _PostDetailViewBodyState extends State<PostDetailViewBody> {
               ),
             const SizedBox(height: 16),
             Text(
-              'Description',
+              S.current.description,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -167,7 +168,7 @@ class _PostDetailViewBodyState extends State<PostDetailViewBody> {
             const SizedBox(height: 16),
             DetailRow(
               icon: Icons.person,
-              label: 'Reported by',
+              label: S.current.reportedBy,
               value: widget.post.postAnonymously
                   ? 'Anonymous'
                   : '${widget.poster.firstName} ${widget.poster.lastName}',
@@ -175,13 +176,13 @@ class _PostDetailViewBodyState extends State<PostDetailViewBody> {
             const SizedBox(height: 16),
             DetailRow(
               icon: Icons.location_on,
-              label: 'Location',
+              label: S.current.location,
               value: widget.post.location,
             ),
             const SizedBox(height: 16),
             DetailRow(
               icon: Icons.calendar_today,
-              label: 'Reported Time',
+              label: S.current.reportedTime,
               value: timeAgo(widget.post.createdAt),
             ),
 
@@ -189,7 +190,7 @@ class _PostDetailViewBodyState extends State<PostDetailViewBody> {
               const SizedBox(height: 16),
               DetailRow(
                 icon: Icons.attach_money,
-                label: 'Bounty',
+                label: S.current.bounty,
                 value: '${widget.post.bountyAmount} JD',
               ),
             ],
@@ -213,7 +214,7 @@ class _PostDetailViewBodyState extends State<PostDetailViewBody> {
                 );
               },
 
-              child: Text('Contact Reporter', style: AppTextStyle.bold20),
+              child: Text(S.current.contactReporter, style: AppTextStyle.bold20),
             ),
             const SizedBox(height: 32),
           ],

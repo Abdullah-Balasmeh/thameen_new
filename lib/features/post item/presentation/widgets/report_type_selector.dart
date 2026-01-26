@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/report_type_button.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class ReportTypeSelector extends StatelessWidget {
   const ReportTypeSelector({super.key, required this.selectedType});
@@ -30,7 +31,7 @@ class ReportTypeSelector extends StatelessWidget {
             children: [
               Expanded(
                 child: ReportTypeButton(
-                  label: 'Lost',
+                  label: S.current.lost,
                   icon: Icons.search,
                   isSelected: value == PostType.lost,
                   color: AppColors.error,
@@ -42,7 +43,7 @@ class ReportTypeSelector extends StatelessWidget {
               const SizedBox(width: 8),
               Expanded(
                 child: ReportTypeButton(
-                  label: 'Found',
+                  label: S.current.found,
                   icon: Icons.done_all,
                   isSelected: value == PostType.found,
                   color: AppColors.success,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class NoReportsFound extends StatelessWidget {
   const NoReportsFound({super.key, this.isAi = false});
@@ -18,6 +19,7 @@ class NoReportsFound extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
+            S.of(context).noReportsYet,
             isAi == true ? 'No Strong Matches Found' : 'No Reports Yet',
             style: TextStyle(
               fontSize: 20,

@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/home/presentation/widgets/sort_by_container.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class SortBy extends StatelessWidget {
   const SortBy({super.key, required this.selectedSort});
 
   final ValueNotifier<String> selectedSort;
 
-  static const List<String> sortOptions = [
-    'Most Recent',
-    'Oldest First',
-    'A-Z',
-    'Z-A',
+  static List<String> sortOptions = [
+    S.current.mostRecent,
+    S.current.oldestFirst,
+    S.current.sortAZ,
+    S.current.sortZA,
   ];
 
   @override
@@ -19,7 +20,7 @@ class SortBy extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Sort By', style: AppTextStyle.medium16),
+        Text(S.current.sortBy, style: AppTextStyle.medium16),
         const SizedBox(height: 16),
 
         ValueListenableBuilder<String>(

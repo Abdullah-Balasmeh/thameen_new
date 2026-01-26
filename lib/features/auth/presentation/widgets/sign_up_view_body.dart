@@ -326,7 +326,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   if (isButtonEnabled) {
                     if (_formKey.currentState!.validate()) {
                       if (!isTermsAccepted) {
-                        buildErrorSnackBar(context, 'يجب قبول الشروط والأحكام');
+                        buildErrorSnackBar(context,S.current.signupAcceptTermsError);
                         return;
                       }
                       final local8 = _extractLocalDigits(

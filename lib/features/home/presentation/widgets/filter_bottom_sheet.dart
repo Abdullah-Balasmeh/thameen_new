@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:path/path.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/home/presentation/bloc/all_posts_cubit/home_cubit.dart';
@@ -9,6 +10,7 @@ import 'package:thameen/features/home/presentation/widgets/filter_by_location.da
 import 'package:thameen/features/home/presentation/widgets/filter_by_post_type.dart';
 import 'package:thameen/features/home/presentation/widgets/sort_by.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
 import 'package:thameen/shared/widgets/bottom_sheet_close_container.dart';
 
@@ -20,9 +22,9 @@ class FilterBottomSheet extends StatefulWidget {
 }
 
 class _FilterBottomSheetState extends State<FilterBottomSheet> {
-  final ValueNotifier<String> selectedType = ValueNotifier('All');
+  final ValueNotifier<String> selectedType = ValueNotifier(S.current.all);
   final TextEditingController locationController = TextEditingController();
-  final ValueNotifier<String> selectedSort = ValueNotifier('Most Recent');
+  final ValueNotifier<String> selectedSort = ValueNotifier(S.current.mostRecent);
   final ValueNotifier<bool> hasBounty = ValueNotifier(false);
 
   @override
@@ -73,28 +75,21 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
             Row(
               children: [
                 Text(
-                  'Filter & Sort',
+                  S.of(context).filterAndSort,
                   style: AppTextStyle.bold24,
                 ),
                 const Spacer(),
                 TextButton(
                   onPressed: () {
-                    final cubit = context.read<HomeCubit>();
-
-                    selectedType.value = 'All';
-                    selectedSort.value = 'Most Recent';
-                    hasBounty.value = false;
-                    locationController.clear();
-
-                    cubit.filterPosts(
-                      type: PostType.all,
-                      location: '',
-                      sort: 'Most Recent',
-                      hasBounty: false,
-                    );
+                    selectedType.value = S.of(context).all;
+                    selectedSort.value = S.of(context).mostRecent;
+                    setState(() {
+                      locationController.text = '';
+                    });
+                    homeCubit.filterPosts();
                   },
                   child: Text(
-                    'Reset All',
+                    S.of(context).resetAll,
                     style: AppTextStyle.medium16.copyWith(
                       color: AppColors.primary,
                     ),
@@ -127,9 +122,9 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                 log('location: ${locationController.text}');
                 log('selectedSort: ${selectedSort.value}');
                 homeCubit.filterPosts(
-                  type: selectedType.value == 'All'
+                  type: selectedType.value == S.of(context).all
                       ? PostType.all
-                      : selectedType.value == 'Lost'
+                      : selectedType.value == S.of(context).lost
                       ? PostType.lost
                       : PostType.found,
                   location: locationController.text,
@@ -139,7 +134,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                 Navigator.pop(context);
               },
               child: Text(
-                'Apply Filters',
+                S.of(context).applyFilters,
                 style: AppTextStyle.bold20,
               ),
             ),

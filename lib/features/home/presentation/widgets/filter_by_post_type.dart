@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/home/presentation/widgets/bounty_toggle.dart';
 import 'package:thameen/features/home/presentation/widgets/post_type_container.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class FilterByPostType extends StatefulWidget {
   const FilterByPostType({
@@ -18,14 +19,14 @@ class FilterByPostType extends StatefulWidget {
 }
 
 class _FilterByPostTypeState extends State<FilterByPostType> {
-  List<String> postTypes = ['All', 'Lost', 'Found'];
+  List<String> postTypes = [S.current.all, S.current.lost, S.current.found];
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Filter by Post Type',
+          S.of(context).filterByPostType,
           style: AppTextStyle.medium16,
         ),
         const SizedBox(height: 16),
