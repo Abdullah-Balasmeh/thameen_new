@@ -364,8 +364,19 @@
   "hideIdentityLabel": "إخفاء هويتك عن المستخدمين الآخرين",
   "uploadItemPhotosLabel": "ارفع صور الغرض (حتى 5 صور)",
   "addMorePhotos": "إضافة المزيد",
-  "maxImagesLimit": "يمكنك رفع حتى 5 صور فقط."
-
+  "maxImagesLimit": "يمكنك رفع حتى 5 صور فقط.",
+  "selectPhotoSource": "اختر مصدر الصورة",
+  "gallery": "المعرض",
+  "camera": "الكاميرا",
+  "online": "متصل",
+  "selectedImages": "الصور المحددة",
+  "sendImages": "إرسال الصور",
+  "today": "اليوم",
+  "yesterday": "أمس",
+  "noChatsYet": "لا توجد محادثات بعد...",
+  "typeMessageHint": "اكتب رسالة",
+  "loading": "جارٍ التحميل...",
+  "anonymous": "مجهول"
 
 
 

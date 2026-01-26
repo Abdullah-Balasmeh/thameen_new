@@ -2653,6 +2653,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Select Photo Source`
+  String get selectPhotoSource {
+    return Intl.message(
+      'Select Photo Source',
+      name: 'selectPhotoSource',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gallery`
+  String get gallery {
+    return Intl.message('Gallery', name: 'gallery', desc: '', args: []);
+  }
+
+  /// `Camera`
+  String get camera {
+    return Intl.message('Camera', name: 'camera', desc: '', args: []);
+  }
+
+  /// `Online`
+  String get online {
+    return Intl.message('Online', name: 'online', desc: '', args: []);
+  }
+
+  /// `Selected Images`
+  String get selectedImages {
+    return Intl.message(
+      'Selected Images',
+      name: 'selectedImages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Images`
+  String get sendImages {
+    return Intl.message('Send Images', name: 'sendImages', desc: '', args: []);
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message('Today', name: 'today', desc: '', args: []);
+  }
+
+  /// `Yesterday`
+  String get yesterday {
+    return Intl.message('Yesterday', name: 'yesterday', desc: '', args: []);
+  }
+
+  /// `No chats yet...`
+  String get noChatsYet {
+    return Intl.message(
+      'No chats yet...',
+      name: 'noChatsYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type a message`
+  String get typeMessageHint {
+    return Intl.message(
+      'Type a message',
+      name: 'typeMessageHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading...`
+  String get loading {
+    return Intl.message('Loading...', name: 'loading', desc: '', args: []);
+  }
+
+  /// `Anonymous`
+  String get anonymous {
+    return Intl.message('Anonymous', name: 'anonymous', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
