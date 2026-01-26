@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:thameen/generated/l10n.dart';
 
-class SwitchNotificationsListTile extends StatelessWidget {
+class SwitchNotificationsListTile extends StatefulWidget {
   const SwitchNotificationsListTile({super.key});
 
   @override
+  State<SwitchNotificationsListTile> createState() =>
+      _SwitchNotificationsListTileState();
+}
+
+class _SwitchNotificationsListTileState
+    extends State<SwitchNotificationsListTile> {
+  bool allowedNotifications = false;
+  @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    bool allowedNotifications = false;
     return SwitchListTile(
       contentPadding: EdgeInsets.zero,
       dense: true,
@@ -33,7 +40,9 @@ class SwitchNotificationsListTile extends StatelessWidget {
       value: allowedNotifications,
       onChanged: (value) {
         HapticFeedback.lightImpact();
-        allowedNotifications = value;
+        setState(() {
+          allowedNotifications = value;
+        });
       },
     );
   }
