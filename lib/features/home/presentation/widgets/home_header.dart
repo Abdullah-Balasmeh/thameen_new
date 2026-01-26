@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/home/presentation/widgets/stat_card.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key, required this.postsCount});
@@ -22,14 +23,14 @@ class HomeHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Welcome back',
+            S.of(context).welcomeBack,
             style: AppTextStyle.medium16.copyWith(
               color: Colors.white,
             ),
           ),
           const SizedBox(height: 4),
           Text(
-            'What did you lose or found today?',
+            S.of(context).whatDidYouLoseOrFindToday,
             style: AppTextStyle.bold24.copyWith(
               color: Colors.white,
             ),
@@ -38,7 +39,7 @@ class HomeHeader extends StatelessWidget {
           Row(
             children: [
               StatCard(
-                title: 'Lost Items',
+                title: S.of(context).lostItems,
                 count: postsCount['lost'] != null
                     ? postsCount['lost'].toString()
                     : '0',
@@ -46,7 +47,7 @@ class HomeHeader extends StatelessWidget {
               ),
               const SizedBox(width: 12),
               StatCard(
-                title: 'Found Items',
+                title: S.of(context).foundItems,
                 count: postsCount['found'] != null
                     ? postsCount['found'].toString()
                     : '0',

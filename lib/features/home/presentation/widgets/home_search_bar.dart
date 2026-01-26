@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/features/home/presentation/bloc/all_posts_cubit/home_cubit.dart';
 import 'package:thameen/features/home/presentation/widgets/filter_bottom_sheet.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class HomeSearchBar extends StatelessWidget {
   const HomeSearchBar({super.key});
@@ -24,7 +25,7 @@ class HomeSearchBar extends StatelessWidget {
         ),
         child: TextField(
           decoration: InputDecoration(
-            hintText: 'Search for something...',
+            hintText: S.of(context).searchHint,
             prefixIcon: const Icon(Icons.search, color: AppColors.primary),
             suffixIcon: IconButton(
               onPressed: () {

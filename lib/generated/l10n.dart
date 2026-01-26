@@ -1189,16 +1189,6 @@ class S {
     );
   }
 
-  /// `No Reports Yet`
-  String get noReportsYet {
-    return Intl.message(
-      'No Reports Yet',
-      name: 'noReportsYet',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Your lost & found reports will appear here`
   String get reportsWillAppearHere {
     return Intl.message(
@@ -1477,11 +1467,6 @@ class S {
   /// `Location`
   String get location {
     return Intl.message('Location', name: 'location', desc: '', args: []);
-  }
-
-  /// `Select City`
-  String get selectCity {
-    return Intl.message('Select City', name: 'selectCity', desc: '', args: []);
   }
 
   /// `Bounty (Optional)`
@@ -2287,6 +2272,261 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `All Items`
+  String get allItems {
+    return Intl.message('All Items', name: 'allItems', desc: '', args: []);
+  }
+
+  /// `Electronics`
+  String get electronics {
+    return Intl.message('Electronics', name: 'electronics', desc: '', args: []);
+  }
+
+  /// `Documents`
+  String get documents {
+    return Intl.message('Documents', name: 'documents', desc: '', args: []);
+  }
+
+  /// `Accessories`
+  String get accessories {
+    return Intl.message('Accessories', name: 'accessories', desc: '', args: []);
+  }
+
+  /// `Money`
+  String get money {
+    return Intl.message('Money', name: 'money', desc: '', args: []);
+  }
+
+  /// `Clothing`
+  String get clothing {
+    return Intl.message('Clothing', name: 'clothing', desc: '', args: []);
+  }
+
+  /// `Bags`
+  String get bags {
+    return Intl.message('Bags', name: 'bags', desc: '', args: []);
+  }
+
+  /// `Pets`
+  String get pets {
+    return Intl.message('Pets', name: 'pets', desc: '', args: []);
+  }
+
+  /// `Other`
+  String get other {
+    return Intl.message('Other', name: 'other', desc: '', args: []);
+  }
+
+  /// `Search for something...`
+  String get searchHint {
+    return Intl.message(
+      'Search for something...',
+      name: 'searchHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Has Bounty`
+  String get hasBounty {
+    return Intl.message('Has Bounty', name: 'hasBounty', desc: '', args: []);
+  }
+
+  /// `Show posts with bounty only`
+  String get hasBountyDesc {
+    return Intl.message(
+      'Show posts with bounty only',
+      name: 'hasBountyDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact Options`
+  String get contactOptions {
+    return Intl.message(
+      'Contact Options',
+      name: 'contactOptions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start Chat`
+  String get startChat {
+    return Intl.message('Start Chat', name: 'startChat', desc: '', args: []);
+  }
+
+  /// `Send Email`
+  String get sendEmail {
+    return Intl.message('Send Email', name: 'sendEmail', desc: '', args: []);
+  }
+
+  /// `Call Phone`
+  String get callPhone {
+    return Intl.message('Call Phone', name: 'callPhone', desc: '', args: []);
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message('Error', name: 'error', desc: '', args: []);
+  }
+
+  /// `You can not chat with yourself`
+  String get cannotChatYourself {
+    return Intl.message(
+      'You can not chat with yourself',
+      name: 'cannotChatYourself',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OK`
+  String get ok {
+    return Intl.message('OK', name: 'ok', desc: '', args: []);
+  }
+
+  /// `Filter & Sort`
+  String get filterAndSort {
+    return Intl.message(
+      'Filter & Sort',
+      name: 'filterAndSort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset All`
+  String get resetAll {
+    return Intl.message('Reset All', name: 'resetAll', desc: '', args: []);
+  }
+
+  /// `Apply Filters`
+  String get applyFilters {
+    return Intl.message(
+      'Apply Filters',
+      name: 'applyFilters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get all {
+    return Intl.message('All', name: 'all', desc: '', args: []);
+  }
+
+  /// `Most Recent`
+  String get mostRecent {
+    return Intl.message('Most Recent', name: 'mostRecent', desc: '', args: []);
+  }
+
+  /// `Filter by Location`
+  String get filterByLocation {
+    return Intl.message(
+      'Filter by Location',
+      name: 'filterByLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select City`
+  String get selectCity {
+    return Intl.message('Select City', name: 'selectCity', desc: '', args: []);
+  }
+
+  /// `Please select an item location`
+  String get selectLocationError {
+    return Intl.message(
+      'Please select an item location',
+      name: 'selectLocationError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Reports Yet`
+  String get noReportsYet {
+    return Intl.message(
+      'No Reports Yet',
+      name: 'noReportsYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bounty`
+  String get bounty {
+    return Intl.message('Bounty', name: 'bounty', desc: '', args: []);
+  }
+
+  /// `Contact Reporter`
+  String get contactReporter {
+    return Intl.message(
+      'Contact Reporter',
+      name: 'contactReporter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter by Post Type`
+  String get filterByPostType {
+    return Intl.message(
+      'Filter by Post Type',
+      name: 'filterByPostType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message('Description', name: 'description', desc: '', args: []);
+  }
+
+  /// `Reported by`
+  String get reportedBy {
+    return Intl.message('Reported by', name: 'reportedBy', desc: '', args: []);
+  }
+
+  /// `Reported Time`
+  String get reportedTime {
+    return Intl.message(
+      'Reported Time',
+      name: 'reportedTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oldest First`
+  String get oldestFirst {
+    return Intl.message(
+      'Oldest First',
+      name: 'oldestFirst',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A-Z`
+  String get sortAZ {
+    return Intl.message('A-Z', name: 'sortAZ', desc: '', args: []);
+  }
+
+  /// `Z-A`
+  String get sortZA {
+    return Intl.message('Z-A', name: 'sortZA', desc: '', args: []);
+  }
+
+  /// `Sort By`
+  String get sortBy {
+    return Intl.message('Sort By', name: 'sortBy', desc: '', args: []);
   }
 }
 

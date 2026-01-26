@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ThameenBlueTitle": MessageLookupByLibrary.simpleMessage("Thameen"),
     "about": MessageLookupByLibrary.simpleMessage("About"),
     "accessControl": MessageLookupByLibrary.simpleMessage("Access & Control"),
+    "accessories": MessageLookupByLibrary.simpleMessage("Accessories"),
     "accountCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Account created successfully",
     ),
@@ -59,17 +60,26 @@ class MessageLookup extends MessageLookupByLibrary {
       "How does the AI Search work?",
     ),
     "ajloun": MessageLookupByLibrary.simpleMessage("Ajloun"),
+    "all": MessageLookupByLibrary.simpleMessage("All"),
+    "allItems": MessageLookupByLibrary.simpleMessage("All Items"),
     "allowingToPaste": MessageLookupByLibrary.simpleMessage(
       "Allowing to paste",
     ),
     "amman": MessageLookupByLibrary.simpleMessage("Amman"),
+    "applyFilters": MessageLookupByLibrary.simpleMessage("Apply Filters"),
     "aqaba": MessageLookupByLibrary.simpleMessage("Aqaba"),
     "assistYouMessage": MessageLookupByLibrary.simpleMessage(
       "We\'re here to assist you with any questions",
     ),
+    "bags": MessageLookupByLibrary.simpleMessage("Bags"),
     "balqa": MessageLookupByLibrary.simpleMessage("Balqa"),
+    "bounty": MessageLookupByLibrary.simpleMessage("Bounty"),
     "bountyOptional": MessageLookupByLibrary.simpleMessage("Bounty (Optional)"),
     "browse": MessageLookupByLibrary.simpleMessage("Browse..."),
+    "callPhone": MessageLookupByLibrary.simpleMessage("Call Phone"),
+    "cannotChatYourself": MessageLookupByLibrary.simpleMessage(
+      "You can not chat with yourself",
+    ),
     "categories": MessageLookupByLibrary.simpleMessage("Categories"),
     "changePassword": MessageLookupByLibrary.simpleMessage("Change Password"),
     "changePasswordTitle": MessageLookupByLibrary.simpleMessage(
@@ -78,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "chatWithUs": MessageLookupByLibrary.simpleMessage(
       "Chat with us instantly",
     ),
+    "clothing": MessageLookupByLibrary.simpleMessage("Clothing"),
     "codeVerification": MessageLookupByLibrary.simpleMessage(
       "Code Verification",
     ),
@@ -88,10 +99,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "connectWithUs": MessageLookupByLibrary.simpleMessage("Connect With Us"),
     "contactMethods": MessageLookupByLibrary.simpleMessage("Contact Methods"),
+    "contactOptions": MessageLookupByLibrary.simpleMessage("Contact Options"),
     "contactPrivacy": MessageLookupByLibrary.simpleMessage("Contact Privacy"),
     "contactPrivacyDescription": MessageLookupByLibrary.simpleMessage(
       "When you tap \'Contact Reporter\', your email or phone may be shared. We recommend using in-app chat for privacy.",
     ),
+    "contactReporter": MessageLookupByLibrary.simpleMessage("Contact Reporter"),
     "contactUs": MessageLookupByLibrary.simpleMessage("Contact Us"),
     "createNewPassword": MessageLookupByLibrary.simpleMessage(
       "Create New Password",
@@ -104,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your data is stored on secure servers with backups. We retain information as long as necessary or required by law.",
     ),
     "daysAgo": MessageLookupByLibrary.simpleMessage("days ago"),
+    "description": MessageLookupByLibrary.simpleMessage("Description"),
     "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
       "Didn\'t receive the code?",
     ),
@@ -111,6 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "directChatDescription": MessageLookupByLibrary.simpleMessage(
       "Connect instantly with reporters.",
     ),
+    "documents": MessageLookupByLibrary.simpleMessage("Documents"),
     "easyReporting": MessageLookupByLibrary.simpleMessage("Easy Reporting"),
     "easyReportingDescription": MessageLookupByLibrary.simpleMessage(
       "Quickly report lost or found items.",
@@ -120,6 +135,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "editProfileTitle": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+    "electronics": MessageLookupByLibrary.simpleMessage("Electronics"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "emailResponseTime": MessageLookupByLibrary.simpleMessage(
       "Get help via email within 24 hours",
@@ -137,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterValid6DigitCodeError": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid 6-digit OTP",
     ),
+    "error": MessageLookupByLibrary.simpleMessage("Error"),
     "errorAccountExistsWithDifferentCredential":
         MessageLookupByLibrary.simpleMessage(
           "This account was registered using a different method.",
@@ -190,8 +207,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "Weak password. Please choose a stronger one.",
     ),
     "faq": MessageLookupByLibrary.simpleMessage("Frequently Asked Questions"),
+    "filterAndSort": MessageLookupByLibrary.simpleMessage("Filter & Sort"),
+    "filterByLocation": MessageLookupByLibrary.simpleMessage(
+      "Filter by Location",
+    ),
+    "filterByPostType": MessageLookupByLibrary.simpleMessage(
+      "Filter by Post Type",
+    ),
     "found": MessageLookupByLibrary.simpleMessage("Found"),
     "foundItems": MessageLookupByLibrary.simpleMessage("Found Items"),
+    "hasBounty": MessageLookupByLibrary.simpleMessage("Has Bounty"),
+    "hasBountyDesc": MessageLookupByLibrary.simpleMessage(
+      "Show posts with bounty only",
+    ),
     "helpAndSupportTitle": MessageLookupByLibrary.simpleMessage(
       "Help & Support",
     ),
@@ -249,6 +277,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "mafraq": MessageLookupByLibrary.simpleMessage("Mafraq"),
     "messages": MessageLookupByLibrary.simpleMessage("Messages"),
     "mobilePhone": MessageLookupByLibrary.simpleMessage("Mobile Phone"),
+    "money": MessageLookupByLibrary.simpleMessage("Money"),
+    "mostRecent": MessageLookupByLibrary.simpleMessage("Most Recent"),
     "myReports": MessageLookupByLibrary.simpleMessage("My Reports"),
     "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
     "newPasswordLabel": MessageLookupByLibrary.simpleMessage("New Password"),
@@ -257,7 +287,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noReportsYet": MessageLookupByLibrary.simpleMessage("No Reports Yet"),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
     "offerBounty": MessageLookupByLibrary.simpleMessage("Offer Bounty"),
+    "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
+    "oldestFirst": MessageLookupByLibrary.simpleMessage("Oldest First"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "What is Thameen? Thameen is an application that helps you find your lost items as easily as possible, connecting you to a world of lost items with just a click of a button.",
     ),
@@ -276,6 +308,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Get Started",
     ),
     "onboardingSkipButton": MessageLookupByLibrary.simpleMessage("Skip"),
+    "other": MessageLookupByLibrary.simpleMessage("Other"),
     "otpCompleted": MessageLookupByLibrary.simpleMessage("Completed"),
     "otpResentSuccessfully": MessageLookupByLibrary.simpleMessage(
       "OTP resent successfully",
@@ -290,6 +323,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordResetSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Password has been reset successfully",
     ),
+    "pets": MessageLookupByLibrary.simpleMessage("Pets"),
     "phoneSupport": MessageLookupByLibrary.simpleMessage("Phone Support"),
     "photos": MessageLookupByLibrary.simpleMessage("Photos"),
     "photosOptional": MessageLookupByLibrary.simpleMessage(
@@ -322,10 +356,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "reportLostItem": MessageLookupByLibrary.simpleMessage(
       "How do I report a lost item?",
     ),
+    "reportedBy": MessageLookupByLibrary.simpleMessage("Reported by"),
+    "reportedTime": MessageLookupByLibrary.simpleMessage("Reported Time"),
     "reportsWillAppearHere": MessageLookupByLibrary.simpleMessage(
       "Your lost & found reports will appear here",
     ),
     "resendCode": MessageLookupByLibrary.simpleMessage("Resend"),
+    "resetAll": MessageLookupByLibrary.simpleMessage("Reset All"),
     "resetPasswordButton": MessageLookupByLibrary.simpleMessage(
       "Reset Password",
     ),
@@ -334,6 +371,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "salt": MessageLookupByLibrary.simpleMessage("Salt"),
     "searchForSomething": MessageLookupByLibrary.simpleMessage(
+      "Search for something...",
+    ),
+    "searchHint": MessageLookupByLibrary.simpleMessage(
       "Search for something...",
     ),
     "securityAndPrivacy": MessageLookupByLibrary.simpleMessage(
@@ -347,6 +387,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectCategory": MessageLookupByLibrary.simpleMessage("Select Category"),
     "selectCity": MessageLookupByLibrary.simpleMessage("Select City"),
+    "selectLocationError": MessageLookupByLibrary.simpleMessage(
+      "Please select an item location",
+    ),
+    "sendEmail": MessageLookupByLibrary.simpleMessage("Send Email"),
     "sendVerificationCodeInfo": MessageLookupByLibrary.simpleMessage(
       "Don\'t worry, just write your email address and we will send you a verification code.",
     ),
@@ -427,9 +471,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "smartNotificationsDescription": MessageLookupByLibrary.simpleMessage(
       "Get notified about potential matches.",
     ),
+    "sortAZ": MessageLookupByLibrary.simpleMessage("A-Z"),
+    "sortBy": MessageLookupByLibrary.simpleMessage("Sort By"),
+    "sortZA": MessageLookupByLibrary.simpleMessage("Z-A"),
     "startCapturing": MessageLookupByLibrary.simpleMessage(
       "Start capturing photos and videos",
     ),
+    "startChat": MessageLookupByLibrary.simpleMessage("Start Chat"),
     "submitReport": MessageLookupByLibrary.simpleMessage("Submit Report"),
     "support": MessageLookupByLibrary.simpleMessage("Support"),
     "supportAndHelp": MessageLookupByLibrary.simpleMessage("Support & Help"),

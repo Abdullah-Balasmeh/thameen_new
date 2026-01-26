@@ -147,7 +147,7 @@
 
   "profileUpdatedSuccessfully": "Profile updated successfully",
 
-  "noReportsYet": "No Reports Yet",
+  
   "reportsWillAppearHere": "Your lost & found reports will appear here",
   "update": "Update",
 
@@ -182,7 +182,7 @@
   "selectCategory": "Select Category",
   "itemDescription": "Item Description",
   "location": "Location",
-  "selectCity": "Select City",
+
   "bountyOptional": "Bounty (Optional)",
   "no": "No",
   "yes": "Yes",
@@ -299,6 +299,61 @@
   "termsSection9Title": "Governing Law",
   "termsSection9Body": "These Terms are governed by the laws of the Hashemite Kingdom of Jordan. Any disputes shall be resolved according to Jordanian law.",
 
-  "termsAndConditionsTitle": "Terms & Conditions"
+  "termsAndConditionsTitle": "Terms & Conditions",
+
+
+  "allItems": "All Items",
+  "electronics": "Electronics",
+  "documents": "Documents",
+  "accessories": "Accessories",
+  "money": "Money",
+  "clothing": "Clothing",
+  "bags": "Bags",
+  "pets": "Pets",
+  "other": "Other",
+
+  "searchHint": "Search for something...",
+
+
+
+  "hasBounty": "Has Bounty",
+  "hasBountyDesc": "Show posts with bounty only",
+
+  "contactOptions": "Contact Options",
+  "startChat": "Start Chat",
+  "sendEmail": "Send Email",
+  "callPhone": "Call Phone",
+  "error": "Error",
+  "cannotChatYourself": "You can not chat with yourself",
+  "ok": "OK",
+
+  "filterAndSort": "Filter & Sort",
+  "resetAll": "Reset All",
+  "applyFilters": "Apply Filters",
+  "all": "All",
+  "mostRecent": "Most Recent",
+
+
+  "filterByLocation": "Filter by Location",
+  "selectCity": "Select City",
+  "selectLocationError": "Please select an item location",
+
+  "noReportsYet": "No Reports Yet"
+
+
+,
+  "bounty": "Bounty",
+  "contactReporter": "Contact Reporter",
+
+  "filterByPostType": "Filter by Post Type",
+
+  "description": "Description",
+  "reportedBy": "Reported by",
+  "reportedTime": "Reported Time",
+
+  "oldestFirst": "Oldest First",
+  "sortAZ": "A-Z",
+  "sortZA": "Z-A",
+  "sortBy": "Sort By"
 
 }

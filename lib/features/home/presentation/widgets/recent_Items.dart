@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/home/presentation/bloc/all_posts_cubit/home_cubit.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class RecentItems extends StatelessWidget {
   const RecentItems({super.key});
@@ -18,7 +19,7 @@ class RecentItems extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Recent Items',
+                S.of(context).recentItems,
                 style: AppTextStyle.bold24.copyWith(
                   color: AppColors.primary,
                 ),
@@ -26,11 +27,11 @@ class RecentItems extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   context.read<HomeCubit>().filterPosts(
-                    category: 'All Items',
+                    category: S.of(context).allItems,
                   );
                 },
                 child: Text(
-                  'View All',
+                  S.of(context).viewAll,
                   style: AppTextStyle.medium16.copyWith(
                     color: AppColors.primary,
                     decoration: TextDecoration.underline,

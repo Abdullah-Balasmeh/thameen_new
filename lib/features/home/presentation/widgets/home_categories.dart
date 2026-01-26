@@ -6,6 +6,7 @@ import 'package:thameen/features/base/data/models/category.dart';
 import 'package:thameen/features/home/presentation/bloc/all_posts_cubit/home_cubit.dart';
 import 'package:thameen/features/home/presentation/widgets/active_home_category_card.dart';
 import 'package:thameen/features/home/presentation/widgets/non_active_home_category_card.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class HomeCategories extends StatefulWidget {
   const HomeCategories({super.key});
@@ -17,49 +18,49 @@ class HomeCategories extends StatefulWidget {
 class _HomeCategoriesState extends State<HomeCategories> {
   final List<Category> categories = [
     Category(
-      name: 'All Items',
+      name: S.current.categories,
       icons: Icons.menu_rounded,
       color: Colors.orange,
     ),
     Category(
-      name: 'Electronics',
+      name: S.current.electronics,
       icons: Icons.devices,
       color: Colors.blue,
     ),
     Category(
-      name: 'Documents',
+      name: S.current.documents,
       icons: Icons.edit_document,
       color: Colors.purple,
     ),
     Category(
-      name: 'Accessories',
+      name: S.current.accessories,
       icons: Icons.watch,
       color: Colors.deepOrangeAccent,
     ),
     Category(
-      name: 'Money',
+      name: S.current.money,
       icons: Icons.money,
       color: Colors.green,
     ),
     Category(
-      name: 'Clothing',
+      name: S.current.clothing,
       icons: Icons.dry_cleaning,
       color: Colors.pink,
     ),
 
     Category(
-      name: 'Bags',
+      name: S.current.bags,
       icons: Icons.shopping_bag,
       color: Colors.teal,
     ),
     Category(
-      name: 'Pets',
+      name: S.current.pets,
       icons: Icons.pets,
       color: Colors.brown,
     ),
 
     Category(
-      name: 'Other',
+      name: S.current.other,
       icons: Icons.more_horiz,
       color: Colors.grey,
     ),
@@ -74,7 +75,7 @@ class _HomeCategoriesState extends State<HomeCategories> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
-            'Categories',
+            S.current.categories,
             style: AppTextStyle.bold24.copyWith(
               color: AppColors.primary,
             ),

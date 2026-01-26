@@ -9,6 +9,7 @@ import 'package:thameen/features/home/presentation/bloc/all_posts_cubit/home_cub
 import 'package:thameen/features/home/presentation/views/home_view.dart';
 import 'package:thameen/features/post%20item/presentation/views/post_report_view.dart';
 import 'package:thameen/features/profile/presentation/views/profile_view.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/services/app_lifecycle_handler.dart';
 import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 import 'package:thameen/shared/services/user_presence_service.dart';
@@ -35,11 +36,11 @@ class _BaseViewState extends State<BaseView> {
     const ProfileView(),
   ];
   List<String> titles = [
-    'Thameen',
-    'AI Search',
-    'Post item',
-    'Messages',
-    'Profile',
+    S.current.thameen,
+    S.current.aiSearch,
+    S.current.postItem,
+    S.current.messages,
+    S.current.profile,
   ];
   late AppLifecycleHandler _lifecycleHandler;
 
@@ -111,26 +112,26 @@ class _BaseViewState extends State<BaseView> {
       type: BottomNavigationBarType.fixed,
       selectedItemColor: AppColors.primary,
       unselectedItemColor: Theme.of(context).iconTheme.color,
-      items: const [
+      items: [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
+          icon: const Icon(Icons.home),
+          label: S.current.home,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.psychology),
-          label: 'AI Search',
+          icon: const Icon(Icons.psychology),
+          label: S.current.aiSearch,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.post_add),
-          label: 'Post item',
+          icon: const Icon(Icons.post_add),
+          label: S.current.postItem,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.chat_bubble_outline),
-          label: 'Messages',
+          icon: const Icon(Icons.chat_bubble_outline),
+          label: S.current.messages,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'Profile',
+          icon: const Icon(Icons.person),
+          label: S.current.profile,
         ),
       ],
     );

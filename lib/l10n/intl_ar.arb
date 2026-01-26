@@ -108,7 +108,7 @@
   "daysAgo": "أيام مضت",
   "hoursAgo": "ساعات مضت",
 
-  "aiSearch": "بحث بالذكاء الاصطناعي",
+  "aiSearch": "البحث الذكي",
   "postItem": "نشر غرض",
   "messages": "الرسائل",
   "thameen": "ثمين",
@@ -300,5 +300,57 @@
   "termsSection9Title": "القانون الحاكم",
   "termsSection9Body": "تخضع هذه الشروط لقوانين المملكة الأردنية الهاشمية. ويتم حل أي نزاعات وفقًا للقانون الأردني.",
 
-  "termsAndConditionsTitle": "الشروط والأحكام"
+  "termsAndConditionsTitle": "الشروط والأحكام",
+
+
+  "allItems": "جميع الأغراض",
+  "electronics": "إلكترونيات",
+  "documents": "مستندات",
+  "accessories": "إكسسوارات",
+  "money": "أموال",
+  "clothing": "ملابس",
+  "bags": "حقائب",
+  "pets": "حيوانات أليفة",
+  "other": "أخرى",
+
+  "searchHint": "ابحث عن شيء...",
+
+
+
+  "hasBounty": "يحتوي على مكافأة",
+  "hasBountyDesc": "عرض المنشورات التي تحتوي على مكافأة فقط",
+
+  "contactOptions": "خيارات التواصل",
+  "startChat": "بدء محادثة",
+  "sendEmail": "إرسال بريد",
+  "callPhone": "الاتصال",
+  "error": "خطأ",
+  "cannotChatWithYourself": "لا يمكنك الدردشة مع نفسك",
+  "ok": "موافق",
+
+  "filterAndSort": "فلترة وترتيب",
+  "resetAll": "إعادة تعيين",
+  "applyFilters": "تطبيق الفلاتر",
+  "all": "الكل",
+  "mostRecent": "الأحدث",
+
+
+  "filterByLocation": "فلترة حسب الموقع",
+
+  "selectLocationError": "يرجى اختيار موقع الغرض",
+
+  "filterByPostType": "فلترة حسب نوع المنشور",
+
+  "description": "الوصف",
+  "reportedBy": "تم الإبلاغ بواسطة",
+  "reportedTime": "وقت الإبلاغ",
+  "bounty": "مكافأة",
+  "contactReporter": "تواصل مع المبلّغ",
+
+  "oldestFirst": "الأقدم أولاً",
+  "sortAZ": "من أ إلى ي",
+  "sortZA": "من ي إلى أ",
+  "sortBy": "الترتيب حسب"
+
+
 }

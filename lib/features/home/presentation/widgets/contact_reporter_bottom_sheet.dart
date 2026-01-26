@@ -9,6 +9,7 @@ import 'package:thameen/features/chat/presentation/views/chat_detail_view.dart';
 import 'package:thameen/features/home/domain/entities/poster_entity.dart';
 import 'package:thameen/features/home/presentation/widgets/contact_option.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 import 'package:thameen/shared/widgets/bottom_sheet_close_container.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -39,7 +40,7 @@ class ContactReporterBottomSheet extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16),
             child: Text(
-              'Contact Options',
+              S.of(context).contactOptions,
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -51,7 +52,7 @@ class ContactReporterBottomSheet extends StatelessWidget {
             const Divider(height: 1),
             ContactOption(
               icon: Icons.chat_bubble_outline,
-              title: 'Start Chat',
+              title: S.of(context).startChat,
               iconColor: AppColors.primary,
               onTap: () async {
                 Navigator.pop(context);
@@ -63,12 +64,12 @@ class ContactReporterBottomSheet extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: const Text('Error'),
-                      content: const Text('You can not chat with yourself'),
+                      title: Text(S.of(context).error),
+                      content: Text(S.of(context).cannotChatYourself),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(context),
-                          child: const Text('OK'),
+                          child: Text(S.of(context).ok),
                         ),
                       ],
                     ),
@@ -98,7 +99,7 @@ class ContactReporterBottomSheet extends StatelessWidget {
             const Divider(height: 1),
             ContactOption(
               icon: Icons.email_outlined,
-              title: 'Send Email',
+              title: S.of(context).sendEmail,
               subtitle: poster.email,
               iconColor: AppColors.primary,
               onTap: () async {
@@ -122,7 +123,7 @@ class ContactReporterBottomSheet extends StatelessWidget {
             const Divider(height: 1),
             ContactOption(
               icon: Icons.phone_outlined,
-              title: 'Call Phone',
+              title: S.of(context).callPhone,
               subtitle: poster.phoneNumber,
               iconColor: AppColors.primary,
               onTap: () async {
