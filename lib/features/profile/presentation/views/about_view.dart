@@ -115,40 +115,40 @@ class AboutView extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Features
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Key Features',
-                    style: TextStyle(
+                    S.of(context).keyFeatures,
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primary,
                     ),
                   ),
-                  SizedBox(height: 12),
+                  const SizedBox(height: 12),
                   _FeatureItem(
                     icon: Icons.search,
-                    title: 'AI-Powered Search',
+                    title: S.of(context).aiPoweredSearch,
                     description:
-                        'Upload a photo and let AI find visual matches',
+                        S.of(context).aiPoweredSearchDescription,
                   ),
                   _FeatureItem(
                     icon: Icons.post_add,
-                    title: 'Easy Reporting',
-                    description: 'Quickly report lost or found items',
+                    title: S.of(context).easyReporting,
+                    description: S.of(context).easyReportingDescription,
                   ),
                   _FeatureItem(
                     icon: Icons.chat_bubble_outline,
-                    title: 'Direct Chat',
-                    description: 'Connect instantly with item reporters',
+                    title: S.of(context).directChat,
+                    description: S.of(context).directChatDesc,
                   ),
                   _FeatureItem(
                     icon: Icons.notifications_active,
-                    title: 'Smart Notifications',
-                    description: 'Get notified about potential matches',
+                    title: S.of(context).smartNotifications,
+                    description: S.of(context).smartNotificationsDescription,
                   ),
                 ],
               ),
@@ -162,9 +162,9 @@ class AboutView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Connect With Us',
-                    style: TextStyle(
+                  Text(
+                    S.of(context).connectWithUs,
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primary,
@@ -225,30 +225,30 @@ class AboutView extends StatelessWidget {
               child: Column(
                 children: [
                   _LegalLink(
-                    title: 'Terms of Service',
+                    title: S.of(context).termsOfService,
                     onTap: () {
                       // TODO: Navigate to terms of service
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Terms of Service')),
+                        SnackBar(content: Text(S.of(context).termsOfService)),
                       );
                     },
                   ),
                   _LegalLink(
-                    title: 'Privacy Policy',
+                    title: S.of(context).privacyPolicy,
                     onTap: () {
                       Navigator.pop(context);
                       // Navigate to privacy screen
                     },
                   ),
                   _LegalLink(
-                    title: 'Licenses',
+                    title: S.of(context).licenses,
                     onTap: () {
                       showLicensePage(
                         context: context,
-                        applicationName: 'Thameen',
+                        applicationName: S.of(context).thameen,
                         applicationVersion: '1.0.0',
                         applicationLegalese:
-                            '© 2025 Thameen App. All rights reserved.',
+                            S.of(context).applicationLegalese,
                       );
                     },
                   ),
@@ -263,21 +263,21 @@ class AboutView extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    '© 2025 Thameen App',
+                    S.of(context).copyright,
                     style: AppTextStyle.medium12.copyWith(
                       color: AppTextStyle.medium14.color,
                     ),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'All rights reserved',
+                    S.of(context).allRightsReserved,
                     style: AppTextStyle.medium12.copyWith(
                       color: AppTextStyle.medium14.color,
                     ),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'Made with ❤️ in Jordan',
+                    S.of(context).madeInJordan,
                     style: AppTextStyle.medium12.copyWith(
                       color: AppTextStyle.medium14.color,
                     ),

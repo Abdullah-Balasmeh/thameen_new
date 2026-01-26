@@ -74,6 +74,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "amman": MessageLookupByLibrary.simpleMessage("Amman"),
     "anonymous": MessageLookupByLibrary.simpleMessage("Anonymous"),
+    "applicationLegalese": MessageLookupByLibrary.simpleMessage(
+      "© 2025 Thameen App. All rights reserved.",
+    ),
     "applyFilters": MessageLookupByLibrary.simpleMessage("Apply Filters"),
     "aqaba": MessageLookupByLibrary.simpleMessage("Aqaba"),
     "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
@@ -107,6 +110,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Change Password",
     ),
     "chatWithUs": MessageLookupByLibrary.simpleMessage(
+      "Chat with us instantly",
+    ),
+    "chatWithUsInstantly": MessageLookupByLibrary.simpleMessage(
       "Chat with us instantly",
     ),
     "clothing": MessageLookupByLibrary.simpleMessage("Clothing"),
@@ -172,6 +178,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "editPhoto": MessageLookupByLibrary.simpleMessage("Edit Photo"),
+    "editPostTitle": MessageLookupByLibrary.simpleMessage("Edit Post"),
     "editPostedItem": MessageLookupByLibrary.simpleMessage(
       "Can I edit my posted item?",
     ),
@@ -187,6 +194,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Get help via email within 24 hours",
     ),
     "emailSupport": MessageLookupByLibrary.simpleMessage("Email Support"),
+    "emailSupportDesc": MessageLookupByLibrary.simpleMessage(
+      "Get help via email within 24 hours",
+    ),
     "english": MessageLookupByLibrary.simpleMessage("English"),
     "enter6DigitCode": MessageLookupByLibrary.simpleMessage(
       "Enter the 6-digit code sent to your number",
@@ -254,6 +264,60 @@ class MessageLookup extends MessageLookupByLibrary {
       "Weak password. Please choose a stronger one.",
     ),
     "faq": MessageLookupByLibrary.simpleMessage("Frequently Asked Questions"),
+    "faqAiSearch": MessageLookupByLibrary.simpleMessage(
+      "How does the AI Search work?",
+    ),
+    "faqAiSearchAnswer": MessageLookupByLibrary.simpleMessage(
+      "Upload a photo of your lost item, and our AI will search through found items to find potential matches based on visual similarity.",
+    ),
+    "faqAiSearchQuestion": MessageLookupByLibrary.simpleMessage(
+      "How does the AI Search work?",
+    ),
+    "faqEditPost": MessageLookupByLibrary.simpleMessage(
+      "Can I edit my posted item?",
+    ),
+    "faqEditPostAnswer": MessageLookupByLibrary.simpleMessage(
+      "Yes, go to \"My Reports\", select your item, and tap \"Edit\".",
+    ),
+    "faqInfoSafe": MessageLookupByLibrary.simpleMessage(
+      "Is my personal information safe?",
+    ),
+    "faqInfoSafeAnswer": MessageLookupByLibrary.simpleMessage(
+      "Yes, we take privacy seriously. Your contact information is only shared when you choose to contact someone about an item.",
+    ),
+    "faqReportFound": MessageLookupByLibrary.simpleMessage(
+      "How do I report a found item?",
+    ),
+    "faqReportFoundAnswer": MessageLookupByLibrary.simpleMessage(
+      "Go to the \"Post Item\" tab, select \"Found\", provide details about the item you found, and wait for the owner to contact you.",
+    ),
+    "faqReportFoundItemAnswer": MessageLookupByLibrary.simpleMessage(
+      "Go to the \"Post Item\" tab, select \"Found\", provide details about the item you found, and wait for the owner to contact you.",
+    ),
+    "faqReportFoundItemQuestion": MessageLookupByLibrary.simpleMessage(
+      "How do I report a found item?",
+    ),
+    "faqReportLost": MessageLookupByLibrary.simpleMessage(
+      "How do I report a lost item?",
+    ),
+    "faqReportLostAnswer": MessageLookupByLibrary.simpleMessage(
+      "Go to the \"Post Item\" tab, select \"Lost\", fill in the details including description, location, and photo, then submit.",
+    ),
+    "faqReportLostItemAnswer": MessageLookupByLibrary.simpleMessage(
+      "Go to the \"Post Item\" tab, select \"Lost\", fill in the details including description, location, and photo, then submit.",
+    ),
+    "faqReportLostItemQuestion": MessageLookupByLibrary.simpleMessage(
+      "How do I report a lost item?",
+    ),
+    "faqTitle": MessageLookupByLibrary.simpleMessage(
+      "Frequently Asked Questions",
+    ),
+    "faqUpdateStatus": MessageLookupByLibrary.simpleMessage(
+      "How do I update my report status?",
+    ),
+    "faqUpdateStatusAnswer": MessageLookupByLibrary.simpleMessage(
+      "Go to \"My Reports\" in your profile, select the report, and tap \"Update Status\".",
+    ),
     "filterAndSort": MessageLookupByLibrary.simpleMessage("Filter & Sort"),
     "filterByLocation": MessageLookupByLibrary.simpleMessage(
       "Filter by Location",
@@ -267,6 +331,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "found": MessageLookupByLibrary.simpleMessage("Found"),
     "foundItems": MessageLookupByLibrary.simpleMessage("Found Items"),
+    "frequentlyAskedQuestions": MessageLookupByLibrary.simpleMessage(
+      "Frequently Asked Questions",
+    ),
     "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
     "hasBounty": MessageLookupByLibrary.simpleMessage("Has Bounty"),
     "hasBountyDesc": MessageLookupByLibrary.simpleMessage(
@@ -276,6 +343,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "helpAndSupportTitle": MessageLookupByLibrary.simpleMessage(
       "Help & Support",
     ),
+    "helpSupportTitle": MessageLookupByLibrary.simpleMessage("Help & Support"),
     "hideIdentity": MessageLookupByLibrary.simpleMessage(
       "Hide your identity from other users",
     ),
@@ -422,6 +490,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter your phone number",
     ),
     "phoneSupport": MessageLookupByLibrary.simpleMessage("Phone Support"),
+    "phoneSupportDesc": MessageLookupByLibrary.simpleMessage(
+      "Call us Mon-Fri, 9AM-6PM",
+    ),
     "photos": MessageLookupByLibrary.simpleMessage("Photos"),
     "photosOptional": MessageLookupByLibrary.simpleMessage(
       "Photos (Up to 5) Optional",
@@ -716,6 +787,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "We collect information you provide when creating an account (name, email, phone number), details about lost or found items you report, and photos you upload for AI search purposes.",
     ),
     "whatsappSupport": MessageLookupByLibrary.simpleMessage("WhatsApp Support"),
+    "whatsappSupportDesc": MessageLookupByLibrary.simpleMessage(
+      "Available 24/7",
+    ),
     "whenYouContactOthers": MessageLookupByLibrary.simpleMessage(
       "When You Contact Others",
     ),

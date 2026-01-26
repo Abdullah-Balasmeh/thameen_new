@@ -425,5 +425,42 @@
   "smartNotificationsDesc": "Get notified about potential matches",
   "copyright": "© 2025 Thameen App",
   "allRightsReserved": "All rights reserved",
-  "madeInJordan": "Made with ❤️ in Jordan"
+  "madeInJordan": "Made with ❤️ in Jordan",
+  "applicationLegalese": "© 2025 Thameen App. All rights reserved.",
+  "editPostTitle": "Edit Post",
+  "helpSupportTitle": "Help & Support",
+
+  "emailSupportDesc": "Get help via email within 24 hours",
+
+  "phoneSupportDesc": "Call us Mon-Fri, 9AM-6PM",
+
+  "whatsappSupportDesc": "Available 24/7",
+
+  "faqTitle": "Frequently Asked Questions",
+
+  "faqReportLost": "How do I report a lost item?",
+  "faqReportLostAnswer": "Go to the \"Post Item\" tab, select \"Lost\", fill in the details including description, location, and photo, then submit.",
+
+  "faqReportFound": "How do I report a found item?",
+  "faqReportFoundAnswer": "Go to the \"Post Item\" tab, select \"Found\", provide details about the item you found, and wait for the owner to contact you.",
+
+  "faqAiSearch": "How does the AI Search work?",
+  "faqAiSearchAnswer": "Upload a photo of your lost item, and our AI will search through found items to find potential matches based on visual similarity.",
+
+  "faqInfoSafe": "Is my personal information safe?",
+  "faqInfoSafeAnswer": "Yes, we take privacy seriously. Your contact information is only shared when you choose to contact someone about an item.",
+
+  "faqUpdateStatus": "How do I update my report status?",
+  "faqUpdateStatusAnswer": "Go to \"My Reports\" in your profile, select the report, and tap \"Update Status\".",
+
+  "faqEditPost": "Can I edit my posted item?",
+  "faqEditPostAnswer": "Yes, go to \"My Reports\", select your item, and tap \"Edit\".",
+  "chatWithUsInstantly": "Chat with us instantly",
+  "frequentlyAskedQuestions": "Frequently Asked Questions",
+  "faqReportLostItemQuestion": "How do I report a lost item?",
+  "faqReportLostItemAnswer": "Go to the \"Post Item\" tab, select \"Lost\", fill in the details including description, location, and photo, then submit.",
+  "faqReportFoundItemQuestion": "How do I report a found item?",
+  "faqReportFoundItemAnswer": "Go to the \"Post Item\" tab, select \"Found\", provide details about the item you found, and wait for the owner to contact you.",
+  "faqAiSearchQuestion": "How does the AI Search work?"
+
 }

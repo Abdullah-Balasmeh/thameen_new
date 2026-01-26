@@ -72,6 +72,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "allowingToPaste": MessageLookupByLibrary.simpleMessage("السماح باللصق"),
     "amman": MessageLookupByLibrary.simpleMessage("عمّان"),
     "anonymous": MessageLookupByLibrary.simpleMessage("مجهول"),
+    "applicationLegalese": MessageLookupByLibrary.simpleMessage(
+      "© 2025 تطبيق ثمين. جميع الحقوق محفوظة.",
+    ),
     "applyFilters": MessageLookupByLibrary.simpleMessage("تطبيق الفلاتر"),
     "aqaba": MessageLookupByLibrary.simpleMessage("العقبة"),
     "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
@@ -102,6 +105,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تغيير كلمة المرور",
     ),
     "chatWithUs": MessageLookupByLibrary.simpleMessage("تحدث معنا فوراً"),
+    "chatWithUsInstantly": MessageLookupByLibrary.simpleMessage(
+      "تحدث معنا فورًا",
+    ),
     "clothing": MessageLookupByLibrary.simpleMessage("ملابس"),
     "codeVerification": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "collections": MessageLookupByLibrary.simpleMessage("المجموعات"),
@@ -163,6 +169,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
     "editPhoto": MessageLookupByLibrary.simpleMessage("تعديل الصورة"),
+    "editPostTitle": MessageLookupByLibrary.simpleMessage("تعديل البلاغ"),
     "editPostedItem": MessageLookupByLibrary.simpleMessage(
       "هل يمكنني تعديل الغرض الذي نشرته؟",
     ),
@@ -180,6 +187,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "سنرد عليك خلال 24 ساعة",
     ),
     "emailSupport": MessageLookupByLibrary.simpleMessage("الدعم عبر البريد"),
+    "emailSupportDesc": MessageLookupByLibrary.simpleMessage(
+      "احصل على المساعدة عبر البريد خلال 24 ساعة",
+    ),
     "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
     "enter6DigitCode": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز التحقق المكون من 6 أرقام المرسل إلى رقمك",
@@ -243,6 +253,58 @@ class MessageLookup extends MessageLookupByLibrary {
       "كلمة المرور ضعيفة، يرجى اختيار كلمة أقوى.",
     ),
     "faq": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
+    "faqAiSearch": MessageLookupByLibrary.simpleMessage(
+      "كيف يعمل البحث بالذكاء الاصطناعي؟",
+    ),
+    "faqAiSearchAnswer": MessageLookupByLibrary.simpleMessage(
+      "ارفع صورة للغرض المفقود وسيبحث الذكاء الاصطناعي عن تطابقات بصرية.",
+    ),
+    "faqAiSearchQuestion": MessageLookupByLibrary.simpleMessage(
+      "كيف يعمل البحث بالذكاء الاصطناعي؟",
+    ),
+    "faqEditPost": MessageLookupByLibrary.simpleMessage(
+      "هل يمكنني تعديل الغرض الذي نشرته؟",
+    ),
+    "faqEditPostAnswer": MessageLookupByLibrary.simpleMessage(
+      "نعم، انتقل إلى \"تقاريري\"، اختر الغرض ثم اضغط \"تعديل\".",
+    ),
+    "faqInfoSafe": MessageLookupByLibrary.simpleMessage(
+      "هل معلوماتي الشخصية آمنة؟",
+    ),
+    "faqInfoSafeAnswer": MessageLookupByLibrary.simpleMessage(
+      "نعم، نولي الخصوصية أهمية كبيرة ولا نشارك معلوماتك إلا عند اختيارك التواصل.",
+    ),
+    "faqReportFound": MessageLookupByLibrary.simpleMessage(
+      "كيف أبلّغ عن غرض موجود؟",
+    ),
+    "faqReportFoundAnswer": MessageLookupByLibrary.simpleMessage(
+      "انتقل إلى تبويب \"نشر غرض\"، اختر \"موجود\"، وأدخل تفاصيل الغرض الذي وجدته.",
+    ),
+    "faqReportFoundItemAnswer": MessageLookupByLibrary.simpleMessage(
+      "انتقل إلى تبويب \"نشر غرض\"، اختر \"موجود\"، وأدخل تفاصيل الغرض الذي وجدته.",
+    ),
+    "faqReportFoundItemQuestion": MessageLookupByLibrary.simpleMessage(
+      "كيف أبلّغ عن غرض تم العثور عليه؟",
+    ),
+    "faqReportLost": MessageLookupByLibrary.simpleMessage(
+      "كيف أبلّغ عن غرض مفقود؟",
+    ),
+    "faqReportLostAnswer": MessageLookupByLibrary.simpleMessage(
+      "انتقل إلى تبويب \"نشر غرض\"، اختر \"مفقود\"، ثم أدخل التفاصيل مثل الوصف والموقع والصورة وأرسل البلاغ.",
+    ),
+    "faqReportLostItemAnswer": MessageLookupByLibrary.simpleMessage(
+      "انتقل إلى تبويب \"نشر غرض\"، اختر \"مفقود\"، ثم أدخل التفاصيل مثل الوصف والموقع والصورة، وبعدها قم بإرسال البلاغ.",
+    ),
+    "faqReportLostItemQuestion": MessageLookupByLibrary.simpleMessage(
+      "كيف أقوم بالإبلاغ عن غرض مفقود؟",
+    ),
+    "faqTitle": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
+    "faqUpdateStatus": MessageLookupByLibrary.simpleMessage(
+      "كيف أغيّر حالة البلاغ؟",
+    ),
+    "faqUpdateStatusAnswer": MessageLookupByLibrary.simpleMessage(
+      "انتقل إلى \"تقاريري\"، اختر البلاغ، واضغط \"تحديث الحالة\".",
+    ),
     "filterAndSort": MessageLookupByLibrary.simpleMessage("فلترة وترتيب"),
     "filterByLocation": MessageLookupByLibrary.simpleMessage(
       "فلترة حسب الموقع",
@@ -256,6 +318,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "found": MessageLookupByLibrary.simpleMessage("موجود"),
     "foundItems": MessageLookupByLibrary.simpleMessage("الأشياء الموجودة"),
+    "frequentlyAskedQuestions": MessageLookupByLibrary.simpleMessage(
+      "الأسئلة الشائعة",
+    ),
     "gallery": MessageLookupByLibrary.simpleMessage("المعرض"),
     "hasBounty": MessageLookupByLibrary.simpleMessage("يحتوي على مكافأة"),
     "hasBountyDesc": MessageLookupByLibrary.simpleMessage(
@@ -265,6 +330,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "helpAndSupportTitle": MessageLookupByLibrary.simpleMessage(
       "المساعدة والدعم",
     ),
+    "helpSupportTitle": MessageLookupByLibrary.simpleMessage("المساعدة والدعم"),
     "hideIdentity": MessageLookupByLibrary.simpleMessage(
       "إخفاء هويتك عن المستخدمين",
     ),
@@ -415,6 +481,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إدخال رقم الهاتف",
     ),
     "phoneSupport": MessageLookupByLibrary.simpleMessage("الدعم الهاتفي"),
+    "phoneSupportDesc": MessageLookupByLibrary.simpleMessage(
+      "اتصل بنا من الأحد إلى الخميس، 9 صباحًا– 6 مساءً",
+    ),
     "photos": MessageLookupByLibrary.simpleMessage("الصور"),
     "photosOptional": MessageLookupByLibrary.simpleMessage(
       "صور (حتى 5) اختياري",
@@ -703,6 +772,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "نحن نجمع المعلومات التي تقدمها عند إنشاء حساب (الاسم، البريد، رقم الهاتف)، إضافة إلى تفاصيل الأغراض المفقودة أو الموجودة والصور المرفوعة للبحث بالذكاء الاصطناعي.",
     ),
     "whatsappSupport": MessageLookupByLibrary.simpleMessage("دعم الواتساب"),
+    "whatsappSupportDesc": MessageLookupByLibrary.simpleMessage(
+      "متاح على مدار الساعة",
+    ),
     "whenYouContactOthers": MessageLookupByLibrary.simpleMessage(
       "عند تواصلك مع الآخرين",
     ),

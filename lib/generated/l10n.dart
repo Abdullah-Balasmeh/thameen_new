@@ -3088,6 +3088,261 @@ class S {
       args: [],
     );
   }
+
+  /// `© 2025 Thameen App. All rights reserved.`
+  String get applicationLegalese {
+    return Intl.message(
+      '© 2025 Thameen App. All rights reserved.',
+      name: 'applicationLegalese',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Post`
+  String get editPostTitle {
+    return Intl.message('Edit Post', name: 'editPostTitle', desc: '', args: []);
+  }
+
+  /// `Help & Support`
+  String get helpSupportTitle {
+    return Intl.message(
+      'Help & Support',
+      name: 'helpSupportTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get help via email within 24 hours`
+  String get emailSupportDesc {
+    return Intl.message(
+      'Get help via email within 24 hours',
+      name: 'emailSupportDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call us Mon-Fri, 9AM-6PM`
+  String get phoneSupportDesc {
+    return Intl.message(
+      'Call us Mon-Fri, 9AM-6PM',
+      name: 'phoneSupportDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Available 24/7`
+  String get whatsappSupportDesc {
+    return Intl.message(
+      'Available 24/7',
+      name: 'whatsappSupportDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Frequently Asked Questions`
+  String get faqTitle {
+    return Intl.message(
+      'Frequently Asked Questions',
+      name: 'faqTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How do I report a lost item?`
+  String get faqReportLost {
+    return Intl.message(
+      'How do I report a lost item?',
+      name: 'faqReportLost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to the "Post Item" tab, select "Lost", fill in the details including description, location, and photo, then submit.`
+  String get faqReportLostAnswer {
+    return Intl.message(
+      'Go to the "Post Item" tab, select "Lost", fill in the details including description, location, and photo, then submit.',
+      name: 'faqReportLostAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How do I report a found item?`
+  String get faqReportFound {
+    return Intl.message(
+      'How do I report a found item?',
+      name: 'faqReportFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to the "Post Item" tab, select "Found", provide details about the item you found, and wait for the owner to contact you.`
+  String get faqReportFoundAnswer {
+    return Intl.message(
+      'Go to the "Post Item" tab, select "Found", provide details about the item you found, and wait for the owner to contact you.',
+      name: 'faqReportFoundAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How does the AI Search work?`
+  String get faqAiSearch {
+    return Intl.message(
+      'How does the AI Search work?',
+      name: 'faqAiSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload a photo of your lost item, and our AI will search through found items to find potential matches based on visual similarity.`
+  String get faqAiSearchAnswer {
+    return Intl.message(
+      'Upload a photo of your lost item, and our AI will search through found items to find potential matches based on visual similarity.',
+      name: 'faqAiSearchAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Is my personal information safe?`
+  String get faqInfoSafe {
+    return Intl.message(
+      'Is my personal information safe?',
+      name: 'faqInfoSafe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes, we take privacy seriously. Your contact information is only shared when you choose to contact someone about an item.`
+  String get faqInfoSafeAnswer {
+    return Intl.message(
+      'Yes, we take privacy seriously. Your contact information is only shared when you choose to contact someone about an item.',
+      name: 'faqInfoSafeAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How do I update my report status?`
+  String get faqUpdateStatus {
+    return Intl.message(
+      'How do I update my report status?',
+      name: 'faqUpdateStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to "My Reports" in your profile, select the report, and tap "Update Status".`
+  String get faqUpdateStatusAnswer {
+    return Intl.message(
+      'Go to "My Reports" in your profile, select the report, and tap "Update Status".',
+      name: 'faqUpdateStatusAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Can I edit my posted item?`
+  String get faqEditPost {
+    return Intl.message(
+      'Can I edit my posted item?',
+      name: 'faqEditPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes, go to "My Reports", select your item, and tap "Edit".`
+  String get faqEditPostAnswer {
+    return Intl.message(
+      'Yes, go to "My Reports", select your item, and tap "Edit".',
+      name: 'faqEditPostAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chat with us instantly`
+  String get chatWithUsInstantly {
+    return Intl.message(
+      'Chat with us instantly',
+      name: 'chatWithUsInstantly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Frequently Asked Questions`
+  String get frequentlyAskedQuestions {
+    return Intl.message(
+      'Frequently Asked Questions',
+      name: 'frequentlyAskedQuestions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How do I report a lost item?`
+  String get faqReportLostItemQuestion {
+    return Intl.message(
+      'How do I report a lost item?',
+      name: 'faqReportLostItemQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to the "Post Item" tab, select "Lost", fill in the details including description, location, and photo, then submit.`
+  String get faqReportLostItemAnswer {
+    return Intl.message(
+      'Go to the "Post Item" tab, select "Lost", fill in the details including description, location, and photo, then submit.',
+      name: 'faqReportLostItemAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How do I report a found item?`
+  String get faqReportFoundItemQuestion {
+    return Intl.message(
+      'How do I report a found item?',
+      name: 'faqReportFoundItemQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to the "Post Item" tab, select "Found", provide details about the item you found, and wait for the owner to contact you.`
+  String get faqReportFoundItemAnswer {
+    return Intl.message(
+      'Go to the "Post Item" tab, select "Found", provide details about the item you found, and wait for the owner to contact you.',
+      name: 'faqReportFoundItemAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How does the AI Search work?`
+  String get faqAiSearchQuestion {
+    return Intl.message(
+      'How does the AI Search work?',
+      name: 'faqAiSearchQuestion',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

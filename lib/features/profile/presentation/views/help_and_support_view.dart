@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HelpSupportView extends StatelessWidget {
@@ -37,9 +38,9 @@ class HelpSupportView extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          'Help & Support',
-          style: TextStyle(
+        title: Text(
+          S.current.helpSupportTitle,
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.w600,
@@ -63,9 +64,9 @@ class HelpSupportView extends StatelessWidget {
                     color: AppColors.primary,
                   ),
                   const SizedBox(height: 16),
-                  const Text(
-                    'How can we help you?',
-                    style: TextStyle(
+                  Text(
+                    S.current.helpSupportTitle,
+                    style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primary,
@@ -73,7 +74,7 @@ class HelpSupportView extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'We\'re here to assist you with any questions',
+                    S.current.assistYouMessage,
                     style: AppTextStyle.medium14,
 
                     textAlign: TextAlign.center,
@@ -85,11 +86,11 @@ class HelpSupportView extends StatelessWidget {
             const SizedBox(height: 16),
 
             // Contact Options
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'Contact Us',
-                style: TextStyle(
+                S.current.contactUs,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primary,
@@ -100,18 +101,18 @@ class HelpSupportView extends StatelessWidget {
 
             _ContactCard(
               icon: Icons.email_outlined,
-              title: 'Email Support',
+              title: S.current.emailSupport,
               subtitle: 'support@thameenapp.com',
-              description: 'Get help via email within 24 hours',
+              description: S.current.emailResponseTime,
               color: AppColors.primary,
               onTap: _sendEmail,
             ),
 
             _ContactCard(
               icon: Icons.phone_outlined,
-              title: 'Phone Support',
+              title: S.current.phoneSupport,
               subtitle: '+962 79 553 8730',
-              description: 'Call us Mon-Fri, 9AM-6PM',
+              description: S.current.phoneSupport,
               color: AppColors.success,
               onTap: () async {
                 final Uri phoneUri = Uri(scheme: 'tel', path: '+962795538730');
@@ -123,9 +124,9 @@ class HelpSupportView extends StatelessWidget {
 
             _ContactCard(
               icon: Icons.chat_bubble_outline,
-              title: 'WhatsApp Support',
-              subtitle: 'Chat with us instantly',
-              description: 'Available 24/7',
+              title: S.current.whatsappSupport,
+              subtitle: S.current.chatWithUsInstantly,
+              description: S.current.whatsappSupportDesc,
               color: const Color(0xFF25D366),
               onTap: _openWhatsApp,
             ),
@@ -133,11 +134,11 @@ class HelpSupportView extends StatelessWidget {
             const SizedBox(height: 24),
 
             // FAQs
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'Frequently Asked Questions',
-                style: TextStyle(
+                S.current.frequentlyAskedQuestions,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primary,
@@ -146,22 +147,22 @@ class HelpSupportView extends StatelessWidget {
             ),
             const SizedBox(height: 12),
 
-            const _FAQItem(
-              question: 'How do I report a lost item?',
+            _FAQItem(
+              question: S.current.faqReportLostItemQuestion,
               answer:
-                  'Go to the "Post Item" tab, select "Lost", fill in the details including description, location, and photo, then submit.',
+                  S.current.faqReportLostItemAnswer,
+              ),
+
+            _FAQItem(
+              question: S.current.faqReportFoundItemQuestion,
+              answer:
+                  S.current.faqReportFoundItemAnswer,
             ),
 
-            const _FAQItem(
-              question: 'How do I report a found item?',
+            _FAQItem(
+              question: S.current.faqAiSearchQuestion,
               answer:
-                  'Go to the "Post Item" tab, select "Found", provide details about the item you found, and wait for the owner to contact you.',
-            ),
-
-            const _FAQItem(
-              question: 'How does the AI Search work?',
-              answer:
-                  'Upload a photo of your lost item, and our AI will search through found items to find potential matches based on visual similarity.',
+                  S.current.faqAiSearchAnswer,
             ),
 
             const _FAQItem(
