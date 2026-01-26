@@ -29,6 +29,10 @@ class EditProfileCubit extends Cubit<EditProfileState> {
     try {
       if (photo != null) {
         final result = await editProfileRepo.updateProfilePhoto(user.id, photo);
+        SharedPreferencesSingleton.setString(
+          'photoUrl',
+          result.getOrElse(() => ''),
+        );
         result.fold(
           (failure) =>
               emit(EditProfileFailure(errMessage: failure.errorMessage)),

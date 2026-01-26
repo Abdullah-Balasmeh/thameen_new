@@ -3,8 +3,8 @@ import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 
 class NoReportsFound extends StatelessWidget {
-  const NoReportsFound({super.key});
-
+  const NoReportsFound({super.key, this.isAi = false});
+  final bool? isAi;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -18,7 +18,7 @@ class NoReportsFound extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            'No Reports Yet',
+            isAi == true ? 'No Strong Matches Found' : 'No Reports Yet',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,

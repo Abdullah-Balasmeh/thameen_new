@@ -181,4 +181,23 @@ class FirestoreService implements DatabaseService {
       return [];
     }
   }
+
+  Future<Map<String, dynamic>> getUserByPostId(String postId) async {
+    try {
+      final snapshot = await _firestore
+          .collection('users')
+          .where('postsId', arrayContains: postId)
+          .limit(1)
+          .get();
+
+      if (snapshot.docs.isEmpty) {
+        throw const DocumentNotFoundException();
+      }
+      log('getUserByPostId: ${snapshot.docs.first.data().toString()}');
+
+      return snapshot.docs.first.data();
+    } on FirebaseException catch (e) {
+      _handleFirebaseException(e);
+    }
+  }
 }

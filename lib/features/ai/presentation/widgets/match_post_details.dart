@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/core/utils/helper/map_category_to_emoji.dart';
+import 'package:thameen/features/ai/data/models/ai_match_model.dart';
 
 class MatchPostDetails extends StatelessWidget {
   const MatchPostDetails({
     super.key,
+    required this.match,
   });
+  final AiMatchModel match;
 
   @override
   Widget build(BuildContext context) {
@@ -23,32 +26,13 @@ class MatchPostDetails extends StatelessWidget {
         children: [
           Row(
             children: [
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 8,
-                  vertical: 4,
-                ),
-                decoration: BoxDecoration(
-                  color: AppColors.error.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                child: const Text(
-                  'Lost',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.error,
-                  ),
-                ),
-              ),
-              const SizedBox(width: 8),
               Text(
-                mapCategoryToEmoji('Electronics'),
+                mapCategoryToEmoji(match.itemCategory),
                 style: const TextStyle(fontSize: 14),
               ),
               const SizedBox(width: 4),
               Text(
-                'Electronics',
+                match.itemCategory,
                 style: TextStyle(
                   fontSize: 12,
                   color: AppTextStyle.bold24.color,
@@ -67,7 +51,7 @@ class MatchPostDetails extends StatelessWidget {
           const SizedBox(height: 12),
           // Title
           Text(
-            'Red T-Shirt',
+            match.itemName,
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -76,15 +60,28 @@ class MatchPostDetails extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           // Description
-          Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl vel ultrices ultrices, nunc nisl ultrices nisl, vel ultrices nisl nisl vel nisl.',
-            style: TextStyle(
-              fontSize: 14,
-              color: AppTextStyle.bold24.color,
-              height: 1.4,
+          Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              color: Colors.grey[200],
+              borderRadius: BorderRadius.circular(12),
             ),
+            child: match.photoUrls.isEmpty
+                ? Icon(
+                    Icons.image_outlined,
+                    color: Colors.grey[400],
+                    size: 30,
+                  )
+                : ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    child: Image.network(
+                      match.photoUrls.first,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
           ),
-          const SizedBox(height: 12),
           // Location and contact
           Row(
             children: [
@@ -96,7 +93,7 @@ class MatchPostDetails extends StatelessWidget {
               const SizedBox(width: 4),
               Expanded(
                 child: Text(
-                  'Amman, Jordan',
+                  match.location,
                   style: TextStyle(
                     fontSize: 13,
                     color: AppTextStyle.bold24.color,
