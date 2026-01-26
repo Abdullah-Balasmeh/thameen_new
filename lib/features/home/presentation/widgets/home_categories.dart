@@ -18,7 +18,7 @@ class HomeCategories extends StatefulWidget {
 class _HomeCategoriesState extends State<HomeCategories> {
   final List<Category> categories = [
     Category(
-      name: S.current.categories,
+      name: S.current.allItems,
       icons: Icons.menu_rounded,
       color: Colors.orange,
     ),

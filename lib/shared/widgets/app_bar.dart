@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
-import 'package:thameen/features/notification/domain/repositories/views/notification_view.dart';
+import 'package:thameen/features/notifications/presentation/views/notifications_view.dart';
 
 AppBar buildAppBar(
   BuildContext context, {
@@ -40,7 +40,7 @@ AppBar buildAppBar(
                 color: backgroundColor != null ? Colors.white : null,
               ),
               onPressed: () {
-                Navigator.pushNamed(context, NotificationView.routeName);
+                Navigator.pushNamed(context, NotificationsView.routeName);
               },
             ),
           ]
