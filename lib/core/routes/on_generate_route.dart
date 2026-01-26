@@ -14,7 +14,7 @@ import 'package:thameen/features/base/presentation/views/base_view.dart';
 import 'package:thameen/features/chat/presentation/views/chat_detail_view.dart';
 import 'package:thameen/features/home/presentation/views/home_view.dart';
 import 'package:thameen/features/home/presentation/views/post_detail_view.dart';
-import 'package:thameen/features/notification/presentation/views/notification_view.dart';
+import 'package:thameen/features/notifications/presentation/views/notifications_view.dart';
 import 'package:thameen/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:thameen/features/profile/presentation/views/about_view.dart';
 import 'package:thameen/features/profile/presentation/views/change_password_view.dart';
@@ -107,9 +107,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const ChangePasswordView(),
       );
-    case NotificationView.routeName:
+    case NotificationsView.routeName:
       return MaterialPageRoute(
-        builder: (context) => const NotificationView(),
+        builder: (context) => const NotificationsView(),
       );
 
     default:
