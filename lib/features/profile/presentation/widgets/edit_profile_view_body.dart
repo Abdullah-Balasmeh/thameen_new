@@ -8,6 +8,7 @@ import 'package:thameen/features/profile/presentation/bloc/edit_profile_cubit/ed
 import 'package:thameen/features/profile/presentation/widgets/edit_profile_phone_text_form_field.dart';
 import 'package:thameen/features/profile/presentation/widgets/edit_profile_photo.dart';
 import 'package:thameen/features/profile/presentation/widgets/edit_profile_text_form_field.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
 
@@ -73,35 +74,35 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
               ),
               const SizedBox(height: 16),
               EditProfileTextFormField(
-                hintText: 'First Name',
+                hintText: S.of(context).firstName,
                 prefixIcon: const Icon(Icons.person),
                 keyboardType: TextInputType.name,
                 controller: _firstNameController,
                 textInputAction: TextInputAction.next,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your first name';
+                    return S.current.firstNameRequired;
                   }
                   return null;
                 },
               ),
               const SizedBox(height: 16),
               EditProfileTextFormField(
-                hintText: 'Last Name',
+                hintText: S.of(context).lastName,
                 prefixIcon: const Icon(Icons.person),
                 keyboardType: TextInputType.name,
                 controller: _lastNameController,
                 textInputAction: TextInputAction.next,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your Last name';
+                    return S.current.lastNameRequired;
                   }
                   return null;
                 },
               ),
               const SizedBox(height: 16),
               EditProfileTextFormField(
-                hintText: 'Email Address',
+                hintText: S.of(context).emailAddress,
                 prefixIcon: const Icon(Icons.email_outlined),
                 keyboardType: TextInputType.emailAddress,
                 controller: _emailController,
@@ -109,24 +110,24 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
                 isEmail: false,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your email address';
+                    return S.current.emailRequired;
                   }
                   return null;
                 },
               ),
               const SizedBox(height: 16),
               EditProfilePhoneTextFormField(
-                hintText: 'Phone Number',
+                hintText: S.of(context).phoneNumber,
                 prefixIcon: const Icon(Icons.phone),
                 keyboardType: TextInputType.phone,
                 controller: _phoneController,
                 textInputAction: TextInputAction.next,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your phone number';
+                    return S.current.phoneRequired;
                   }
                   if (value.length != 13) {
-                    return 'Phone number must be 9 digits after +962 7';
+                    return S.current.invalidPhoneLength;
                   }
                   return null;
                 },
@@ -134,7 +135,7 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
               const SizedBox(height: 16),
               AppButton(
                 child: Text(
-                  'Update',
+                  S.of(context).update,
                   style: AppTextStyle.bold20,
                 ),
                 onPressed: () {

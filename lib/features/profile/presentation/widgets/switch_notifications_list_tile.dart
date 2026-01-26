@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class SwitchNotificationsListTile extends StatelessWidget {
   const SwitchNotificationsListTile({super.key});
@@ -25,7 +26,7 @@ class SwitchNotificationsListTile extends StatelessWidget {
       title: Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: Text(
-          'Notifications',
+          S.of(context).notifications,
           style: Theme.of(context).textTheme.bodyLarge,
         ),
       ),

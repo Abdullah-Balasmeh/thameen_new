@@ -16,6 +16,7 @@ import 'package:thameen/features/post%20item/presentation/widgets/report_text_fo
 import 'package:thameen/features/post%20item/presentation/widgets/report_type_selector.dart';
 import 'package:thameen/features/post%20item/presentation/widgets/section_title.dart';
 import 'package:thameen/features/profile/presentation/bloc/myreports/my_reports_cubit.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
 import 'package:thameen/shared/widgets/loading_button.dart';
 
@@ -96,13 +97,13 @@ class _PostEditFormState extends State<PostEditForm> {
             selectedType: selectedType,
           ),
           const SizedBox(height: 16),
-          const SectionTitle(title: 'Item Information'),
+          SectionTitle(title: S.of(context).itemInformation),
           const SizedBox(height: 16),
           ReportTextFormField(
             maxLines: 1,
             keyboardType: TextInputType.name,
             controller: itemNameController,
-            hintText: 'Item Name',
+            hintText: S.of(context).itemName,
             prefixIcon: const Icon(Icons.label),
             textInputAction: TextInputAction.next,
             autovalidateMode: nameTouched
@@ -117,7 +118,7 @@ class _PostEditFormState extends State<PostEditForm> {
             },
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter an item name';
+                return S.of(context).itemNameRequired;
               }
               return null;
             },
@@ -125,13 +126,13 @@ class _PostEditFormState extends State<PostEditForm> {
           const SizedBox(height: 16),
           DropDownFormButtonCategory(
             itemList: categories,
-            hintText: 'Select Category',
+            hintText: S.of(context).selectCategory,
             prefixIcon: const Icon(Icons.category),
             keyboardType: TextInputType.text,
             controller: itemCategoryController,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please select an item category';
+                return S.of(context).itemCategoryRequired;
               }
               return null;
             },
@@ -147,7 +148,7 @@ class _PostEditFormState extends State<PostEditForm> {
             maxLines: 4,
             keyboardType: TextInputType.multiline,
             controller: itemDescriptionController,
-            hintText: 'Item Description',
+            hintText: S.of(context).itemDescription,
             prefixIcon: const Padding(
               padding: EdgeInsets.only(bottom: 100),
               child: Icon(Icons.description),
@@ -156,24 +157,24 @@ class _PostEditFormState extends State<PostEditForm> {
             textInputAction: TextInputAction.next,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter an item description';
+                return S.of(context).itemDescriptionRequired;
               }
               return null;
             },
             autovalidateMode: autovalidateMode,
           ),
           const SizedBox(height: 16),
-          const SectionTitle(title: 'Location'),
+          SectionTitle(title: S.of(context).location),
           const SizedBox(height: 16),
           DropDownFormButtonCity(
             city: jordanCities,
-            hintText: 'Select City',
+            hintText: S.of(context).selectCity,
             prefixIcon: const Icon(Icons.location_city),
             keyboardType: TextInputType.text,
             controller: itemLocationController,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please select an item location';
+                return S.of(context).itemLocationRequired;
               }
               return null;
             },
@@ -199,13 +200,13 @@ class _PostEditFormState extends State<PostEditForm> {
             },
           ),
           const SizedBox(height: 16),
-          const SectionTitle(title: 'Privacy'),
+          SectionTitle(title: S.of(context).privacy),
           const SizedBox(height: 16),
           AnonymousToggle(
             postAnonymously: postAnonymously,
           ),
           const SizedBox(height: 16),
-          const SectionTitle(title: 'Contact Methods'),
+          SectionTitle(title: S.of(context).contactMethods),
           const SizedBox(height: 16),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -220,17 +221,17 @@ class _PostEditFormState extends State<PostEditForm> {
                 },
               ),
               if (contactMethodsError)
-                const Padding(
-                  padding: EdgeInsets.only(left: 8, top: 6),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8, top: 6),
                   child: Text(
-                    'Please select at least one contact method',
-                    style: TextStyle(color: Colors.red, fontSize: 13),
+                    S.of(context).contactMethodRequired,
+                    style: const TextStyle(color: Colors.red, fontSize: 13),
                   ),
                 ),
             ],
           ),
           const SizedBox(height: 16),
-          const SectionTitle(title: 'Photos (Up to 5) Optional'),
+          SectionTitle(title: S.of(context).photosOptional),
           const SizedBox(height: 16),
           PhotoUpload(
             existingImageUrls: existingImageUrls,
@@ -291,7 +292,7 @@ class _PostEditFormState extends State<PostEditForm> {
             },
             child: isLoading
                 ? const LoadingButton()
-                : Text('Update Report', style: AppTextStyle.bold20),
+                : Text(S.of(context).updateReport, style: AppTextStyle.bold20),
           ),
           const SizedBox(height: 16),
         ],

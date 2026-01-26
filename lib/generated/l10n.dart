@@ -2733,6 +2733,361 @@ class S {
   String get anonymous {
     return Intl.message('Anonymous', name: 'anonymous', desc: '', args: []);
   }
+
+  /// `Update Status`
+  String get updateStatus {
+    return Intl.message(
+      'Update Status',
+      name: 'updateStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Active`
+  String get statusActive {
+    return Intl.message('Active', name: 'statusActive', desc: '', args: []);
+  }
+
+  /// `Resolved`
+  String get statusResolved {
+    return Intl.message('Resolved', name: 'statusResolved', desc: '', args: []);
+  }
+
+  /// `Deleted`
+  String get statusDeleted {
+    return Intl.message('Deleted', name: 'statusDeleted', desc: '', args: []);
+  }
+
+  /// `Confirm Delete`
+  String get confirmDelete {
+    return Intl.message(
+      'Confirm Delete',
+      name: 'confirmDelete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this report?`
+  String get confirmDeleteMessage {
+    return Intl.message(
+      'Are you sure you want to delete this report?',
+      name: 'confirmDeleteMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
+
+  /// `Help & Support`
+  String get helpAndSupport {
+    return Intl.message(
+      'Help & Support',
+      name: 'helpAndSupport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy & Security`
+  String get privacyAndSecurity {
+    return Intl.message(
+      'Privacy & Security',
+      name: 'privacyAndSecurity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message('Edit', name: 'edit', desc: '', args: []);
+  }
+
+  /// `User Name`
+  String get profileUserName {
+    return Intl.message(
+      'User Name',
+      name: 'profileUserName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `demo@example.com`
+  String get profileEmailPlaceholder {
+    return Intl.message(
+      'demo@example.com',
+      name: 'profileEmailPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update Report`
+  String get updateReport {
+    return Intl.message(
+      'Update Report',
+      name: 'updateReport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Logout`
+  String get confirmLogout {
+    return Intl.message(
+      'Confirm Logout',
+      name: 'confirmLogout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to log out from your account?`
+  String get confirmLogoutMessage {
+    return Intl.message(
+      'Are you sure you want to log out from your account?',
+      name: 'confirmLogoutMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message('English', name: 'english', desc: '', args: []);
+  }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message('Arabic', name: 'arabic', desc: '', args: []);
+  }
+
+  /// `First Name`
+  String get firstName {
+    return Intl.message('First Name', name: 'firstName', desc: '', args: []);
+  }
+
+  /// `Last Name`
+  String get lastName {
+    return Intl.message('Last Name', name: 'lastName', desc: '', args: []);
+  }
+
+  /// `Email Address`
+  String get emailAddress {
+    return Intl.message(
+      'Email Address',
+      name: 'emailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your first name`
+  String get firstNameRequired {
+    return Intl.message(
+      'Please enter your first name',
+      name: 'firstNameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your last name`
+  String get lastNameRequired {
+    return Intl.message(
+      'Please enter your last name',
+      name: 'lastNameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your email address`
+  String get emailRequired {
+    return Intl.message(
+      'Please enter your email address',
+      name: 'emailRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your phone number`
+  String get phoneRequired {
+    return Intl.message(
+      'Please enter your phone number',
+      name: 'phoneRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number must be 9 digits after +962 7`
+  String get invalidPhoneLength {
+    return Intl.message(
+      'Phone number must be 9 digits after +962 7',
+      name: 'invalidPhoneLength',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report updated successfully`
+  String get reportUpdatedSuccessfully {
+    return Intl.message(
+      'Report updated successfully',
+      name: 'reportUpdatedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Photo`
+  String get editPhoto {
+    return Intl.message('Edit Photo', name: 'editPhoto', desc: '', args: []);
+  }
+
+  /// `Enter your old password and create a new password`
+  String get changePasswordInstruction {
+    return Intl.message(
+      'Enter your old password and create a new password',
+      name: 'changePasswordInstruction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Old password is incorrect`
+  String get oldPasswordIncorrect {
+    return Intl.message(
+      'Old password is incorrect',
+      name: 'oldPasswordIncorrect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Old password and new password cannot be the same`
+  String get oldAndNewPasswordSame {
+    return Intl.message(
+      'Old password and new password cannot be the same',
+      name: 'oldAndNewPasswordSame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password changed successfully`
+  String get passwordChangedSuccessfully {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'passwordChangedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User not logged in`
+  String get userNotLoggedIn {
+    return Intl.message(
+      'User not logged in',
+      name: 'userNotLoggedIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload a photo and let AI find visual matches`
+  String get aiPoweredSearchDesc {
+    return Intl.message(
+      'Upload a photo and let AI find visual matches',
+      name: 'aiPoweredSearchDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quickly report lost or found items`
+  String get easyReportingDesc {
+    return Intl.message(
+      'Quickly report lost or found items',
+      name: 'easyReportingDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connect instantly with item reporters`
+  String get directChatDesc {
+    return Intl.message(
+      'Connect instantly with item reporters',
+      name: 'directChatDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get notified about potential matches`
+  String get smartNotificationsDesc {
+    return Intl.message(
+      'Get notified about potential matches',
+      name: 'smartNotificationsDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `© 2025 Thameen App`
+  String get copyright {
+    return Intl.message(
+      '© 2025 Thameen App',
+      name: 'copyright',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All rights reserved`
+  String get allRightsReserved {
+    return Intl.message(
+      'All rights reserved',
+      name: 'allRightsReserved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Made with ❤️ in Jordan`
+  String get madeInJordan {
+    return Intl.message(
+      'Made with ❤️ in Jordan',
+      name: 'madeInJordan',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

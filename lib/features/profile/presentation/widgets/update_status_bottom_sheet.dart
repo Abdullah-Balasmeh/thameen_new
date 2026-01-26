@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class UpdateStatusBottomSheet extends StatelessWidget {
   final PostState currentStatus;
@@ -21,7 +22,7 @@ class UpdateStatusBottomSheet extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Update Status',
+            S.of(context).updateStatus,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -31,7 +32,7 @@ class UpdateStatusBottomSheet extends StatelessWidget {
           const SizedBox(height: 24),
           _StatusOption(
             icon: Icons.check_circle_outline,
-            label: 'ACTIVE',
+            label: S.of(context).statusActive,
             isSelected: currentStatus == PostState.active,
             color: AppColors.primary,
             onTap: () {
@@ -42,7 +43,7 @@ class UpdateStatusBottomSheet extends StatelessWidget {
           const SizedBox(height: 12),
           _StatusOption(
             icon: Icons.check_circle,
-            label: 'RESOLVED',
+            label: S.of(context).statusResolved,
             isSelected: currentStatus == PostState.resolved,
             color: AppColors.primary,
             onTap: () {
@@ -53,7 +54,7 @@ class UpdateStatusBottomSheet extends StatelessWidget {
           const SizedBox(height: 12),
           _StatusOption(
             icon: Icons.cancel,
-            label: 'DELETED',
+            label: S.of(context).statusDeleted,
             isSelected: currentStatus == PostState.deleted,
             color: AppColors.primary,
             onTap: () {
@@ -71,14 +72,14 @@ class UpdateStatusBottomSheet extends StatelessWidget {
       context: context,
       barrierDismissible: false,
       builder: (context) => AlertDialog(
-        title: const Text('Confirm Delete'),
-        content: const Text(
-          'Are you sure you want to delete this report?',
+        title: Text(S.current.confirmDelete),
+        content: Text(
+          S.current.confirmDeleteMessage,
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text(S.current.cancel),
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -91,7 +92,7 @@ class UpdateStatusBottomSheet extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
               child: Text(
-                'Delete',
+                S.current.delete,
                 style: AppTextStyle.medium16,
               ),
             ),

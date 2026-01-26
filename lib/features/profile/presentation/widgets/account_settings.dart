@@ -5,6 +5,7 @@ import 'package:thameen/features/profile/presentation/widgets/app_divider.dart';
 import 'package:thameen/features/profile/presentation/widgets/language_list_tile_drop_down_menu.dart';
 import 'package:thameen/features/profile/presentation/widgets/profile_list_tile.dart';
 import 'package:thameen/features/profile/presentation/widgets/switch_notifications_list_tile.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/widgets/theme_switch_list_tile.dart';
 
 class AccountSettings extends StatelessWidget {
@@ -32,7 +33,7 @@ class AccountSettings extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Account Settings',
+            S.of(context).accountSettings,
             style: theme.textTheme.bodyLarge,
           ),
           const SizedBox(
@@ -41,7 +42,7 @@ class AccountSettings extends StatelessWidget {
 
           ProfileListTile(
             icon: Icons.edit,
-            title: 'Edit Profile',
+            title: S.of(context).editProfile,
             onTap: () {
               Navigator.pushNamed(context, EditProfileView.routeName);
             },
@@ -55,7 +56,7 @@ class AccountSettings extends StatelessWidget {
           ),
           ProfileListTile(
             icon: Icons.lock_rounded,
-            title: 'Change Password',
+            title: S.of(context).changePassword,
             onTap: () {
               Navigator.pushNamed(context, ChangePasswordView.routeName);
             },
