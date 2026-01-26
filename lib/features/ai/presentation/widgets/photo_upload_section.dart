@@ -1,8 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/theme/app_colors.dart';
-import 'package:thameen/core/theme/app_text_style.dart';
+import 'package:thameen/features/ai/presentation/bloc/ai/ai_cubit.dart';
 import 'package:thameen/features/ai/presentation/widgets/ai_bottom_sheet.dart';
 import 'package:thameen/features/ai/presentation/widgets/photo_ready.dart';
 import 'package:thameen/features/ai/presentation/widgets/searching_indecator.dart';
@@ -10,33 +11,43 @@ import 'package:thameen/features/ai/presentation/widgets/upload_photo_to_search.
 import 'package:thameen/shared/widgets/app_button.dart';
 
 class PhotoUploadSection extends StatefulWidget {
-  const PhotoUploadSection({super.key, required this.image});
-  final ValueNotifier<File?> image;
+  const PhotoUploadSection({
+    super.key,
+  });
 
   @override
   State<PhotoUploadSection> createState() => _PhotoUploadSectionState();
 }
 
 class _PhotoUploadSectionState extends State<PhotoUploadSection> {
-  bool isSearching = false;
+  final ValueNotifier<File?> image = ValueNotifier(null);
+
   @override
   Widget build(BuildContext context) {
+    return BlocListener<AiSearchCubit, AiSearchState>(
+      listener: (context, state) {
+        if (state is AiSearchInitial) {
+          image.value = null; // ✅ امسح الصورة
+        }
+      },
+      child: _buildContent(context),
+    );
+  }
+
+  Widget _buildContent(BuildContext context) {
+    bool isSearching = context.select(
+      (AiSearchCubit cubit) => cubit.isSearching,
+    );
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16),
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.darkSurfaceElevated.withValues(alpha: 0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
       ),
       child: ValueListenableBuilder<File?>(
-        valueListenable: widget.image,
+        valueListenable: image,
         builder: (context, file, _) {
           return Column(
             children: [
@@ -56,10 +67,9 @@ class _PhotoUploadSectionState extends State<PhotoUploadSection> {
                 child: file == null
                     ? GestureDetector(
                         onTap: () {
-                          showModalBottomSheet<void>(
+                          showModalBottomSheet(
                             context: context,
-                            builder: (context) =>
-                                AiBottomSheet(image: widget.image),
+                            builder: (_) => AiBottomSheet(image: image),
                           );
                         },
                         child: const UploadPhotoToSearch(),
@@ -72,14 +82,9 @@ class _PhotoUploadSectionState extends State<PhotoUploadSection> {
               if (file != null) ...[
                 const SizedBox(height: 20),
                 AppButton(
-                  child: Text(
-                    'Search',
-                    style: AppTextStyle.bold20,
-                  ),
+                  child: const Text('Search'),
                   onPressed: () {
-                    setState(() {
-                      isSearching = true;
-                    });
+                    context.read<AiSearchCubit>().searchByImage(file);
                   },
                 ),
               ],

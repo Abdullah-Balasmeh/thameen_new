@@ -19,6 +19,7 @@ import 'package:thameen/features/profile/data/repo_impl/my_repeprts_repo_impl.da
 import 'package:thameen/features/profile/domain/edit_profile_repo.dart';
 import 'package:thameen/features/profile/domain/repo/change_password_repo.dart';
 import 'package:thameen/features/profile/domain/repo/my_reports_repo.dart';
+import 'package:thameen/shared/services/ai_service.dart';
 import 'package:thameen/shared/services/database_service.dart';
 import 'package:thameen/shared/services/firebase_auth_service.dart';
 import 'package:thameen/shared/services/firebase_storage.dart';
@@ -35,6 +36,7 @@ Future<void> setupServiceLocator() async {
   getIt.registerLazySingleton(() => ThemeService());
   getIt.registerLazySingleton(() => ImagePickerService(ImagePicker()));
   getIt.registerSingleton<FirebaseAuthService>(FirebaseAuthService());
+  getIt.registerSingleton<AiService>(AiService());
   getIt.registerLazySingleton<DatabaseService>(
     () => FirestoreService(),
   );

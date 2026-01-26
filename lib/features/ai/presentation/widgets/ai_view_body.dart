@@ -1,32 +1,14 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:thameen/features/ai/presentation/bloc/ai/ai_cubit.dart';
 import 'package:thameen/features/ai/presentation/widgets/ai_view_header.dart';
 import 'package:thameen/features/ai/presentation/widgets/photo_upload_section.dart';
 import 'package:thameen/features/ai/presentation/widgets/ready_to_search_section.dart';
 import 'package:thameen/features/ai/presentation/widgets/search_result_section.dart';
+import 'package:thameen/features/home/presentation/widgets/no_reports_found.dart';
 
-class AiViewBody extends StatefulWidget {
+class AiViewBody extends StatelessWidget {
   const AiViewBody({super.key});
-
-  @override
-  State<AiViewBody> createState() => _AiViewBodyState();
-}
-
-class _AiViewBodyState extends State<AiViewBody> {
-  late ValueNotifier<File?> image;
-  bool isSearching = false;
-  @override
-  void initState() {
-    image = ValueNotifier<File?>(null);
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    image.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,22 +17,34 @@ class _AiViewBodyState extends State<AiViewBody> {
         children: [
           const AiViewHeader(),
           const SizedBox(height: 16),
-          PhotoUploadSection(image: image),
-          ValueListenableBuilder(
-            valueListenable: image,
-            builder: (context, file, _) {
-              if (file == null) {
-                return const Column(
-                  children: [
-                    SizedBox(height: 16),
-                    ReadyToSearchSection(),
-                    SizedBox(height: 16),
-                  ],
+          const PhotoUploadSection(),
+          const SizedBox(height: 16),
+
+          BlocBuilder<AiSearchCubit, AiSearchState>(
+            builder: (context, state) {
+              if (state is AiSearchInitial) {
+                return const ReadyToSearchSection();
+              }
+              if (state is AiSearchFailure) {
+                return const NoReportsFound(isAi: true);
+              }
+
+              if (state is AiSearchSuccess) {
+                if (state.results.isEmpty) {
+                  return const NoReportsFound();
+                } else {
+                  return SearchResultSection(results: state.results);
+                }
+              }
+
+              if (state is AiSearchFailure) {
+                return Text(
+                  state.message,
+                  style: const TextStyle(color: Colors.red),
                 );
               }
-              return isSearching == false
-                  ? const SearchResultSection()
-                  : const SizedBox.shrink();
+
+              return const SizedBox.shrink();
             },
           ),
         ],
