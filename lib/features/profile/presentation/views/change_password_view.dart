@@ -5,6 +5,7 @@ import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/features/profile/domain/repo/change_password_repo.dart';
 import 'package:thameen/features/profile/presentation/bloc/change_password/change_password_cubit.dart';
 import 'package:thameen/features/profile/presentation/widgets/change_password_view_body_bloc_consumer.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/widgets/app_bar.dart';
 
 class ChangePasswordView extends StatelessWidget {
@@ -20,7 +21,7 @@ class ChangePasswordView extends StatelessWidget {
           showButtonBack: true,
           showButtonActions: false,
           backgroundColor: AppColors.primary,
-          title: 'Change Password',
+          title: S.of(context).changePasswordTitle,
           onPressed: () {
             Navigator.pop(context);
           },

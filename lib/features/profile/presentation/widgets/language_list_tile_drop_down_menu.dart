@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:thameen/core/language/language_provider.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class LanguageListTileDropDownMenu extends StatefulWidget {
   const LanguageListTileDropDownMenu({super.key});
@@ -31,7 +32,7 @@ class _LanguageListTileDropDownMenuState
           size: 26,
         ),
         title: Text(
-          'Language',
+          S.of(context).language,
           style: theme.textTheme.bodyLarge,
         ),
         trailing: Container(
@@ -56,14 +57,14 @@ class _LanguageListTileDropDownMenuState
               borderRadius: BorderRadius.circular(16),
               style: theme.textTheme.bodyMedium,
               dropdownColor: theme.colorScheme.surface,
-              items: const [
+              items: [
                 DropdownMenuItem(
                   value: 'English',
-                  child: Text('English'),
+                  child: Text(S.current.english),
                 ),
                 DropdownMenuItem(
                   value: 'Arabic',
-                  child: Text('Arabic'),
+                  child: Text(S.current.arabic),
                 ),
               ],
               onChanged: (value) {

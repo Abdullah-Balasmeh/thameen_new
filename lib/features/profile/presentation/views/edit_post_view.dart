@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
 import 'package:thameen/features/profile/presentation/widgets/edit_post_view_body_bloc_consumer.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/widgets/app_bar.dart';
 
 class EditPostView extends StatelessWidget {
@@ -21,7 +22,7 @@ class EditPostView extends StatelessWidget {
           showButtonBack: true,
           showButtonActions: false,
           backgroundColor: AppColors.primary,
-          title: 'Edit Post',
+          title: S.of(context).editPostTitle,
           onPressed: () {
             Navigator.pop(context);
           },

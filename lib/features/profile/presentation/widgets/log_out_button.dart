@@ -3,6 +3,7 @@ import 'package:thameen/core/constants/shared_pref_constants.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/auth/presentation/views/sign_in_view.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 
 class LogOutButton extends StatelessWidget {
@@ -33,7 +34,7 @@ class LogOutButton extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             Text(
-              'Log Out',
+              S.of(context).logOut,
               style: AppTextStyle.bold20.copyWith(
                 color: Colors.white,
               ),
@@ -49,14 +50,14 @@ class LogOutButton extends StatelessWidget {
       context: context,
       barrierDismissible: false,
       builder: (context) => AlertDialog(
-        title: const Text('Confirm Logout'),
-        content: const Text(
-          'Are you sure you want to log out from your account?',
+        title: Text(S.current.confirmLogout),
+        content: Text(
+          S.current.confirmLogoutMessage,
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text(S.current.cancel),
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -69,7 +70,7 @@ class LogOutButton extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
               child: Text(
-                'Log Out',
+                S.of(context).logOut,
                 style: AppTextStyle.medium16,
               ),
             ),

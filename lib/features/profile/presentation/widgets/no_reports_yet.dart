@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class NoReportsYet extends StatelessWidget {
   const NoReportsYet({
@@ -20,7 +21,7 @@ class NoReportsYet extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            'No Reports Yet',
+            S.of(context).noReportsYet,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
@@ -29,7 +30,7 @@ class NoReportsYet extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'Your lost & found reports will appear here',
+            S.of(context).reportsWillAppearHere,
             style: TextStyle(
               fontSize: 14,
               color: AppTextStyle.medium14.color,

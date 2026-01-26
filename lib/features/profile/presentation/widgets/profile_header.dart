@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 
 class ProfileHeader extends StatelessWidget {
@@ -11,8 +12,8 @@ class ProfileHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = {
-      'name': SharedPreferencesSingleton.getString('userName'),
-      'email': SharedPreferencesSingleton.getString('email'),
+      'name': SharedPreferencesSingleton.getString(S.current.profileUserName),
+      'email': SharedPreferencesSingleton.getString(S.current.profileEmailPlaceholder),
       'photoUrl': SharedPreferencesSingleton.getString('photoUrl'),
     };
     log('user: ${user['name']}');

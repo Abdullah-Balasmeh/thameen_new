@@ -5,6 +5,7 @@ import 'package:thameen/core/utils/helper/build_success_snackbar.dart';
 import 'package:thameen/features/post%20item/domain/entities/post_entity.dart';
 import 'package:thameen/features/profile/presentation/bloc/myreports/my_reports_cubit.dart';
 import 'package:thameen/features/profile/presentation/widgets/edit_post_view_body.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class EditPostViewBodyBlocConsumer extends StatelessWidget {
   const EditPostViewBodyBlocConsumer({
@@ -19,7 +20,7 @@ class EditPostViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<MyReportsCubit, MyReportsState>(
       listener: (context, state) {
         if (state is UpdateReportSuccess) {
-          buildSuccessSnackBar(context, 'Report updated successfully');
+          buildSuccessSnackBar(context, S.of(context).reportUpdatedSuccessfully);
         }
         if (state is UpdateReportFailure) {
           buildErrorSnackBar(context, state.errMessage);

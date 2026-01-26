@@ -83,12 +83,12 @@ class _ChangePasswordViewBodyState extends State<ChangePasswordViewBody> {
             ),
             const SizedBox(height: 24),
             Text(
-              'Enter your old password and create a new password',
+              S.of(context).changePasswordInstruction,
               style: AppTextStyle.bold20,
             ),
             const SizedBox(height: 24),
             PasswordTextFormField(
-              hintText: 'Old Password',
+              hintText: S.of(context).oldPassword,
               prefixIcon: const Icon(Icons.lock_outline),
               keyboardType: TextInputType.visiblePassword,
               controller: _oldPasswordController,
@@ -115,7 +115,7 @@ class _ChangePasswordViewBodyState extends State<ChangePasswordViewBody> {
               height: 16,
             ),
             PasswordTextFormField(
-              hintText: 'New Password',
+              hintText: S.of(context).newPassword,
               prefixIcon: const Icon(Icons.lock_outline),
               keyboardType: TextInputType.visiblePassword,
               controller: _passwordController,
@@ -184,7 +184,7 @@ class _ChangePasswordViewBodyState extends State<ChangePasswordViewBody> {
               child: isLoading
                   ? const LoadingButton()
                   : Text(
-                      'Change Password',
+                      S.of(context).changePassword,
                       style: AppTextStyle.bold20,
                     ),
               onPressed: () {
@@ -209,14 +209,14 @@ class _ChangePasswordViewBodyState extends State<ChangePasswordViewBody> {
                   if (oldPassword != _oldPasswordController.text) {
                     buildErrorSnackBar(
                       context,
-                      'Old password is incorrect',
+                      S.of(context).oldPasswordIncorrect,
                     );
                     return;
                   }
                   if (_oldPasswordController.text == _passwordController.text) {
                     buildErrorSnackBar(
                       context,
-                      'Old password and new password cannot be the same',
+                      S.of(context).oldAndNewPasswordSame,
                     );
                     return;
                   }

@@ -6,6 +6,7 @@ import 'package:thameen/core/utils/helper/build_error_snackbar.dart';
 import 'package:thameen/features/auth/presentation/widgets/showSuccessDialog.dart';
 import 'package:thameen/features/profile/presentation/bloc/change_password/change_password_cubit.dart';
 import 'package:thameen/features/profile/presentation/widgets/change_password_view_body.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class ChangePasswordViewBodyBlocConsumer extends StatelessWidget {
   const ChangePasswordViewBodyBlocConsumer({
@@ -19,7 +20,7 @@ class ChangePasswordViewBodyBlocConsumer extends StatelessWidget {
         if (state is ChangePasswordSuccess) {
           showSuccessDialog(
             context,
-            'Password changed successfully',
+            S.of(context).passwordChangedSuccessfully,
           );
         }
         if (state is ChangePasswordFailure) {

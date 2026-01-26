@@ -376,8 +376,87 @@
   "noChatsYet": "لا توجد محادثات بعد...",
   "typeMessageHint": "اكتب رسالة",
   "loading": "جارٍ التحميل...",
-  "anonymous": "مجهول"
+  "anonymous": "مجهول",
 
+  "updateStatus": "تحديث الحالة",
+  "statusActive": "نشط",
+  "statusResolved": "تم الحل",
+  "statusDeleted": "محذوف",
+  "confirmDelete": "تأكيد الحذف",
+  "confirmDeleteMessage": "هل أنت متأكد أنك تريد حذف هذا البلاغ؟",
+  "cancel": "إلغاء",
+  "delete": "حذف",
+  "helpAndSupport": "المساعدة والدعم",
+  "privacyAndSecurity": "الخصوصية والأمان",
+  "edit": "تعديل",
+  "profileUserName": "اسم المستخدم",
+  "profileEmailPlaceholder": "example@email.com",
+  "updateReport": "تحديث البلاغ",
+  "confirmLogout": "تأكيد تسجيل الخروج",
+  "confirmLogoutMessage": "هل أنت متأكد أنك تريد تسجيل الخروج من حسابك؟",
+  "english": "الإنجليزية",
+  "arabic": "العربية",
+  "firstName": "الاسم الأول",
+  "lastName": "اسم العائلة",
+  "emailAddress": "البريد الإلكتروني",
+  "phoneNumber": "رقم الهاتف",
 
+  "firstNameRequired": "يرجى إدخال الاسم الأول",
+  "lastNameRequired": "يرجى إدخال اسم العائلة",
+  "emailRequired": "يرجى إدخال البريد الإلكتروني",
+  "phoneRequired": "يرجى إدخال رقم الهاتف",
+  "invalidPhoneLength": "يجب أن يكون رقم الهاتف 9 أرقام بعد +962 7",
+  "reportUpdatedSuccessfully": "تم تحديث البلاغ بنجاح",
+  "editPhoto": "تعديل الصورة",
+  "changePasswordInstruction": "أدخل كلمة المرور القديمة وأنشئ كلمة مرور جديدة",
+  "oldPasswordIncorrect": "كلمة المرور القديمة غير صحيحة",
+  "oldAndNewPasswordSame": "لا يمكن أن تكون كلمة المرور الجديدة مثل القديمة",
+  "passwordChangedSuccessfully": "تم تغيير كلمة المرور بنجاح",
+  "userNotLoggedIn": "المستخدم غير مسجّل الدخول",
+
+  "aiPoweredSearchDesc": "ارفع صورة ودع الذكاء الاصطناعي يجد تطابقات محتملة",
+  "easyReportingDesc": "أبلِغ بسرعة عن الأغراض المفقودة أو الموجودة",
+  "directChatDesc": "تواصل فورًا مع أصحاب البلاغات",
+  "smartNotificationsDesc": "احصل على إشعارات عند وجود تطابقات محتملة",
+
+  "copyright": "© 2025 تطبيق ثمين",
+  "allRightsReserved": "جميع الحقوق محفوظة",
+  "madeInJordan": "صُنع بـ ❤️ في الأردن",
+  "applicationLegalese": "© 2025 تطبيق ثمين. جميع الحقوق محفوظة.",
+  "editPostTitle": "تعديل البلاغ",
+  "helpSupportTitle": "المساعدة والدعم",
+
+  "emailSupportDesc": "احصل على المساعدة عبر البريد خلال 24 ساعة",
+
+  "phoneSupportDesc": "اتصل بنا من الأحد إلى الخميس، 9 صباحًا– 6 مساءً",
+
+  "whatsappSupportDesc": "متاح على مدار الساعة",
+
+  "faqTitle": "الأسئلة الشائعة",
+
+  "faqReportLost": "كيف أبلّغ عن غرض مفقود؟",
+  "faqReportLostAnswer": "انتقل إلى تبويب \"نشر غرض\"، اختر \"مفقود\"، ثم أدخل التفاصيل مثل الوصف والموقع والصورة وأرسل البلاغ.",
+
+  "faqReportFound": "كيف أبلّغ عن غرض موجود؟",
+  "faqReportFoundAnswer": "انتقل إلى تبويب \"نشر غرض\"، اختر \"موجود\"، وأدخل تفاصيل الغرض الذي وجدته.",
+
+  "faqAiSearch": "كيف يعمل البحث بالذكاء الاصطناعي؟",
+  "faqAiSearchAnswer": "ارفع صورة للغرض المفقود وسيبحث الذكاء الاصطناعي عن تطابقات بصرية.",
+
+  "faqInfoSafe": "هل معلوماتي الشخصية آمنة؟",
+  "faqInfoSafeAnswer": "نعم، نولي الخصوصية أهمية كبيرة ولا نشارك معلوماتك إلا عند اختيارك التواصل.",
+
+  "faqUpdateStatus": "كيف أغيّر حالة البلاغ؟",
+  "faqUpdateStatusAnswer": "انتقل إلى \"تقاريري\"، اختر البلاغ، واضغط \"تحديث الحالة\".",
+
+  "faqEditPost": "هل يمكنني تعديل الغرض الذي نشرته؟",
+  "faqEditPostAnswer": "نعم، انتقل إلى \"تقاريري\"، اختر الغرض ثم اضغط \"تعديل\".",
+  "chatWithUsInstantly": "تحدث معنا فورًا",
+  "frequentlyAskedQuestions": "الأسئلة الشائعة",
+  "faqReportLostItemQuestion": "كيف أقوم بالإبلاغ عن غرض مفقود؟",
+  "faqReportLostItemAnswer": "انتقل إلى تبويب \"نشر غرض\"، اختر \"مفقود\"، ثم أدخل التفاصيل مثل الوصف والموقع والصورة، وبعدها قم بإرسال البلاغ.",
+  "faqReportFoundItemQuestion": "كيف أبلّغ عن غرض تم العثور عليه؟",
+  "faqReportFoundItemAnswer": "انتقل إلى تبويب \"نشر غرض\"، اختر \"موجود\"، وأدخل تفاصيل الغرض الذي وجدته.",
+  "faqAiSearchQuestion": "كيف يعمل البحث بالذكاء الاصطناعي؟"
 
 }
