@@ -87,6 +87,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                     setState(() {
                       locationController.text = '';
                     });
+                    hasBounty.value = false;
                     homeCubit.filterPosts();
                   },
                   child: Text(

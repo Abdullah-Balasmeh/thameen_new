@@ -35,13 +35,7 @@ class _BaseViewState extends State<BaseView> {
     const ChatView(),
     const ProfileView(),
   ];
-  List<String> titles = [
-    S.current.thameen,
-    S.current.aiSearch,
-    S.current.postItem,
-    S.current.messages,
-    S.current.profile,
-  ];
+
   late AppLifecycleHandler _lifecycleHandler;
 
   @override
@@ -67,6 +61,13 @@ class _BaseViewState extends State<BaseView> {
 
   @override
   Widget build(BuildContext context) {
+    List<String> titles = [
+      S.of(context).thameen,
+      S.of(context).aiSearch,
+      S.of(context).postItem,
+      S.of(context).messages,
+      S.of(context).profile,
+    ];
     return BlocProvider(
       create: (context) => HomeCubit(getIt<HomeRepo>()),
       child: GestureDetector(
@@ -115,23 +116,23 @@ class _BaseViewState extends State<BaseView> {
       items: [
         BottomNavigationBarItem(
           icon: const Icon(Icons.home),
-          label: S.current.home,
+          label: S.of(context).home,
         ),
         BottomNavigationBarItem(
           icon: const Icon(Icons.psychology),
-          label: S.current.aiSearch,
+          label: S.of(context).aiSearch,
         ),
         BottomNavigationBarItem(
           icon: const Icon(Icons.post_add),
-          label: S.current.postItem,
+          label: S.of(context).postItem,
         ),
         BottomNavigationBarItem(
           icon: const Icon(Icons.chat_bubble_outline),
-          label: S.current.messages,
+          label: S.of(context).messages,
         ),
         BottomNavigationBarItem(
           icon: const Icon(Icons.person),
-          label: S.current.profile,
+          label: S.of(context).profile,
         ),
       ],
     );
