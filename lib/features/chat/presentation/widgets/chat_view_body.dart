@@ -6,6 +6,7 @@ import 'package:thameen/features/chat/presentation/bloc/cubit/chat_cubit.dart';
 import 'package:thameen/features/chat/presentation/views/chat_detail_view.dart';
 import 'package:thameen/features/chat/presentation/widgets/chat_card.dart';
 import 'package:thameen/features/chat/presentation/widgets/chat_divider.dart';
+import 'package:thameen/generated/l10n.dart';
 
 class ChatViewBody extends StatelessWidget {
   const ChatViewBody({super.key});
@@ -30,7 +31,7 @@ class ChatViewBody extends StatelessWidget {
                   color: AppColors.primary,
                 ),
                 Text(
-                  'No chats yet...',
+                  S.of(context).noChatsYet,
                   style: AppTextStyle.bold20,
                 ),
               ],

@@ -368,6 +368,21 @@
   "hideIdentityLabel": "Hide your identity from other users",
   "uploadItemPhotosLabel": "Upload photos of the item (up to 5)",
   "addMorePhotos": "Add More",
-  "maxImagesLimit": "You can only upload up to 5 images."
+  "maxImagesLimit": "You can only upload up to 5 images.",
+  "selectPhotoSource": "Select Photo Source",
+  "gallery": "Gallery",
+  "camera": "Camera",
+  "online": "Online",
+  "selectedImages": "Selected Images",
+  "sendImages": "Send Images",
+  "today": "Today",
+  "yesterday": "Yesterday",
+  "noChatsYet": "No chats yet...",
+  "typeMessageHint": "Type a message",
+  "loading": "Loading...",
+  "anonymous": "Anonymous"
+
+
+
 
 }

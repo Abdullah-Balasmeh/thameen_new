@@ -6,6 +6,7 @@ import 'package:thameen/core/theme/app_colors.dart';
 import 'package:thameen/features/chat/data/models/chat_user_model.dart';
 import 'package:thameen/features/chat/domain/repositories/chat_repository.dart';
 import 'package:thameen/features/chat/presentation/widgets/name_and_online_state.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/services/shared_preferences_singleton.dart';
 
 AppBar buildChatDetailAppBar(
@@ -49,13 +50,13 @@ AppBar buildChatDetailAppBar(
           stream: chatRepository.streamChatUser(otherUserId),
           builder: (context, userSnapshot) {
             if (!userSnapshot.hasData) {
-              return const Text(
-                'Loading...',
-                style: TextStyle(color: Colors.white),
+              return Text(
+                S.current.loading,
+                style: const TextStyle(color: Colors.white),
               );
             }
             final String displayName = isAnonymousChat
-                ? 'Anonymous'
+                ? S.current.anonymous
                 : userSnapshot.data!.name;
             return NameAndOnlineState(
               user: userSnapshot.data!,

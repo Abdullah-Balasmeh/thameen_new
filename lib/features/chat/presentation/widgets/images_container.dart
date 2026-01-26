@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thameen/core/theme/app_text_style.dart';
 import 'package:thameen/features/chat/presentation/bloc/cubit/chat_cubit.dart';
+import 'package:thameen/generated/l10n.dart';
 import 'package:thameen/shared/widgets/app_button.dart';
 
 class ImagesContainer extends StatefulWidget {
@@ -34,7 +35,7 @@ class _ImagesContainerState extends State<ImagesContainer> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Selected Images', style: AppTextStyle.bold24),
+            Text(S.of(context).selectedImages, style: AppTextStyle.bold24),
             const SizedBox(height: 16),
 
             Wrap(
@@ -92,7 +93,7 @@ class _ImagesContainerState extends State<ImagesContainer> {
                 );
                 Navigator.pop(context);
               },
-              child: Text('Send Images', style: AppTextStyle.bold20),
+              child: Text(S.of(context).sendImages, style: AppTextStyle.bold20),
             ),
             const SizedBox(height: 24),
           ],

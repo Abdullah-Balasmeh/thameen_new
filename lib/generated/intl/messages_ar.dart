@@ -65,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "allItems": MessageLookupByLibrary.simpleMessage("جميع الأغراض"),
     "allowingToPaste": MessageLookupByLibrary.simpleMessage("السماح باللصق"),
     "amman": MessageLookupByLibrary.simpleMessage("عمّان"),
+    "anonymous": MessageLookupByLibrary.simpleMessage("مجهول"),
     "applyFilters": MessageLookupByLibrary.simpleMessage("تطبيق الفلاتر"),
     "aqaba": MessageLookupByLibrary.simpleMessage("العقبة"),
     "assistYouMessage": MessageLookupByLibrary.simpleMessage(
@@ -83,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "bountyOptional": MessageLookupByLibrary.simpleMessage("مكافأة (اختياري)"),
     "browse": MessageLookupByLibrary.simpleMessage("استعراض..."),
     "callPhone": MessageLookupByLibrary.simpleMessage("الاتصال"),
+    "camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
     "categories": MessageLookupByLibrary.simpleMessage("فئات"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
     "changePasswordTitle": MessageLookupByLibrary.simpleMessage(
@@ -216,6 +218,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "found": MessageLookupByLibrary.simpleMessage("موجود"),
     "foundItems": MessageLookupByLibrary.simpleMessage("الأشياء الموجودة"),
+    "gallery": MessageLookupByLibrary.simpleMessage("المعرض"),
     "hasBounty": MessageLookupByLibrary.simpleMessage("يحتوي على مكافأة"),
     "hasBountyDesc": MessageLookupByLibrary.simpleMessage(
       "عرض المنشورات التي تحتوي على مكافأة فقط",
@@ -279,6 +282,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "languageCode": MessageLookupByLibrary.simpleMessage("ar"),
     "licenses": MessageLookupByLibrary.simpleMessage("التراخيص"),
     "lightMode": MessageLookupByLibrary.simpleMessage("الوضع الفاتح"),
+    "loading": MessageLookupByLibrary.simpleMessage("جارٍ التحميل..."),
     "localeName": MessageLookupByLibrary.simpleMessage("ar"),
     "location": MessageLookupByLibrary.simpleMessage("الموقع"),
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
@@ -303,6 +307,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "كلمة المرور الجديدة",
     ),
     "no": MessageLookupByLibrary.simpleMessage("لا"),
+    "noChatsYet": MessageLookupByLibrary.simpleMessage(
+      "لا توجد محادثات بعد...",
+    ),
     "noPhotosYet": MessageLookupByLibrary.simpleMessage("لا توجد صور بعد"),
     "noReportsYet": MessageLookupByLibrary.simpleMessage("لا توجد تقارير بعد"),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
@@ -328,6 +335,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "ابدأ الآن",
     ),
     "onboardingSkipButton": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "online": MessageLookupByLibrary.simpleMessage("متصل"),
     "other": MessageLookupByLibrary.simpleMessage("أخرى"),
     "otpCompleted": MessageLookupByLibrary.simpleMessage("اكتمل الإدخال"),
     "otpResentSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -411,7 +419,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectLocationError": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار موقع الغرض",
     ),
+    "selectPhotoSource": MessageLookupByLibrary.simpleMessage(
+      "اختر مصدر الصورة",
+    ),
+    "selectedImages": MessageLookupByLibrary.simpleMessage("الصور المحددة"),
     "sendEmail": MessageLookupByLibrary.simpleMessage("إرسال بريد"),
+    "sendImages": MessageLookupByLibrary.simpleMessage("إرسال الصور"),
     "sendVerificationCodeInfo": MessageLookupByLibrary.simpleMessage(
       "لا تقلق، فقط اكتب بريدك الإلكتروني وسنرسل لك رمز التحقق.",
     ),
@@ -567,6 +580,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "thirdPartySharingDescription": MessageLookupByLibrary.simpleMessage(
       "لا نقوم ببيع معلوماتك. تتم مشاركة بياناتك فقط عندما تختار التواصل بشأن غرض معيّن. قد نشارك بيانات مجهولة لأغراض تحليلية.",
     ),
+    "today": MessageLookupByLibrary.simpleMessage("اليوم"),
+    "typeMessageHint": MessageLookupByLibrary.simpleMessage("اكتب رسالة"),
     "unexpectedErrorTryAgain": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ غير متوقع، حاول مرة أخرى.",
     ),
@@ -609,6 +624,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "عند تواصلك مع الآخرين",
     ),
     "yes": MessageLookupByLibrary.simpleMessage("نعم"),
+    "yesterday": MessageLookupByLibrary.simpleMessage("أمس"),
     "yourPrivacyMatters": MessageLookupByLibrary.simpleMessage("خصوصيتك مهمة"),
     "yourRights": MessageLookupByLibrary.simpleMessage("حقوقك"),
     "yourRightsList": MessageLookupByLibrary.simpleMessage(
