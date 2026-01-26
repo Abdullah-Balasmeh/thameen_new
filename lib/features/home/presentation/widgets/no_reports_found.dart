@@ -19,8 +19,9 @@ class NoReportsFound extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            S.of(context).noReportsYet,
-            isAi == true ? 'No Strong Matches Found' : 'No Reports Yet',
+            isAi == true
+                ? 'No Strong Matches Found'
+                : S.of(context).noReportsYet,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
